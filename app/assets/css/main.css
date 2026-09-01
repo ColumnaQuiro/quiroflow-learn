@@ -1,0 +1,113 @@
+/* Brand tokens copied from the main QuiroFlow app's theme.css (light palette only --
+   this is a public, unauthenticated site, so no dark-mode toggle for v1). */
+:root {
+  --color-brand: #4f46e5;
+  --color-brand-hover: #4339ce;
+  --color-brand-text: #3b32c9;
+  --color-brand-tint: #eef0fe;
+  --color-brand-tint-border: #d8dcfb;
+
+  --color-surface-page: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #fafafb;
+
+  --color-line: #e8e9ed;
+  --color-line-divider: #f0f1f4;
+
+  --color-ink-900: #15171e;
+  --color-ink-700: #222530;
+  --color-ink-600: #2b3040;
+  --color-ink-muted: #6b7180;
+  --color-ink-muted2: #8a8fa0;
+  --color-ink-faint: #9ba0b0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-surface-page);
+  color: var(--color-ink-700);
+  font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-brand-text);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-brand-hover);
+  text-decoration: underline;
+}
+
+code,
+pre {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.prose h1 {
+  font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -0.012em;
+  color: var(--color-ink-900);
+  margin: 0 0 8px;
+}
+.prose h2 {
+  font-size: 19px;
+  font-weight: 620;
+  color: var(--color-ink-900);
+  margin: 32px 0 10px;
+}
+.prose h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-ink-900);
+  margin: 24px 0 8px;
+}
+.prose p {
+  margin: 0 0 14px;
+}
+.prose ul,
+.prose ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+.prose li {
+  margin: 0 0 6px;
+}
+.prose img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--color-line);
+}
+.prose code {
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-line);
+  border-radius: 5px;
+  padding: 1px 5px;
+  font-size: 13px;
+}
+.prose blockquote {
+  margin: 0 0 14px;
+  padding: 10px 16px;
+  background: var(--color-brand-tint);
+  border-left: 3px solid var(--color-brand);
+  border-radius: 0 8px 8px 0;
+  color: var(--color-ink-600);
+}
