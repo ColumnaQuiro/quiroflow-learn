@@ -2,9 +2,10 @@
 import { collectionBySlug } from '~/utils/collections'
 
 const route = useRoute()
+const { locale, t, localePath } = useLocale()
 const q = computed(() => (route.query.q as string) ?? '')
 
-const { data: all } = await useAsyncData('search-all', () => queryCollection('articles').all())
+const { data: all } = await useAsyncData(`search-all-${locale.value}`, () => queryCollection(locale.value === 'es' ? 'articlesEs' : 'articles').all())
 
 const results = computed(() => {
   const needle = q.value.trim().toLowerCase()
@@ -12,22 +13,22 @@ const results = computed(() => {
   return all.value.filter((a) => a.title.toLowerCase().includes(needle) || a.description.toLowerCase().includes(needle))
 })
 
-useHead({ title: `Search: ${q.value} - QuiroFlow Help Center` })
+useHead({ title: `${t.value.searchResultsFor}: ${q.value} - ${t.value.siteTitle}` })
 </script>
 
 <template>
   <main class="container page">
-    <h1>Search results for &ldquo;{{ q }}&rdquo;</h1>
+    <h1>{{ t.searchResultsFor }} &ldquo;{{ q }}&rdquo;</h1>
     <ul v-if="results.length > 0" class="list">
       <li v-for="a in results" :key="a.path">
         <NuxtLink :to="a.path">
-          <span class="tag">{{ collectionBySlug(a.collection)?.title }}</span>
+          <span class="tag">{{ collectionBySlug(locale, a.collection)?.title }}</span>
           <span class="title">{{ a.title }}</span>
           <span class="desc">{{ a.description }}</span>
         </NuxtLink>
       </li>
     </ul>
-    <p v-else class="empty">No articles matched &ldquo;{{ q }}&rdquo;. Try a different search, or browse the collections on the <NuxtLink to="/">home page</NuxtLink>.</p>
+    <p v-else class="empty">{{ t.noResults(q) }} <NuxtLink :to="localePath('/')">{{ t.homePage }}</NuxtLink>.</p>
   </main>
 </template>
 

@@ -2,20 +2,23 @@
 import { collectionBySlug } from '~/utils/collections'
 
 const route = useRoute()
+const { locale, t, localePath } = useLocale()
 const slug = route.params.collection as string
-const meta = collectionBySlug(slug)
+const meta = collectionBySlug(locale.value, slug)
 if (!meta) {
   throw createError({ statusCode: 404, statusMessage: 'Collection not found', fatal: true })
 }
 
-const { data: articles } = await useAsyncData(`collection-${slug}`, () => queryCollection('articles').where('collection', '=', slug).order('order', 'ASC').all())
+const { data: articles } = await useAsyncData(`collection-${locale.value}-${slug}`, () =>
+  queryCollection(locale.value === 'es' ? 'articlesEs' : 'articles').where('collection', '=', slug).order('order', 'ASC').all(),
+)
 
-useHead({ title: `${meta.title} - QuiroFlow Help Center` })
+useHead({ title: `${meta.title} - ${t.value.siteTitle}` })
 </script>
 
 <template>
   <main class="container page">
-    <NuxtLink to="/" class="back">&larr; All collections</NuxtLink>
+    <NuxtLink :to="localePath('/')" class="back">{{ t.allCollections }}</NuxtLink>
     <div class="head">
       <span class="icon">{{ meta.icon }}</span>
       <div>
@@ -32,7 +35,7 @@ useHead({ title: `${meta.title} - QuiroFlow Help Center` })
         </NuxtLink>
       </li>
     </ul>
-    <p v-else class="empty">Articles for this collection are coming soon.</p>
+    <p v-else class="empty">{{ t.comingSoon }}</p>
   </main>
 </template>
 

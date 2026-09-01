@@ -2,28 +2,32 @@
 import { collectionBySlug } from '~/utils/collections'
 
 const route = useRoute()
+const { locale, t, localePath } = useLocale()
 const collectionSlug = route.params.collection as string
-const meta = collectionBySlug(collectionSlug)
+const meta = collectionBySlug(locale.value, collectionSlug)
 if (!meta) {
   throw createError({ statusCode: 404, statusMessage: 'Collection not found', fatal: true })
 }
 
-const { data: page } = await useAsyncData(`article-${route.path}`, () => queryCollection('articles').path(route.path).first())
+const collectionName = locale.value === 'es' ? 'articlesEs' : 'articles'
+const { data: page } = await useAsyncData(`article-${route.path}`, () => queryCollection(collectionName).path(route.path).first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
 }
 
-const { data: siblings } = await useAsyncData(`siblings-${collectionSlug}`, () => queryCollection('articles').where('collection', '=', collectionSlug).order('order', 'ASC').all())
+const { data: siblings } = await useAsyncData(`siblings-${locale.value}-${collectionSlug}`, () =>
+  queryCollection(collectionName).where('collection', '=', collectionSlug).order('order', 'ASC').all(),
+)
 
-useHead({ title: `${page.value.title} - QuiroFlow Help Center`, meta: [{ name: 'description', content: page.value.description }] })
+useHead({ title: `${page.value.title} - ${t.value.siteTitle}`, meta: [{ name: 'description', content: page.value.description }] })
 </script>
 
 <template>
   <main class="container page">
     <nav class="breadcrumb">
-      <NuxtLink to="/">Help Center</NuxtLink>
+      <NuxtLink :to="localePath('/')">{{ t.helpCenter }}</NuxtLink>
       <span>/</span>
-      <NuxtLink :to="`/articles/${collectionSlug}`">{{ meta.title }}</NuxtLink>
+      <NuxtLink :to="localePath(`/articles/${collectionSlug}`)">{{ meta.title }}</NuxtLink>
     </nav>
 
     <div class="layout">

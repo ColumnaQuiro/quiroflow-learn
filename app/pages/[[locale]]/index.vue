@@ -1,36 +1,42 @@
 <script setup lang="ts">
-import { collections } from '~/utils/collections'
+import { collectionsFor } from '~/utils/collections'
+
+const { locale, t, localePath } = useLocale()
+const collections = collectionsFor(locale.value)
 
 // A hand-picked set rather than derived from view counts -- there's no
 // analytics wired up yet, so "popular" just means "most likely to be useful
 // first" until real usage data exists to base it on instead.
-const POPULAR_PATHS = [
-  '/articles/getting-started/welcome-to-quiroflow',
-  '/articles/calendar-appointments/booking-an-appointment',
-  '/articles/billing-payments/selling-a-package-bono',
-  '/articles/billing-payments/adding-a-patients-card',
-  '/articles/calendar-appointments/appointment-statuses-explained',
-  '/articles/getting-started/inviting-your-team',
+const POPULAR_SLUGS = [
+  ['getting-started', 'welcome-to-quiroflow'],
+  ['calendar-appointments', 'booking-an-appointment'],
+  ['billing-payments', 'selling-a-package-bono'],
+  ['billing-payments', 'adding-a-patients-card'],
+  ['calendar-appointments', 'appointment-statuses-explained'],
+  ['getting-started', 'inviting-your-team'],
 ]
 
-const { data: popular } = await useAsyncData('home-popular', async () => {
-  const all = await queryCollection('articles').all()
+const { data: popular } = await useAsyncData(`home-popular-${locale.value}`, async () => {
+  const paths = POPULAR_SLUGS.map(([c, a]) => localePath(`/articles/${c}/${a}`))
+  const all = await queryCollection(locale.value === 'es' ? 'articlesEs' : 'articles').all()
   const byPath = new Map(all.map((a) => [a.path, a]))
-  return POPULAR_PATHS.map((p) => byPath.get(p)).filter(Boolean)
+  return paths.map((p) => byPath.get(p)).filter(Boolean)
 })
+
+useHead({ title: t.value.siteTitle })
 </script>
 
 <template>
   <main>
     <section class="hero">
       <div class="container">
-        <h1>How can we help?</h1>
-        <p>Guides and answers for using QuiroFlow -- your calendar, patients, billing, and communications, all in one place.</p>
+        <h1>{{ t.heroTitle }}</h1>
+        <p>{{ t.heroSubtitle }}</p>
       </div>
     </section>
 
     <section class="container section">
-      <h2 class="section-title">Popular articles</h2>
+      <h2 class="section-title">{{ t.popularArticles }}</h2>
       <ul class="popular-list">
         <li v-for="a in popular" :key="a.path">
           <NuxtLink :to="a.path">{{ a.title }}</NuxtLink>
@@ -39,9 +45,9 @@ const { data: popular } = await useAsyncData('home-popular', async () => {
     </section>
 
     <section class="container section">
-      <h2 class="section-title">Collections</h2>
+      <h2 class="section-title">{{ t.collections }}</h2>
       <div class="grid">
-        <NuxtLink v-for="c in collections" :key="c.slug" :to="`/articles/${c.slug}`" class="card">
+        <NuxtLink v-for="c in collections" :key="c.slug" :to="localePath(`/articles/${c.slug}`)" class="card">
           <span class="card-icon">{{ c.icon }}</span>
           <span class="card-title">{{ c.title }}</span>
           <span class="card-desc">{{ c.description }}</span>

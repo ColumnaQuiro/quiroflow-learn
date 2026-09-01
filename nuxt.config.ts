@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content'],
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
+  // Force plain static output regardless of host auto-detection (Netlify's
+  // build otherwise swaps in its own "netlify" Nitro preset, which expects
+  // serverless/edge function artifacts this site has no use for -- it's
+  // pure Markdown-to-HTML with no server-side logic anywhere).
+  nitro: { preset: 'static' },
   css: ['~/assets/css/main.css'],
   app: {
     head: {
