@@ -11,7 +11,9 @@ Go to **Settings &rarr; Team** to invite staff members.
 
 1. Enter the person's email address.
 2. Choose a role from the dropdown.
-3. Select **Invite**.
+3. Select **Create Invite Link**.
+
+![Team Members settings page, with an invite form and Alex Rivera listed as Owner](/screenshots/settings-team.png)
 
 QuiroFlow emails them a sign-up link. You'll also see the invite link on screen, in case you'd rather send it yourself (over WhatsApp, for example) instead of waiting on email delivery.
 

@@ -16,6 +16,8 @@ On a patient's **Billing** tab, find the **Packages / bonos** section:
 3. If paying now, choose the **Method**: Cash, Card, or Credit on account (only shown if the patient has account credit available).
 4. Select **Sell**.
 
+![Billing tab showing the Packages / bonos section with a purchased 10-Session Wellness Package and the "Sell a package…" dropdown](/screenshots/patient-billing.png)
+
 The package appears in the patient's list showing sessions used and remaining, and can be logged against future visits.
 
 ## Partial payments and autopay

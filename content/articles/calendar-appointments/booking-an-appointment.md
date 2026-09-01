@@ -20,6 +20,8 @@ Fill in:
 
 Select **Book** (or the equivalent submit button) to save it. The appointment appears on the calendar immediately, colored by its appointment type.
 
+![Calendar view with several appointments in different colors and statuses](/screenshots/calendar.png)
+
 ## Understanding the calendar block
 
 Each appointment block shows a small status dot -- see [Appointment statuses explained](/articles/calendar-appointments/appointment-statuses-explained) for what each color means.

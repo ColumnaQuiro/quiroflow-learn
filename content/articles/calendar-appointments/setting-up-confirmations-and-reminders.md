@@ -7,6 +7,8 @@ order: 3
 
 Go to **Settings &rarr; Communication &rarr; General** to control automatic confirmation and reminder messages. Both are turned on by default.
 
+![Settings General page with Appointment Confirmations and Appointment Reminders toggles, both enabled with WhatsApp checked](/screenshots/settings-communications-general.png)
+
 ## Appointment Confirmations
 
 Sent right after an appointment is booked (whether booked by staff or by the patient online). Choose which channels to send it on:

@@ -9,6 +9,8 @@ A saved card lets you take payments without asking for card details every visit,
 
 On a patient's **Billing** tab, you have two ways to add one:
 
+![Billing tab toolbar showing Add credit, Take payment, Add card, and Copy card link buttons, with Card on file set to None](/screenshots/patient-billing.png)
+
 ## Option 1: Enter it yourself
 
 Select **Add card** (or **Replace card** if one's already on file). A secure card form opens right there -- card details go straight to Stripe and are never stored in QuiroFlow itself.

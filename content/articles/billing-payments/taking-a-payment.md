@@ -12,6 +12,8 @@ On a patient's **Billing** tab, select **Take payment**.
 3. Choose the **method**: Cash, Card, or Credit (using the patient's own account credit balance -- capped at what's actually available).
 4. Confirm to record it.
 
+![Account Ledger showing an invoice and a partial card payment against it, with €200.00 still outstanding](/screenshots/patient-billing.png)
+
 The invoice updates to **Paid** automatically once payments against it add up to the full amount; otherwise it stays partially outstanding.
 
 ## Adding credit instead

@@ -17,6 +17,8 @@ Every appointment block on the Calendar shows a small colored dot indicating its
 | No-show | Red | The patient didn't come and wasn't marked as cancelled in advance. |
 | Cancelled | Gray | The appointment was cancelled. |
 
+![Calendar showing appointments with Booked, Confirmed, Wants to reschedule, and Missed statuses, plus the status key legend](/screenshots/calendar.png)
+
 ## How Confirmed / Wants to reschedule / Unconfirmed get set
 
 If you've set up [automatic confirmations and reminders](/articles/calendar-appointments/setting-up-confirmations-and-reminders), QuiroFlow sends the patient a WhatsApp message asking them to confirm. When they reply:

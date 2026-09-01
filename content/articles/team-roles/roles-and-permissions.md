@@ -13,6 +13,8 @@ Every team member has a role, and every role has its own set of permissions. Man
 - **Practitioner** -- scoped to their own calendar and patients by default.
 - **Front Desk** -- sees the whole calendar and all patients, handles billing, but no account settings.
 
+![Roles & Permissions settings page listing Owner, Front Desk, and Practitioner roles](/screenshots/settings-roles.png)
+
 ## Creating a custom role
 
 If the built-in roles don't fit, create your own from **Settings &rarr; Roles**. A few of the permissions you can toggle:
