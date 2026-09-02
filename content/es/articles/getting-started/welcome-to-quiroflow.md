@@ -9,6 +9,8 @@ QuiroFlow es el sistema del día a día para gestionar tu clínica: reservar y g
 
 ## Las áreas principales
 
+![Panel de control de QuiroFlow con el menú lateral completo: Dashboard, My Day, Calendar, Patients, Recalls, Inbox, Billing, Reports y Campaigns](/screenshots/dashboard.png)
+
 - **Calendario (Calendar)** -- reserva, confirma y gestiona citas en tus clínicas, salas y profesionales.
 - **Pacientes (Patients)** -- la ficha completa de cada paciente: datos de contacto, historial de visitas, documentos y facturación.
 - **Recordatorios (Recalls)** -- una lista de pacientes que no han reservado en un tiempo, para que nadie se quede sin seguimiento.

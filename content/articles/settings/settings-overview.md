@@ -7,6 +7,8 @@ order: 3
 
 Settings is grouped into five sections (some items only show up if your role has permission for them -- see [Roles & permissions](/articles/team-roles/roles-and-permissions)):
 
+![Settings sidebar showing the Clinic and Billing groups](/screenshots/settings-team.png)
+
 ## General
 - **Appearance** -- light/dark theme and similar personal preferences.
 

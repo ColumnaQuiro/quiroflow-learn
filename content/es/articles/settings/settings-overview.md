@@ -7,6 +7,8 @@ order: 3
 
 Settings está agrupado en cinco secciones (algunos elementos solo aparecen si tu rol tiene permiso para ellos -- consulta [Roles y permisos](/es/articles/team-roles/roles-and-permissions)):
 
+![Menú lateral de Settings mostrando los grupos Clinic y Billing](/screenshots/settings-team.png)
+
 ## General
 - **Appearance** -- tema claro/oscuro y preferencias personales similares.
 

@@ -9,6 +9,8 @@ QuiroFlow is the day-to-day system for running your clinic: booking and managing
 
 ## The main areas
 
+![QuiroFlow dashboard with the full sidebar visible: Dashboard, My Day, Calendar, Patients, Recalls, Inbox, Billing, Reports, and Campaigns](/screenshots/dashboard.png)
+
 - **Calendar** -- book, confirm, and manage appointments across your clinics, rooms, and practitioners.
 - **Patients** -- every patient's record: contact details, visit history, documents, and billing.
 - **Recalls** -- a queue of patients who haven't booked in a while, so nobody falls through the cracks.
