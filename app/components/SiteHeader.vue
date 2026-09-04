@@ -13,9 +13,9 @@ function submitSearch() {
 <template>
   <header class="header">
     <div class="container header-inner">
-      <NuxtLink :to="localePath('/')" class="brand">
+      <NuxtLink :to="localePath('/')" class="brand" :aria-label="t.siteTitle">
         <img src="/logo/quiroflow-app-icon.svg" alt="" width="26" height="26" />
-        <span>{{ t.siteTitle }}</span>
+        <span class="brand-title">{{ t.siteTitle }}</span>
       </NuxtLink>
       <div class="right">
         <form class="search" @submit.prevent="submitSearch">
@@ -49,7 +49,7 @@ function submitSearch() {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  height: 64px;
+  min-height: 64px;
 }
 .brand {
   display: flex;
@@ -113,6 +113,21 @@ function submitSearch() {
 @media (max-width: 560px) {
   .search input {
     width: 150px;
+  }
+}
+@media (max-width: 460px) {
+  /* "QuiroFlow Help Center" plus a search box and the EN/ES toggle doesn't
+     fit one row this narrow -- it used to wrap the title across three
+     lines while the header's fixed height clipped it. Icon-only branding
+     (with the full title still read by screen readers via the link's
+     aria-label) keeps everything on one line instead. */
+  .brand-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
   }
 }
 </style>
