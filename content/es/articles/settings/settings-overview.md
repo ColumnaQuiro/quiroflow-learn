@@ -17,11 +17,12 @@ Settings está organizado en cinco secciones (algunos elementos solo aparecen si
 - **Online Booking** -- consulta la colección **Reservas online**.
 - **Team Members** y **Practitioners** -- cuentas de personal e invitaciones; consulta [Invitar a tu equipo](/es/articles/getting-started/inviting-your-team). Practitioners sirve específicamente para vincular nombres migrados a cuentas reales, o para invitar a un profesional que aún no tiene acceso de inicio de sesión.
 - **Roles & Permissions** -- consulta [Roles y permisos](/es/articles/team-roles/roles-and-permissions).
-- **Appointment Types**, **Scheduling Policies**, **Calendar Resources** (salas), **Modalities** -- cómo está estructurado tu calendario: qué visitas ofreces, las reglas de cancelación/no presentado, las salas físicas disponibles, y cómo categorizas profesionales y citas.
+- **Appointment Types** -- consulta [Tipos de cita, servicios y productos](/es/articles/settings/appointment-types-and-services).
+- **Scheduling Policies**, **Calendar Resources** (salas), **Modalities** -- cómo está estructurado tu calendario: las reglas de cancelación/no presentado, las salas físicas disponibles, y cómo categorizas profesionales y citas.
 - **Mobile App**, **Referral Sources**, **New Patient Fields** -- configuración más pequeña para la app y la admisión de pacientes, incluido el código de acceso de tu clínica para la app móvil y qué campos se muestran (y cuáles son obligatorios) al añadir un paciente nuevo.
 
 ## Billing
-- **Services & Products**, **Packages / Bonos**, **Memberships** -- lo que vendes: servicios puntuales, bonos de sesiones prepagadas, y membresías recurrentes, cada uno con su propia configuración de precios.
+- **Services & Products**, **Packages / Bonos**, **Memberships** -- lo que vendes: servicios puntuales, bonos de sesiones prepagadas, y membresías recurrentes, cada uno con su propia configuración de precios. Consulta [Tipos de cita, servicios y productos](/es/articles/settings/appointment-types-and-services), [Vender un bono a un paciente](/es/articles/billing-payments/selling-a-package-bono) y [Vender y gestionar membresías](/es/articles/billing-payments/memberships).
 - **Payments (Stripe)** -- consulta [Conectar Stripe](/es/articles/settings/connecting-stripe).
 - **Payment Methods**, **Invoice Settings**, **Fiscal Data** -- detalles de facturación e información legal/fiscal, incluido lo que exija tu autoridad fiscal local en las facturas emitidas.
 

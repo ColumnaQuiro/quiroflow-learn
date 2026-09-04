@@ -17,7 +17,15 @@ Dale un nombre, el número total de visitas previstas, y cada cuánto se esperan
 
 ## Por qué es útil
 
-Un plan de tratamiento es informativo -- no bloquea la reserva ni la facturación, y un paciente puede seguir reservando una visita fuera del ritmo previsto del plan -- pero es una forma rápida de que tanto el personal como los profesionales vean si un paciente va según lo previsto, se está retrasando, o está por terminar su tratamiento. También es un buen punto de partida para una conversación en recepción: un paciente que va "3 de 10, cada 2 semanas" pero no ha venido en un mes merece un contacto rápido antes de que formalmente entre en un Recall por retraso.
+Un plan de tratamiento es informativo -- no bloquea la reserva ni la facturación, y un paciente puede seguir reservando una visita fuera del ritmo previsto del plan -- pero es una forma rápida de que tanto el personal como los profesionales vean si un paciente va según lo previsto, se está retrasando, o está por terminar su tratamiento. También es un buen punto de partida para una conversación en recepción: un paciente que va "3 de 10, cada 2 semanas" pero no ha venido en un mes merece un contacto rápido antes de que formalmente entre en un [Recall](/es/articles/patients/recalls) por retraso.
+
+## Care Plan Alerts
+
+No hace falta que tú mismo revises el progreso de cada paciente activo -- **Care Plan Alerts** (en el menú lateral, bajo Patients) es una lista permanente de todos los pacientes con un plan activo cuya próxima visita está atrasada según el propio ritmo de ese plan, y que no tienen ya una cita futura reservada.
+
+![Lista de Care Plan Alerts mostrando el plan de un paciente, su progreso, última visita, fecha prevista y cuánto retraso lleva](/screenshots/care-plan-alerts.png)
+
+Es una lista más concreta y acotada que Recalls -- solo incluye a pacientes con un plan activo, y juzga el "retraso" según el propio calendario de ese plan (cada 1 semana, cada 2 semanas, lo que hayas definido) en lugar de un único umbral general de la cuenta. Selecciona **Message** directamente desde la lista para contactar sin necesidad de abrir antes la ficha completa del paciente.
 
 ## Cuando un plan termina
 

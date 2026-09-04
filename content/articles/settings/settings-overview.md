@@ -17,11 +17,12 @@ Settings is grouped into five sections (some items only show up if your role has
 - **Online Booking** -- see the **Online Booking** collection.
 - **Team Members** and **Practitioners** -- staff accounts and invites; see [Inviting your team](/articles/getting-started/inviting-your-team). Practitioners is specifically for linking migrated names to real accounts, or inviting a practitioner who doesn't have login access yet.
 - **Roles & Permissions** -- see [Roles & permissions](/articles/team-roles/roles-and-permissions).
-- **Appointment Types**, **Scheduling Policies**, **Calendar Resources** (rooms), **Modalities** -- how your calendar is structured: what visits you offer, cancellation/no-show rules, the physical rooms available, and how you categorize practitioners and appointments.
+- **Appointment Types** -- see [Appointment types, services, and products](/articles/settings/appointment-types-and-services).
+- **Scheduling Policies**, **Calendar Resources** (rooms), **Modalities** -- how your calendar is structured: cancellation/no-show rules, the physical rooms available, and how you categorize practitioners and appointments.
 - **Mobile App**, **Referral Sources**, **New Patient Fields** -- smaller configuration for the app and patient intake, including your clinic's join code for the mobile app and which fields show (and are required) when adding a new patient.
 
 ## Billing
-- **Services & Products**, **Packages / Bonos**, **Memberships** -- what you sell: one-off services, prepaid session packages, and recurring memberships, each with their own pricing setup.
+- **Services & Products**, **Packages / Bonos**, **Memberships** -- what you sell: one-off services, prepaid session packages, and recurring memberships, each with their own pricing setup. See [Appointment types, services, and products](/articles/settings/appointment-types-and-services), [Selling a package to a patient](/articles/billing-payments/selling-a-package-bono), and [Selling and managing memberships](/articles/billing-payments/memberships).
 - **Payments (Stripe)** -- see [Connecting Stripe](/articles/settings/connecting-stripe).
 - **Payment Methods**, **Invoice Settings**, **Fiscal Data** -- invoicing details and legal/tax information, including whatever your local tax authority requires on issued invoices.
 

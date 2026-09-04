@@ -17,7 +17,15 @@ Give it a name, the total number of planned visits, and how often they're expect
 
 ## Why it's useful
 
-A care plan is informational -- it doesn't block booking or billing, and a patient can still be booked for a visit outside the plan's expected cadence -- but it's a quick way for both staff and practitioners to see whether a patient is on track, falling behind, or due to wrap up their course of treatment. It's a good conversation-starter at the front desk too: a patient who's "3 of 10, every 2 weeks" but hasn't visited in a month is worth a quick check-in before they're formally overdue for a Recall.
+A care plan is informational -- it doesn't block booking or billing, and a patient can still be booked for a visit outside the plan's expected cadence -- but it's a quick way for both staff and practitioners to see whether a patient is on track, falling behind, or due to wrap up their course of treatment. It's a good conversation-starter at the front desk too: a patient who's "3 of 10, every 2 weeks" but hasn't visited in a month is worth a quick check-in before they're formally overdue for a [Recall](/articles/patients/recalls).
+
+## Care Plan Alerts
+
+You don't have to remember to check every active patient's progress yourself -- **Care Plan Alerts** (in the sidebar, under Patients) is a standing list of everyone on an active care plan whose next visit is overdue by that plan's own cadence, with no future appointment already booked.
+
+![Care Plan Alerts list showing a patient's plan, progress, last visit, due date, and how overdue they are](/screenshots/care-plan-alerts.png)
+
+This is a narrower, more specific list than Recalls -- it only includes patients on an active plan, and it judges "overdue" against that plan's own schedule (every 1 week, every 2 weeks, whatever you set) rather than a single account-wide threshold. Select **Message** directly from the list to reach out without opening the patient's full record first.
 
 ## When a plan finishes
 

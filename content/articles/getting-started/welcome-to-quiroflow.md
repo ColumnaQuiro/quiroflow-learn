@@ -15,9 +15,11 @@ QuiroFlow is the day-to-day system for running your clinic: booking and managing
 - **My Day** -- a filtered, single-practitioner view of today's schedule -- useful if you're a practitioner who just wants to see your own visits without the full clinic calendar.
 - **Calendar** -- book, confirm, and manage appointments across your clinics, rooms, and practitioners. This is where most of your team will spend their day -- see [Booking an appointment](/articles/calendar-appointments/booking-an-appointment).
 - **Patients** -- every patient's record in one place: contact details, visit history, care plans, documents, and billing history, all on one page per patient.
-- **Recalls** -- an automatically-maintained queue of patients who haven't booked in a while (based on rules you set), so nobody falls through the cracks between visits.
+- **Recalls** -- an automatically-maintained queue of patients who haven't booked in a while, so nobody falls through the cracks between visits. See [Recalls -- bringing patients back](/articles/patients/recalls).
+- **Waitlist** -- hold a patient's spot for a specific appointment type or practitioner, and offer it automatically the moment a matching slot opens up. See [The Waitlist](/articles/patients/waitlist).
+- **Care Plan Alerts** -- patients on an active care plan who've fallen behind its own schedule. See [Setting up a care plan](/articles/patients/care-plans).
 - **Inbox** -- every WhatsApp conversation with your patients, in one shared place your whole team can see and reply from -- no more messages trapped on one person's phone.
-- **Billing** -- packages (bonos), memberships, invoices, and payments, including cards patients have on file for fast checkout.
+- **Billing** -- packages (bonos), memberships, invoices, and payments, including cards patients have on file for fast checkout and [cash shift](/articles/billing-payments/cash-shift) reconciliation for your front desk.
 - **Reports** -- financial and activity reporting: revenue, visit counts, cancellations, and more, filterable by clinic, practitioner, and date range.
 - **Campaigns** -- WhatsApp and email marketing to your patient list, from one-off announcements to automated reminder sequences.
 - **Settings** -- your team, roles and permissions, clinics, appointment types, and payment setup. Most one-time configuration lives here.

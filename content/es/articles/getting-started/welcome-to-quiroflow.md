@@ -15,9 +15,11 @@ QuiroFlow es el sistema del día a día para gestionar tu clínica: reservar y g
 - **My Day** -- una vista filtrada, de un solo profesional, de la agenda de hoy -- útil si eres un profesional que solo quiere ver sus propias visitas sin el calendario completo de la clínica.
 - **Calendar** -- reserva, confirma y gestiona citas en tus clínicas, salas y profesionales. Aquí es donde la mayoría de tu equipo pasará su día -- consulta [Reservar una cita](/es/articles/calendar-appointments/booking-an-appointment).
 - **Patients** -- la ficha completa de cada paciente en un mismo lugar: datos de contacto, historial de visitas, planes de tratamiento, documentos e historial de facturación, todo en una sola página por paciente.
-- **Recalls** -- una lista mantenida automáticamente de pacientes que no han reservado en un tiempo (según las reglas que definas), para que nadie se quede sin seguimiento entre visitas.
+- **Recalls** -- una lista mantenida automáticamente de pacientes que no han reservado en un tiempo, para que nadie se quede sin seguimiento entre visitas. Consulta [Recordatorios (Recalls) -- recuperar pacientes](/es/articles/patients/recalls).
+- **Waitlist** -- guarda el hueco de un paciente para un tipo de cita o profesional concreto, y ofréceselo automáticamente en cuanto quede libre un hueco que coincida. Consulta [La lista de espera (Waitlist)](/es/articles/patients/waitlist).
+- **Care Plan Alerts** -- pacientes con un plan de tratamiento activo que se han retrasado según su propio calendario. Consulta [Configurar un plan de tratamiento](/es/articles/patients/care-plans).
 - **Inbox** -- todas las conversaciones de WhatsApp con tus pacientes, en un solo lugar compartido donde todo tu equipo puede verlas y responder -- se acabaron los mensajes atrapados en el teléfono de una sola persona.
-- **Billing** -- bonos, membresías, facturas y pagos, incluidas las tarjetas guardadas de los pacientes para un cobro rápido.
+- **Billing** -- bonos, membresías, facturas y pagos, incluidas las tarjetas guardadas de los pacientes para un cobro rápido y la conciliación de [turnos de caja](/es/articles/billing-payments/cash-shift) para tu recepción.
 - **Reports** -- informes financieros y de actividad: ingresos, número de visitas, cancelaciones y más, filtrables por clínica, profesional y rango de fechas.
 - **Campaigns** -- marketing por WhatsApp y correo electrónico a tu lista de pacientes, desde anuncios puntuales hasta secuencias automáticas de recordatorios.
 - **Settings** -- tu equipo, roles y permisos, clínicas, tipos de cita y configuración de pagos. Casi toda la configuración que solo haces una vez está aquí.

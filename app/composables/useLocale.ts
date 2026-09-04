@@ -14,6 +14,8 @@ const UI_STRINGS = {
     searchResultsFor: 'Search results for',
     noResults: (q: string) => `No articles matched "${q}". Try a different search, or browse the collections on the`,
     homePage: 'home page',
+    previous: 'Previous',
+    next: 'Next',
   },
   es: {
     siteTitle: 'Centro de ayuda de QuiroFlow',
@@ -28,6 +30,8 @@ const UI_STRINGS = {
     searchResultsFor: 'Resultados de búsqueda para',
     noResults: (q: string) => `Ningún artículo coincide con "${q}". Prueba otra búsqueda, o explora las colecciones en la`,
     homePage: 'página de inicio',
+    previous: 'Anterior',
+    next: 'Siguiente',
   },
 } as const
 

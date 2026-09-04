@@ -15,9 +15,21 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
 }
 
+// Only fetched for prev/next -- the full collection listing itself now lives
+// in the persistent CategorySidebar, so this page doesn't need to repeat it.
 const { data: siblings } = await useAsyncData(`siblings-${locale.value}-${collectionSlug}`, () =>
   queryCollection(collectionName).where('collection', '=', collectionSlug).order('order', 'ASC').all(),
 )
+const prev = computed(() => {
+  const list = siblings.value ?? []
+  const i = list.findIndex((a) => a.path === route.path)
+  return i > 0 ? list[i - 1] : null
+})
+const next = computed(() => {
+  const list = siblings.value ?? []
+  const i = list.findIndex((a) => a.path === route.path)
+  return i >= 0 && i < list.length - 1 ? list[i + 1] : null
+})
 
 useHead({ title: `${page.value.title} - ${t.value.siteTitle}`, meta: [{ name: 'description', content: page.value.description }] })
 </script>
@@ -30,26 +42,28 @@ useHead({ title: `${page.value.title} - ${t.value.siteTitle}`, meta: [{ name: 'd
       <NuxtLink :to="localePath(`/articles/${collectionSlug}`)">{{ meta.title }}</NuxtLink>
     </nav>
 
-    <div class="layout">
-      <article v-if="page" class="prose">
-        <ContentRenderer :value="page" />
-      </article>
+    <article v-if="page" class="prose">
+      <ContentRenderer :value="page" />
+    </article>
 
-      <aside class="sidebar">
-        <p class="sidebar-title">{{ meta.title }}</p>
-        <ul>
-          <li v-for="a in siblings" :key="a.path">
-            <NuxtLink :to="a.path" :class="{ active: a.path === route.path }">{{ a.title }}</NuxtLink>
-          </li>
-        </ul>
-      </aside>
-    </div>
+    <nav v-if="prev || next" class="prev-next">
+      <NuxtLink v-if="prev" :to="prev.path" class="pn prev">
+        <span class="pn-label">{{ t.previous }}</span>
+        <span class="pn-title">{{ prev.title }}</span>
+      </NuxtLink>
+      <span v-else />
+      <NuxtLink v-if="next" :to="next.path" class="pn next">
+        <span class="pn-label">{{ t.next }}</span>
+        <span class="pn-title">{{ next.title }}</span>
+      </NuxtLink>
+    </nav>
   </main>
 </template>
 
 <style scoped>
 .page {
   padding: 28px 0 64px;
+  max-width: 760px;
 }
 .breadcrumb {
   display: flex;
@@ -59,57 +73,54 @@ useHead({ title: `${page.value.title} - ${t.value.siteTitle}`, meta: [{ name: 'd
   color: var(--color-ink-faint);
   margin-bottom: 20px;
 }
-.layout {
+.prev-next {
   display: grid;
-  grid-template-columns: 1fr 220px;
-  gap: 40px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-line-divider);
 }
-@media (max-width: 760px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-  .sidebar {
-    order: -1;
-  }
-}
-.sidebar {
-  position: sticky;
-  top: 84px;
-  background: var(--color-surface);
+.pn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px;
   border: 1px solid var(--color-line);
   border-radius: 10px;
-  padding: 14px;
+  background: var(--color-surface);
+  min-width: 0;
 }
-.sidebar-title {
-  font-size: 12px;
+.pn:hover {
+  border-color: var(--color-brand);
+  text-decoration: none;
+}
+.pn.next {
+  text-align: right;
+  grid-column: 2;
+}
+.pn-label {
+  font-size: 11px;
   font-weight: 650;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: var(--color-ink-muted2);
-  margin: 0 0 8px;
+  color: var(--color-ink-faint);
 }
-.sidebar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 2px;
-}
-.sidebar a {
-  display: block;
-  padding: 6px 8px;
-  border-radius: 6px;
-  font-size: 13px;
-  color: var(--color-ink-muted);
-}
-.sidebar a:hover {
-  background: var(--color-surface-subtle);
-  text-decoration: none;
-}
-.sidebar a.active {
-  background: var(--color-brand-tint);
-  color: var(--color-brand-text);
+.pn-title {
+  font-size: 13.5px;
   font-weight: 600;
+  color: var(--color-ink-900);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .prev-next {
+    grid-template-columns: 1fr;
+  }
+  .pn.next {
+    grid-column: 1;
+    text-align: left;
+  }
 }
 </style>
