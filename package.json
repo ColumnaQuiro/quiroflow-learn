@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "dev": "node scripts/build-corpus.mjs && nuxt dev",
+    "generate": "node scripts/build-corpus.mjs && nuxt generate",
     "preview": "nuxt preview"
   },
   "dependencies": {

@@ -25,3 +25,6 @@ logs
 
 # Local Netlify folder
 .netlify
+
+# Generated at build time by scripts/build-corpus.mjs
+public/corpus.json
