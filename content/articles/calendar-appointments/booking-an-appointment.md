@@ -37,8 +37,43 @@ Select **Create** (or the equivalent submit button) to save it. The appointment 
 
 ## Understanding the calendar block
 
-Each appointment block shows a small status dot -- see [Appointment statuses explained](/articles/calendar-appointments/appointment-statuses-explained) for what each color means. Hovering over a block shows a quick summary without opening it; clicking opens the full appointment.
+Each appointment block shows a small status dot -- see [Appointment statuses explained](/articles/calendar-appointments/appointment-statuses-explained) for what each color means.
 
-## Editing or cancelling
+## The quick view
 
-Click an existing appointment to open it again. From there you can change the time, room, or practitioner, mark it as checked in, completed, or a no-show, or cancel it entirely. If it's part of a recurring series, editing or cancelling only affects that one occurrence -- the rest of the series is untouched.
+Clicking an appointment block opens a small popover first, before the full editor -- it's built for the common case of "what's this, and can I move it along" without a full edit screen:
+
+- Patient name, status, time, type, and practitioner at a glance.
+- A balance warning if they owe money from a past visit (e.g. "Patient owes €55.00 -- will need to pay").
+- A quick note field for this specific visit, and the patient's persistent **Patient note** (see [A patient's record](/articles/patients/patient-records)) shown inline and editable right there.
+- A recent activity log (who created it, what's changed).
+- **Check in**, **Open chart** (jumps straight to the patient's record), and **Reschedule…**.
+
+## The full editor
+
+Select the small edit icon in the corner of an appointment block to open the fuller **Edit Appointment** window, split into four tabs:
+
+::image-carousel
+---
+images:
+  - src: /screenshots/appointment-edit-details.png
+    alt: Edit Appointment Details tab with date, time, duration, room, practitioner, status, and confirmation fields
+    caption: "Details -- the same fields as booking, plus Status and Confirmation"
+  - src: /screenshots/appointment-edit-billing.png
+    alt: Edit Appointment Billing tab with an invoice, Add Service/Product, and a Process payment form
+    caption: "Billing -- invoice and take payment without leaving the appointment"
+  - src: /screenshots/appointment-edit-history.png
+    alt: Edit Appointment History tab listing this patient's past completed visits
+    caption: "History -- this patient's past visits, for context"
+  - src: /screenshots/appointment-edit-notes.png
+    alt: Edit Appointment Notes tab with a field to add a sticky note
+    caption: "Notes -- a sticky note on this specific appointment"
+---
+::
+
+- **Details** -- everything from the booking panel, plus **Status** (Booked, Completed, No-show, Cancelled -- see [Appointment statuses explained](/articles/calendar-appointments/appointment-statuses-explained)) and **Confirmation**, which you can also set by hand here if a patient confirms by phone instead of replying on WhatsApp.
+- **Billing** -- the invoice tied to this appointment, right there: add a service or product to it, see the running total and balance due, and take a payment (amount + method) without leaving the appointment or navigating to the patient's own Billing tab. A banner reminds you when there's no future appointment booked, since that's exactly what puts a patient into [Recalls](/articles/patients/recalls).
+- **History** -- a quick list of this patient's past appointments (date, type, practitioner, status), so you can see the pattern of their visits without opening their full record.
+- **Notes** -- a sticky note on this one appointment. This is different from the patient's general **Patient note** (persistent, about the patient) and from [Visit notes](/articles/patients/visit-notes) (clinical notes tied to a specific visit) -- think of it as a short-lived reminder for whoever handles this particular appointment.
+
+From either the quick view or the Details tab you can change the time, room, or practitioner, mark it checked in, completed, or a no-show, or cancel it entirely. If it's part of a recurring series, editing or cancelling only affects that one occurrence -- the rest of the series is untouched.

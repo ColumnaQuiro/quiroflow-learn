@@ -17,7 +17,7 @@ Open any patient to see their full record, organized into tabs:
 
 - **Overview** -- contact details, flags, care plan, and account summary at a glance.
 - **Appointments** -- their full visit history and any upcoming bookings.
-- **Visit notes** -- clinical notes recorded by practitioners.
+- **Visit notes** -- clinical notes recorded by practitioners, one per visit. See [Visit notes](/articles/patients/visit-notes).
 - **Billing** -- invoices, payments, packages, memberships, and cards on file. See the **Billing & Payments** collection.
 - **Communications** -- every message sent to or from this patient.
 - **Docs** -- forms and documents sent for them to fill out or sign; see [Sending forms and documents to a patient](/articles/patients/patient-documents).
@@ -27,9 +27,17 @@ Open any patient to see their full record, organized into tabs:
 
 The Overview tab's stat row -- **Visits (12mo)**, **Attendance**, **Last visit**, **Lifetime value** -- is the fastest way to size up a patient at a glance before opening any of the other tabs: a low attendance percentage or a lifetime value that's dropped off might be worth a Recall, for instance.
 
+## Patient note
+
+Separate from Flags, the **Patient note** card on Overview is a single free-text field for anything true about the patient generally -- intake history, ongoing precautions, context worth reading before their first session with a new practitioner. Select **Edit** to write or update it. Unlike [Visit notes](/articles/patients/visit-notes), it isn't tied to a specific date or appointment -- there's only ever one, and editing it overwrites what was there before, so it's for standing context rather than a running log.
+
 ## Flags
 
-The **Flags** card on Overview surfaces anything staff should know at a glance -- things like do-not-contact, minor status, or other account markers. Select **Edit** to change them. Because it's the first thing visible on the page, this is the right place for anything that should change how staff handle the patient before they even open another tab -- not a general notes field for clinical detail, which belongs in Visit notes instead.
+The **Flags** card on Overview surfaces anything staff should know at a glance -- things like do-not-contact, minor status, or other account markers. Select **Edit** to change them. Because it's the first thing visible on the page, this is the right place for anything that should change how staff handle the patient before they even open another tab -- not clinical detail, which belongs in Visit notes, and not general background, which belongs in the Patient note above.
+
+## Duplicate patients
+
+If the same person ends up with two records -- a walk-in created before someone realized they'd called in before, a CSV import that didn't match an existing entry -- avoid just deleting one, since that takes its appointment history, billing, and documents with it. Merging and deleting patients are both permission-gated actions (see **Roles & Permissions** in [Roles & permissions](/articles/team-roles/roles-and-permissions)); if you run into duplicates regularly, check with whoever holds Owner or Front Desk-level access about the right way to consolidate them in your account.
 
 ## Deactivating vs. deleting
 
