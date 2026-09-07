@@ -5,12 +5,11 @@ collection: settings
 order: 3
 ---
 
-Settings is grouped into five sections (some items only show up if your role has permission for them -- see [Roles & permissions](/articles/team-roles/roles-and-permissions), since a Front Desk role, for example, won't see most of this at all).
+Settings is grouped into a few sections (some items only show up if your role has permission for them -- see [Roles & permissions](/articles/team-roles/roles-and-permissions), since a Front Desk role, for example, won't see most of this at all).
 
 ![Settings sidebar showing the Clinic and Billing groups](/screenshots/settings-team.png)
 
-## General
-- **Appearance** -- light/dark theme and similar personal preferences. This is per-user, not account-wide, so switching it doesn't change what your teammates see.
+This page covers clinic-wide configuration -- everything here affects your whole team. Your own personal preferences (theme, language, password) live somewhere else entirely: select your name in the top-right corner -- see [Your account settings](/articles/getting-started/account-settings).
 
 ## Clinic
 - **Clinics** -- your locations. See [Managing clinics](/articles/settings/managing-clinics).
@@ -19,12 +18,13 @@ Settings is grouped into five sections (some items only show up if your role has
 - **Roles & Permissions** -- see [Roles & permissions](/articles/team-roles/roles-and-permissions).
 - **Appointment Types** -- see [Appointment types, services, and products](/articles/settings/appointment-types-and-services).
 - **Scheduling Policies**, **Calendar Resources** (rooms), **Modalities** -- how your calendar is structured: cancellation/no-show rules, the physical rooms available, and how you categorize practitioners and appointments.
-- **Mobile App**, **Referral Sources**, **New Patient Fields** -- smaller configuration for the app and patient intake, including your clinic's join code for the mobile app and which fields show (and are required) when adding a new patient.
+- **Mobile App** -- your clinic's join code and QR for the patient-facing app; see [Getting patients on the QuiroFlow app](/articles/patients/mobile-app).
+- **Referral Sources**, **New Patient Fields** -- smaller configuration for patient intake: the referral source options offered when adding a patient, and which fields show (and are required) on that form.
 
 ## Billing
 - **Services & Products**, **Packages / Bonos**, **Memberships** -- what you sell: one-off services, prepaid session packages, and recurring memberships, each with their own pricing setup. See [Appointment types, services, and products](/articles/settings/appointment-types-and-services), [Selling a package to a patient](/articles/billing-payments/selling-a-package-bono), and [Selling and managing memberships](/articles/billing-payments/memberships).
 - **Payments (Stripe)** -- see [Connecting Stripe](/articles/settings/connecting-stripe).
-- **Payment Methods**, **Invoice Settings**, **Fiscal Data** -- invoicing details and legal/tax information, including whatever your local tax authority requires on issued invoices.
+- **Payment Methods**, **Invoice Settings**, **Fiscal Data** -- invoicing details and legal information. Fiscal Data specifically holds the legal name, tax ID, and address printed on every invoice, plus a footer note -- required for an invoice to be fiscally valid, so it's worth getting right before you send your first one.
 
 ## Communication
 - **General** -- automatic confirmations and reminders, see [Setting up appointment confirmations and reminders](/articles/calendar-appointments/setting-up-confirmations-and-reminders).
@@ -33,7 +33,11 @@ Settings is grouped into five sections (some items only show up if your role has
 - **Docs** -- document templates for the [Docs tab](/articles/patients/patient-documents), where you build reusable consent forms and intake questionnaires once and send them to any patient.
 
 ## Data
-- **Import Patients (CSV)**, **Migrate Attachments**, **Webhooks** -- bulk data tools, mostly used once when first setting up or migrating from another system. Webhooks here is account-wide, separate from the per-campaign webhook action covered in [Sending campaigns](/articles/communications/sending-campaigns).
+- **Import Patients (CSV)**, **Migrate Attachments** -- bulk data tools, mostly used once when first setting up or migrating from another system.
+- **Webhooks** -- account-wide, separate from the per-campaign webhook action covered in [Sending campaigns](/articles/communications/sending-campaigns).
+
+## Developers
+- **API & Tokens** -- for anyone integrating QuiroFlow with something you've built yourself, separate from the ready-made Stripe/WhatsApp connections covered elsewhere in Settings.
 
 ## If you can't find something
 

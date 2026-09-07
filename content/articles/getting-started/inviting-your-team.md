@@ -39,7 +39,12 @@ Every account starts with three built-in roles:
 - **Practitioner** -- sees their own calendar and their own patients by default. Can manage visit notes, check patients in and out, and (if you enable it per person) appear as bookable on your online booking page.
 - **Front Desk** -- sees the whole calendar and every patient across the clinic, can take payments and manage billing, but doesn't have access to account-wide settings like billing plans or role permissions.
 
-Each row in the team list also has its own **Online Booking** toggle -- this controls whether that specific person shows up as a bookable practitioner on your public booking page, independent of their role. A Practitioner who mostly does off-calendar work (home visits, admin) can be switched off here without changing their role.
+Each row in the team list also has two independent toggles, separate from the role itself:
+
+- **Practitioner** -- whether this person can be selected as a practitioner when booking an appointment internally. It's not tied to their role: an Owner who also treats patients can have it on, while a Front Desk-only hire has it off.
+- **Online Booking** -- whether they show up as a bookable practitioner on your *public* booking page. A Practitioner who mostly does off-calendar work (home visits, admin) can have this off while still being selectable internally.
+
+Getting these two backwards is a common source of "why can't patients book with me online" -- it's the Online Booking toggle that controls that, not the Practitioner one.
 
 If none of the built-in roles fit exactly -- for example, a senior practitioner who should also see clinic-wide reports -- you can create a custom role with its own set of permissions from **Settings &rarr; Roles & Permissions**. See [Roles & permissions](/articles/team-roles/roles-and-permissions) for the full list of what can be turned on or off per role.
 
@@ -48,5 +53,6 @@ If none of the built-in roles fit exactly -- for example, a senior practitioner 
 Refreshing the page usually fixes it -- a team member's permissions and calendar data load right after they first sign in, and very occasionally that first load finishes before everything is ready. If it's still wrong after a refresh:
 
 - Double check their role in **Settings &rarr; Team** matches what you intended -- it's easy to pick the wrong role from the dropdown when inviting several people in a row.
-- If they should see a specific clinic's calendar and don't, confirm they're linked to that clinic under **Settings &rarr; Practitioners**.
 - Ask them to sign out and back in fully (not just refresh) if the issue persists -- this clears any stale session data from before their role was finalized.
+
+(**Settings &rarr; Practitioners** is a different, unrelated tool -- it's for linking a practitioner's *name* on old, migrated appointments to their real account, not for day-to-day clinic assignment.)
