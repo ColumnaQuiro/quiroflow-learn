@@ -17,27 +17,27 @@ Esta página cubre la configuración de toda la clínica -- todo aquí afecta a 
 - **Team Members** y **Practitioners** -- cuentas de personal e invitaciones; consulta [Invitar a tu equipo](/es/articles/getting-started/inviting-your-team). Practitioners sirve específicamente para vincular nombres migrados a cuentas reales, o para invitar a un profesional que aún no tiene acceso de inicio de sesión.
 - **Roles & Permissions** -- consulta [Roles y permisos](/es/articles/team-roles/roles-and-permissions).
 - **Appointment Types** -- consulta [Tipos de cita, servicios y productos](/es/articles/settings/appointment-types-and-services).
-- **Scheduling Policies**, **Calendar Resources** (salas), **Modalities** -- cómo está estructurado tu calendario: las reglas de cancelación/no presentado, las salas físicas disponibles, y cómo categorizas profesionales y citas.
+- **Scheduling Policies**, **Calendar Resources** (salas), **Modalities** -- consulta [Políticas de programación, salas y modalidades](/es/articles/settings/scheduling-and-resources).
 - **Mobile App** -- el código de acceso y el QR de tu clínica para la app de pacientes; consulta [Llevar a tus pacientes a la app de QuiroFlow](/es/articles/patients/mobile-app).
-- **Referral Sources**, **New Patient Fields** -- configuración más pequeña para la admisión de pacientes: las opciones de fuente de referencia que se ofrecen al añadir un paciente, y qué campos se muestran (y cuáles son obligatorios) en ese formulario.
+- **Referral Sources**, **New Patient Fields** -- consulta [Fuentes de referencia y campos de admisión de pacientes](/es/articles/settings/patient-intake-fields).
 
 ## Billing
 - **Services & Products**, **Packages / Bonos**, **Memberships** -- lo que vendes: servicios puntuales, bonos de sesiones prepagadas, y membresías recurrentes, cada uno con su propia configuración de precios. Consulta [Tipos de cita, servicios y productos](/es/articles/settings/appointment-types-and-services), [Vender un bono a un paciente](/es/articles/billing-payments/selling-a-package-bono) y [Vender y gestionar membresías](/es/articles/billing-payments/memberships).
 - **Payments (Stripe)** -- consulta [Conectar Stripe](/es/articles/settings/connecting-stripe).
-- **Payment Methods**, **Invoice Settings**, **Fiscal Data** -- detalles de facturación e información legal. Fiscal Data guarda concretamente el nombre legal, el NIF/CIF y la dirección que se imprimen en cada factura, más una nota de pie -- obligatorio para que una factura sea fiscalmente válida, así que merece la pena tenerlo bien configurado antes de emitir la primera.
+- **Payment Methods**, **Invoice Settings**, **Fiscal Data** -- consulta [Métodos de pago, facturación y datos fiscales](/es/articles/settings/billing-configuration).
 
 ## Communication
 - **General** -- confirmaciones y recordatorios automáticos, consulta [Configurar confirmaciones y recordatorios de citas](/es/articles/calendar-appointments/setting-up-confirmations-and-reminders).
 - **WhatsApp** -- consulta [Conectar WhatsApp](/es/articles/communications/connecting-whatsapp).
-- **Saved Replies** -- respuestas predefinidas para el Inbox, útiles para las preguntas que tu recepción responde a menudo (aparcamiento, qué traer a una primera visita, política de cancelación).
+- **Saved Replies** -- respuestas predefinidas para el Inbox; consulta [La bandeja de entrada compartida](/es/articles/communications/the-shared-inbox).
 - **Docs** -- plantillas de documentos para la [pestaña Docs](/es/articles/patients/patient-documents), donde creas una vez formularios de consentimiento y cuestionarios de admisión reutilizables y los envías a cualquier paciente.
 
 ## Data
-- **Import Patients (CSV)**, **Migrate Attachments** -- herramientas de datos masivos, usadas sobre todo una vez al configurar la cuenta por primera vez o al migrar desde otro sistema.
-- **Webhooks** -- de toda la cuenta, distinto de la acción de webhook por campaña que se explica en [Enviar campañas](/es/articles/communications/sending-campaigns).
+- **Import Patients (CSV)**, **Migrate Attachments**, **Compress Files** -- consulta [Importar y migrar tus datos](/es/articles/settings/importing-your-data).
+- **Webhooks** -- consulta [Webhooks y la API](/es/articles/settings/webhooks-and-api).
 
 ## Developers
-- **API & Tokens** -- para quien integre QuiroFlow con algo desarrollado por su cuenta, distinto de las conexiones ya hechas con Stripe/WhatsApp que se explican en otras partes de Settings.
+- **API & Tokens** -- consulta [Webhooks y la API](/es/articles/settings/webhooks-and-api).
 
 ## Si no encuentras algo
 

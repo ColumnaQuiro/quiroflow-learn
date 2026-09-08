@@ -23,6 +23,10 @@ Selecciona **+ New** para iniciar una conversación con un paciente que aún no 
 
 Abre una conversación y responde como en un chat normal. Las respuestas enviadas dentro de las 24 horas desde el último mensaje del paciente pueden ser texto libre; fuera de esa ventana, las normas de WhatsApp exigen enviar en su lugar una plantilla aprobada (las mismas configuradas en [Conectar WhatsApp](/es/articles/communications/connecting-whatsapp)). QuiroFlow te muestra en qué modo estás para que no te pille por sorpresa un mensaje que falla en silencio.
 
+## Saved Replies
+
+Para las preguntas que tu recepción responde a menudo -- horario, dónde aparcar, qué traer a la primera visita, tu política de cancelación -- configura **Saved Replies** en **Settings &rarr; Saved Replies** e insértala en el editor en lugar de volver a escribir la misma respuesta cada vez. Se comparten con todo tu equipo, así que en cuanto alguien escribe una buena respuesta, todos pueden usarla -- y si la respuesta cambia alguna vez (nuevo horario, otra dirección), actualizar la respuesta guardada una sola vez mantiene coherente cada envío futuro, en lugar de depender de que cada persona del equipo recuerde la versión actual.
+
 ## Actualizaciones automáticas de estado
 
 Cuando un paciente responde a un mensaje de confirmación o recordatorio, QuiroFlow lee esa respuesta automáticamente y actualiza la cita correspondiente -- consulta [Estados de las citas explicados](/es/articles/calendar-appointments/appointment-statuses-explained). No necesitas hacer nada para que ocurra, pero la conversación sigue siendo visible aquí como contexto -- útil cuando la respuesta de un paciente no encaja claramente con un patrón esperado y alguien necesita leer lo que realmente dijo.

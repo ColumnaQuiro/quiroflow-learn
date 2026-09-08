@@ -23,6 +23,10 @@ Select **+ New** to start a conversation with a patient who hasn't messaged you 
 
 Open a conversation and reply like a normal chat. Replies sent within 24 hours of the patient's last message can be free-form text; outside that window, WhatsApp's rules require sending an approved template instead (the same ones configured in [Connecting WhatsApp](/articles/communications/connecting-whatsapp)). QuiroFlow shows you which mode you're in so you're not caught out by a message silently failing to send.
 
+## Saved Replies
+
+For questions your front desk answers often -- hours, parking, what to bring to a first visit, your cancellation policy -- set up **Saved Replies** in **Settings -> Saved Replies** and insert one into the composer instead of retyping the same answer each time. They're shared across your whole team, so once someone writes a good answer, everyone can use it -- and if the answer ever changes (new hours, a different address), updating the saved reply once keeps every future send consistent, rather than relying on each staff member to remember the current version.
+
 ## Automatic status updates
 
 When a patient replies to a confirmation or reminder message, QuiroFlow reads it automatically and updates the relevant appointment -- see [Appointment statuses explained](/articles/calendar-appointments/appointment-statuses-explained). You don't need to do anything for that to happen, but the conversation is still visible here for context -- useful when a patient's reply doesn't cleanly match an expected pattern and a human needs to read what they actually said.

@@ -17,27 +17,27 @@ This page covers clinic-wide configuration -- everything here affects your whole
 - **Team Members** and **Practitioners** -- staff accounts and invites; see [Inviting your team](/articles/getting-started/inviting-your-team). Practitioners is specifically for linking migrated names to real accounts, or inviting a practitioner who doesn't have login access yet.
 - **Roles & Permissions** -- see [Roles & permissions](/articles/team-roles/roles-and-permissions).
 - **Appointment Types** -- see [Appointment types, services, and products](/articles/settings/appointment-types-and-services).
-- **Scheduling Policies**, **Calendar Resources** (rooms), **Modalities** -- how your calendar is structured: cancellation/no-show rules, the physical rooms available, and how you categorize practitioners and appointments.
+- **Scheduling Policies**, **Calendar Resources** (rooms), **Modalities** -- see [Scheduling policies, rooms, and modalities](/articles/settings/scheduling-and-resources).
 - **Mobile App** -- your clinic's join code and QR for the patient-facing app; see [Getting patients on the QuiroFlow app](/articles/patients/mobile-app).
-- **Referral Sources**, **New Patient Fields** -- smaller configuration for patient intake: the referral source options offered when adding a patient, and which fields show (and are required) on that form.
+- **Referral Sources**, **New Patient Fields** -- see [Referral sources and patient intake fields](/articles/settings/patient-intake-fields).
 
 ## Billing
 - **Services & Products**, **Packages / Bonos**, **Memberships** -- what you sell: one-off services, prepaid session packages, and recurring memberships, each with their own pricing setup. See [Appointment types, services, and products](/articles/settings/appointment-types-and-services), [Selling a package to a patient](/articles/billing-payments/selling-a-package-bono), and [Selling and managing memberships](/articles/billing-payments/memberships).
 - **Payments (Stripe)** -- see [Connecting Stripe](/articles/settings/connecting-stripe).
-- **Payment Methods**, **Invoice Settings**, **Fiscal Data** -- invoicing details and legal information. Fiscal Data specifically holds the legal name, tax ID, and address printed on every invoice, plus a footer note -- required for an invoice to be fiscally valid, so it's worth getting right before you send your first one.
+- **Payment Methods**, **Invoice Settings**, **Fiscal Data** -- see [Payment methods, invoicing, and fiscal data](/articles/settings/billing-configuration).
 
 ## Communication
 - **General** -- automatic confirmations and reminders, see [Setting up appointment confirmations and reminders](/articles/calendar-appointments/setting-up-confirmations-and-reminders).
 - **WhatsApp** -- see [Connecting WhatsApp](/articles/communications/connecting-whatsapp).
-- **Saved Replies** -- canned responses for the Inbox, useful for questions your front desk answers often (parking, what to bring to a first visit, cancellation policy).
+- **Saved Replies** -- canned responses for the Inbox; see [The shared Inbox](/articles/communications/the-shared-inbox).
 - **Docs** -- document templates for the [Docs tab](/articles/patients/patient-documents), where you build reusable consent forms and intake questionnaires once and send them to any patient.
 
 ## Data
-- **Import Patients (CSV)**, **Migrate Attachments** -- bulk data tools, mostly used once when first setting up or migrating from another system.
-- **Webhooks** -- account-wide, separate from the per-campaign webhook action covered in [Sending campaigns](/articles/communications/sending-campaigns).
+- **Import Patients (CSV)**, **Migrate Attachments**, **Compress Files** -- see [Importing and migrating your data](/articles/settings/importing-your-data).
+- **Webhooks** -- see [Webhooks and the API](/articles/settings/webhooks-and-api).
 
 ## Developers
-- **API & Tokens** -- for anyone integrating QuiroFlow with something you've built yourself, separate from the ready-made Stripe/WhatsApp connections covered elsewhere in Settings.
+- **API & Tokens** -- see [Webhooks and the API](/articles/settings/webhooks-and-api).
 
 ## If you can't find something
 
