@@ -42,10 +42,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
 
-      # No local install step -- --build hands the whole build to Netlify's
-      # own build system, which does its own dependency install (detecting
-      # npm/pnpm/yarn from this repo's lockfile) as part of that process.
+      # --build does NOT install dependencies itself when run this way --
+      # that only happens automatically inside Netlify's own hosted build
+      # environment. Running plain `--build` here (no install) is exactly
+      # what failed the first time this workflow ran: "nuxt: not found",
+      # since node_modules never existed in the checkout.
+      - run: npm ci
+
       - name: Build and deploy to Netlify
         run: |
           if [ "${{ github.event_name }}" = "push" ] || [ "${{ inputs.prod }}" = "true" ]; then
