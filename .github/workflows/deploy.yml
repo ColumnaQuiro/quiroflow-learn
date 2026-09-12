@@ -1,0 +1,60 @@
+name: Deploy to Netlify
+
+# Netlify's own git-integration continuous deployment isn't available for a
+# private, organization-owned repo without a paid Netlify plan. This
+# replaces it: on every push to main, GitHub Actions asks Netlify to build
+# and publish the site itself, authenticating with a personal access token
+# instead of Netlify's repo access. Works the same regardless of repo
+# visibility. Same approach as ColumnaQuiro/quiroflow's own deploy.yml,
+# adapted for this site -- see that repo for the fuller writeup of why.
+#
+# Unlike quiroflow, this uses --build (Netlify runs its own build via
+# @netlify/build, from whatever netlify.toml/dashboard already specify)
+# rather than building here first. quiroflow needed the "build it
+# ourselves" workaround because a site setting -- Enforce deployment
+# methods, under this site's Build & deploy settings -- was blocking any
+# CLI/API deploy from reaching production; once that setting was off,
+# --build was never the problem. This site already has that setting off,
+# so the simpler form applies directly.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      prod:
+        description: "Publish to production (unchecked = draft preview deploy only, safe to test with)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: netlify-deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # No local install step -- --build hands the whole build to Netlify's
+      # own build system, which does its own dependency install (detecting
+      # npm/pnpm/yarn from this repo's lockfile) as part of that process.
+      - name: Build and deploy to Netlify
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] || [ "${{ inputs.prod }}" = "true" ]; then
+            npx netlify-cli@27.5.2 deploy --build --prod
+          else
+            npx netlify-cli@27.5.2 deploy --build
+          fi
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          # Not a secret -- a site's API ID is not sensitive information,
+          # only its auth token is. learn.quiroflow.com's Netlify site.
+          NETLIFY_SITE_ID: 12553bd5-ae93-48d3-89ca-87f8c8b0b2ee
