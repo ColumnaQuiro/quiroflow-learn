@@ -232,5 +232,12 @@ export default async function seed(ctx) {
   // --- a satisfaction survey on Alba's last visit, for the patient-side clip
   const albaLast = (await one(admin.from('appointments').select('id').eq('patient_id', alba.id).eq('status', 'completed').order('starts_at', { ascending: false }).limit(1)))[0]
   const survey = await one(admin.from('satisfaction_surveys').select('id').eq('token', 'demo-encuesta-alba').limit(1))
-  if (!survey.length && albaLast) await one(admin.from('satisfaction_surveys').insert({ account_id: accountId, appointment_id: albaLast.id, token: 'demo-encuesta-alba', sent_at: daysAgo(0) }))
+  if (!survey.length && albaLast) {
+    // One survey per appointment, and the app may already have sent its own
+    // for this visit (completing it in a clip does): take that one over
+    // rather than inserting a second.
+    const existing = await one(admin.from('satisfaction_surveys').select('id').eq('appointment_id', albaLast.id).limit(1))
+    if (existing.length) await one(admin.from('satisfaction_surveys').update({ token: 'demo-encuesta-alba', sent_at: daysAgo(0), score: null, comment: null, answered_at: null, review_offered_at: null }).eq('id', existing[0].id).select('id'))
+    else await one(admin.from('satisfaction_surveys').insert({ account_id: accountId, appointment_id: albaLast.id, token: 'demo-encuesta-alba', sent_at: daysAgo(0) }))
+  }
 }
