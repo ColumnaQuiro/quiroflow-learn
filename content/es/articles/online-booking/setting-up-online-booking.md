@@ -1,35 +1,60 @@
 ---
 title: Configurar la reserva online
-description: Deja que los pacientes reserven sus propias citas, y consigue tu enlace público de reserva.
+description: Publica tu página de reservas, ponla en tu web y decide qué se puede reservar y a quién se avisa.
 collection: online-booking
 order: 1
 ---
 
-La reserva online permite a los pacientes reservar directamente, sin llamar ni escribir a tu clínica -- funciona contra la misma disponibilidad en tiempo real que ve tu equipo en el Calendario, así que no hay riesgo de que ofrezca un hueco que en realidad ya está ocupado.
+Con la reserva online, los pacientes reservan su cita desde tu web o desde un enlace, sin llamar ni escribir. La página usa la misma disponibilidad que ves en el calendario, así que nunca ofrece una hora que ya está ocupada. Cada reserva entra en la agenda al momento y el paciente recibe su confirmación.
 
-## Activarla
+Se configura en **Ajustes › Clínica › Reserva online**. Necesitas los permisos **Entrar en Ajustes** y **Clínica y agenda**.
 
-Hay dos interruptores, y ambos tienen que estar activados antes de que un tipo de cita concreto sea reservable online:
+## Publicar tu página
 
-1. **Per clinic** -- el horario y la disponibilidad se gestionan en **Settings &rarr; Online Booking &rarr; Clinics & Hours**, que es lo que consulta la reserva online.
-2. **Per appointment type** -- en **Settings &rarr; Appointment Types**, cada tipo tiene su propio interruptor **online booking enabled**, más un interruptor separado de **online payment required** si quieres cobrar (o pedir una señal) en el momento de la reserva.
+Arriba de la página verás si está lista: «Tu página de reservas está activa» o «Aún no se puede reservar nada», y en cuántas clínicas y para cuántos tipos de cita se puede reservar.
 
-Incluso con ambos activados, un tipo se puede acotar aún más en **Bookable Entities** -- restringido solo a pacientes nuevos o solo a existentes, por ejemplo -- consulta [Personalizar tu página de reservas](/es/articles/online-booking/customizing-the-booking-page).
+1. En **Dónde y qué se puede reservar**, activa **Reserva online en** cada clínica que quieras ofrecer. El horario es el de cada clínica (**Editar horario**).
+2. Revisa la lista de **Tipos de cita**: cada uno aparece como **online** o **no online**. Es cada tipo de cita el que decide si se reserva online, con cuánta antelación y si se paga al reservar; se cambia en **Ajustes › Tipos de cita** (consulta [Tipos de cita y servicios](/es/articles/settings/appointment-types-and-services)).
+3. Pulsa **Guardar cambios**.
 
-## Configuración General
+## Compartir el enlace y verla
 
-![Pestaña General de la configuración de reserva online con la ventana máxima de reserva y el enlace público de reserva](/screenshots/settings-online-booking-general.png)
+::help-video{clip="booking--copy-link-open" caption="Copiar el enlace de reservas y abrir la página"}
+::
 
-- **Maximum future booking time** -- cuántos días de antelación pueden reservar los pacientes online (90 por defecto). Se puede sobrescribir por tipo de cita en Bookable Entities si algunas visitas deberían abrirse con más o menos antelación que otras.
-- **Google Tag Manager** -- un ID de contenedor GTM opcional, que se inyecta en la página pública de reservas si quieres seguimiento de conversiones en las reservas completadas sin que QuiroFlow necesite conocer los detalles de tu analítica.
-- **Patient referral URL** -- a dónde redirige un enlace de paciente referido, si haces seguimiento de referidos por separado de las [fuentes de referencia](/es/articles/settings/settings-overview) propias de QuiroFlow.
-- **Public booking link** -- la URL independiente de tu página de reservas. Cópiala para compartirla directamente, o insértala en tu propia web.
-- **Booking notifications** -- recibe un aviso en cuanto un paciente reserva online, por correo, WhatsApp, o ambos. La notificación de WhatsApp solo se entrega como mensaje libre dentro de las 24 horas desde que ese número escribió por última vez al WhatsApp de tu clínica -- escríbele de vez en cuando para mantener las notificaciones activas, o configura una plantilla de notificación al personal en **Settings &rarr; WhatsApp** para enviar también fuera de esa ventana.
+1. En la tarjeta de arriba, en **Enlace**, pulsa **Copiar**. Ese enlace se puede poner en Instagram, en Google o en un WhatsApp.
+2. Pulsa **Abrir página** para verla como la ve un paciente.
 
-## Lo que ven los pacientes
+## Ponerla en tu web
 
-Eligen un tipo de cita, eligen un profesional (a menos que hayas configurado ese tipo para saltarse la selección de profesional), y luego una fecha y hora de disponibilidad real -- consulta [Personalizar tu página de reservas](/es/articles/online-booking/customizing-the-booking-page) para ver las opciones que dan forma a esta experiencia.
+En **Insertar en tu web** tienes el **Código para insertar en tu web**. Pulsa **Copiar** y pégalo en la página de tu web donde quieras que aparezca la reserva. Quien lleve tu web lo hace en un minuto.
 
-## Probarlo tú mismo
+> **Ten en cuenta:** el código incluye un script que distingue las reservas que vienen de anuncios de pago (Google, Meta) del resto, para que Crecimiento sepa de dónde vino cada paciente. Si ya insertaste la reserva a mano, basta con añadir la etiqueta script.
 
-Antes de compartir tu enlace de reserva ampliamente, ábrelo tú mismo (en una ventana privada/incógnito, para no estar conectado como personal) y completa una reserva entera como lo haría un paciente. Es la forma más rápida de detectar un tipo de cita mal configurado o un texto confuso antes de que le pase a un paciente real.
+## Lo que hace el paciente
+
+::help-video{clip="booking--book-as-patient" caption="Reservar una primera visita desde la página pública, en el móvil"}
+::
+
+1. Elige la **Clínica** (si hay varias) y el **Servicio**.
+2. En **Elija un profesional**, elige uno o **Cualquier profesional**.
+3. En **Elija su fecha y hora**, elige el día en el calendario y una hora de la mañana o de la tarde.
+4. En **Introduzca sus datos**, escribe **Nombre**, **Apellidos**, **Correo electrónico** y **Número de móvil** (y, si quiere, **Notas**, un **Código de descuento** o **Tengo un bono regalo**).
+5. Pulsa **Reservar cita**. Verá «¡Cita reservada!» y la invitación a descargar la app.
+
+Si el tipo de cita se paga al reservar, verá el paso **Pago**. Si la clínica pide una tarjeta para garantizar la cita, verá «Tu cita está reservada · Para garantizarla, añade una tarjeta. No se cobra nada ahora.». Las clases muestran las plazas que quedan y, si están completas, **Apuntarme a la lista de espera**.
+
+> **Ten en cuenta:** la página pública trata al paciente de usted y está en español, inglés o francés según su navegador (o el selector de idioma, si lo muestras).
+
+## Que la clínica se entere: avisos
+
+En **Avisar a la clínica de las reservas**, escribe un correo (**Por correo**) y/o un número (**Por WhatsApp**, en formato +34…). El aviso se envía en cuanto un paciente reserva. Si ese número no ha escrito a la clínica en 24 horas, WhatsApp solo entrega la plantilla **Aviso de reserva (al personal)** que elijas en **Ajustes › Comunicación › WhatsApp**.
+
+## Medir anuncios: seguimiento
+
+En **Seguimiento**:
+
+- **Google Tag Manager**: el identificador de tu contenedor (GTM-…). Se carga en la página de reservas. Déjalo vacío si no tienes anuncios.
+- **Página de agradecimiento**: si quieres que, al reservar, el paciente vaya a una página de tu web (para registrar allí la conversión) en lugar de la confirmación de QuiroFlow. A la dirección se le añaden la reserva, el tipo, el importe y la moneda.
+
+Pulsa **Guardar cambios** al terminar. Para el aspecto, los textos, la antelación y los códigos de descuento, consulta [Personalizar la página de reservas](/es/articles/online-booking/customizing-the-booking-page).

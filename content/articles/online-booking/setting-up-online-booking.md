@@ -1,35 +1,60 @@
 ---
 title: Setting up online booking
-description: Let patients book their own appointments, and get your public booking link.
+description: Publish your booking page, put it on your website, and decide what can be booked and who is told.
 collection: online-booking
 order: 1
 ---
 
-Online booking lets patients book directly, without calling or messaging your clinic -- it runs against the same real-time availability your team sees on the Calendar, so there's no risk of it offering a slot that's actually taken.
+With online booking, patients book their own appointment from your website or a link, without calling or writing. The page uses the same availability you see in the calendar, so it never offers a time that's already taken. Each booking lands in the diary straight away and the patient gets their confirmation.
 
-## Turning it on
+It's set up in **Settings › Clinic › Online Booking**. You need the **Open Settings** and **Clinic and diary** permissions.
 
-There are two switches, and both need to be on before a given appointment type is bookable online:
+## Publishing your page
 
-1. **Per clinic** -- business hours and availability are managed in **Settings &rarr; Online Booking &rarr; Clinics & Hours**, which is what online booking checks against.
-2. **Per appointment type** -- in **Settings &rarr; Appointment Types**, each type has its own **online booking enabled** toggle, plus a separate **online payment required** toggle if you want to collect payment (or a deposit) at the time of booking.
+At the top of the page you'll see whether it's ready: "Your booking page is live" or "Nothing can be booked yet", and at how many clinics and for how many appointment types it can be booked.
 
-Even after both are on, a type can be narrowed further under **Bookable Entities** -- restricted to new or existing patients only, for example -- see [Customizing your booking page](/articles/online-booking/customizing-the-booking-page).
+1. Under **Where & what can be booked**, turn on **Online booking at** each clinic you want to offer. Hours are each clinic's own (**Edit hours**).
+2. Check the **Appointment types** list: each shows as **online** or **not online**. Each appointment type decides whether it is bookable online, how far ahead and whether it's paid when booking; that's changed in **Settings › Appointment Types** (see [Appointment types and services](/articles/settings/appointment-types-and-services)).
+3. Click **Save changes**.
 
-## General settings
+## Sharing the link and viewing it
 
-![Online booking General settings tab with the maximum booking window and public booking link](/screenshots/settings-online-booking-general.png)
+::help-video{clip="booking--copy-link-open" caption="Copying the booking link and opening the page"}
+::
 
-- **Maximum future booking time** -- how many days ahead patients can book online (90 by default). This can be overridden per appointment type under Bookable Entities if some visits should open up further or less far ahead than others.
-- **Google Tag Manager** -- an optional GTM container ID, injected on the public booking page if you want conversion tracking on booking completions without QuiroFlow needing to know about your specific analytics setup.
-- **Patient referral URL** -- where a referred-patient link redirects to, if you track referrals separately from QuiroFlow's own [referral sources](/articles/settings/settings-overview).
-- **Public booking link** -- your standalone booking page URL. Copy it to share directly, or embed it on your own website.
-- **Booking notifications** -- get pinged as soon as a patient books online, by email, WhatsApp, or both. The WhatsApp notification only delivers as a free-form message within 24 hours of that number last messaging your clinic's WhatsApp number -- either message it occasionally to keep notifications flowing, or set a staff notification template in **Settings &rarr; WhatsApp** to send outside that window too.
+1. On the card at the top, under **Link**, click **Copy**. You can put that link on Instagram, on Google or in a WhatsApp message.
+2. Click **Open page** to see it as a patient does.
 
-## What patients see
+## Putting it on your website
 
-They pick an appointment type, choose a practitioner (unless you've set that type to skip practitioner selection), then a date and time from real availability -- see [Customizing your booking page](/articles/online-booking/customizing-the-booking-page) for the options that shape this experience further.
+Under **Website embed** you have the **Website embed code**. Click **Copy** and paste it on the page of your website where you want booking to appear. Whoever manages your website can do it in a minute.
 
-## Testing it yourself
+> **Good to know:** the code includes a script that tells bookings from paid ads (Google, Meta) apart from the rest, so Growth knows where each patient came from. If you already embedded booking by hand, adding just the script tag is enough.
 
-Before sharing your booking link widely, open it yourself (in a private/incognito window, so you're not logged in as staff) and go through a full booking as a patient would. It's the fastest way to catch a misconfigured appointment type or confusing wording before a real patient runs into it.
+## What the patient does
+
+::help-video{clip="booking--book-as-patient" caption="Booking a first visit from the public page on a phone"}
+::
+
+1. Choose the **Clínica** (clinic, if there are several) and the **Servicio** (service).
+2. Under **Elija un profesional**, choose a practitioner or **Cualquier profesional** (any practitioner).
+3. Under **Elija su fecha y hora**, pick the day on the calendar and a morning or afternoon time.
+4. Under **Introduzca sus datos**, enter first name, surname, email and mobile number (and optionally notes, a discount code or a gift voucher).
+5. Click **Reservar cita**. They'll see "¡Cita reservada!" and an invitation to download the app.
+
+The clip shows the page in Spanish; a patient whose browser is in English sees it in English. If the appointment type is paid when booking, there's a payment step. If the clinic asks for a card to guarantee the visit, they're asked to add one, with nothing charged now. Classes show the places left and, when full, offer the waiting list.
+
+> **Good to know:** the public page is in Spanish, English or French depending on the patient's browser (or the language picker, if you show it).
+
+## Telling the clinic: notifications
+
+Under **Tell the clinic about new bookings**, enter an email (**By email**) and/or a number (**By WhatsApp**, in +34… format). The alert goes out the moment a patient books. If that number hasn't written to the clinic in 24 hours, WhatsApp only delivers the **New booking alert (to staff)** template you choose in **Settings › Communication › WhatsApp**.
+
+## Measuring ads: tracking
+
+Under **Tracking**:
+
+- **Google Tag Manager**: your container ID (GTM-…). It's loaded on the booking page. Leave it empty if you don't run ads.
+- **Thank-you page**: to send patients to a page on your own website after booking (to record the conversion there) instead of QuiroFlow's confirmation. The booking, type, value and currency are added to the address.
+
+Click **Save changes** when you're done. For the look, the texts, how far ahead and discount codes, see [Customising the booking page](/articles/online-booking/customizing-the-booking-page).

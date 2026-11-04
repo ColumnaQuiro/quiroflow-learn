@@ -1,48 +1,48 @@
 ---
-title: Customizing your booking page
-description: Discount codes, layout, per-type booking rules, and text overrides.
+title: Customising the booking page
+description: How far ahead, practitioner order, colours, your own wording and discount codes on your booking page.
 collection: online-booking
 order: 2
 ---
 
-**Settings &rarr; Online Booking** has several tabs beyond General for shaping the booking experience -- from per-type rules down to the exact wording patients see.
+Your booking page can be adapted to your clinic: how far ahead people can book, the order practitioners are listed in, its colours and logo, any of the text it shows, and the discount codes you accept. It's all in **Settings › Clinic › Online Booking**, in the **Rules**, **Look**, **Texts** and **Discount codes** sections.
 
-::image-carousel
----
-images:
-  - src: /screenshots/settings-online-booking-entities.png
-    alt: Bookable Entities tab listing appointment types with a Configure link for each
-    caption: "Bookable Entities -- per-type booking rules"
-  - src: /screenshots/settings-online-booking-discounts.png
-    alt: Discount Codes tab with a form for Code, percent off, amount off, expiry date, and max uses
-    caption: "Discount Codes -- create one in a single form"
----
+You need the **Open Settings** and **Clinic and diary** permissions. Click **Save changes** after each change.
+
+## Rules
+
+- **How far ahead**: the furthest ahead a patient can book, in days. An appointment type can set its own.
+- **Practitioner order**: **As added** or **A to Z**, when a patient picks one.
+
+The other rules (new patients only, payment or deposit when booking) belong to each appointment type and are changed in **Settings › Appointment Types**.
+
+## Look
+
+::help-video{clip="booking--appearance" caption="Changing the colour and hiding the heading on the booking page"}
 ::
 
-## Bookable Entities
+1. Under **Look**, choose the **Main colour**, **Soft colour** and **Background**. The page is always light; the background lets it blend into a site that embeds it.
+2. Turn **Show your logo**, **Show the heading and clinic name** (turn it off when your website already has its own title above) and **Show the language picker** on or off.
+3. Check the result in **Preview** and click **Save changes**.
 
-For each appointment type, select **Configure** to set:
+Without the language picker, the page follows your website's language (when embedded with the code) or else the patient's browser.
 
-- **Bookable by** -- everyone, new patients only, or existing patients only. Useful for keeping a "New Patient Exam" type from being booked by someone who's already a patient, or vice versa.
-- **Bypass practitioner selection** -- skip straight to date/time instead of asking which practitioner, for clinics where the type is always handled by whoever's available.
-- **Max days ahead override** -- a per-type limit, if different from the account-wide default set in General.
-- **Deposit amount** -- charge a fixed deposit instead of the full price, when online payment is required for that type (set alongside the **online payment required** toggle in Settings &rarr; Appointment Types).
+## Texts
 
-## Discount Codes
+Under **Texts** you can replace any of the booking page's own words: type yours on the line you want to change and leave the rest empty to keep the original. What you write replaces the Spanish page; a patient booking in English or French sees its own translation.
 
-Create a code with:
+## Discount codes
 
-- **Code** -- the text patients type in at checkout (e.g. "WELCOME10").
-- **% off** or **€ off** -- pick one; they're alternatives, not combinable on the same code.
-- **Expires** -- an optional expiry date, after which the code stops working automatically.
-- **Max uses** -- an optional cap on total redemptions across all patients; leave blank for unlimited.
+::help-video{clip="booking--discount-code" caption="Creating a discount code"}
+::
 
-Patients enter the code during checkout on the booking page, and the discount applies before payment is collected. There's no per-patient limit built in beyond the account-wide **Max uses** -- if you need to stop one patient from reusing a code repeatedly, set a low max-uses cap or retire the code after their booking.
+1. Under **Discount codes**, type the **Code** (for example AMIGOS5).
+2. Set the discount in **% off** or in **€ off** (one or the other).
+3. Optionally, set a date in **Expires** and a limit in **Max uses**.
+4. Click **Add**.
 
-## Layout
+The patient types it into the discount code box when booking and applies it. The list shows each code with its uses ("7 of 50 used · expires …"). Switch it off to pause it, or delete it: whoever holds it can no longer use it, and bookings already made keep their discount.
 
-Set your primary and secondary colors and choose whether to show your clinic logo, so the booking page matches your branding rather than looking like a generic third-party tool. Changes here apply immediately to your live public booking link -- there's no separate "publish" step.
+> **Good to know:** the use limit is for the code as a whole, not per patient.
 
-## Language Overrides
-
-The booking page's text (headings, button labels, step titles) can be overridden here if you want different wording than the defaults -- useful for translating it fully into another language, or just matching your own clinic's tone (more casual, more formal, industry-specific terms your patients expect to see).
+Gift vouchers redeemed on the booking page are sold from Billing; see [Gift vouchers](/articles/billing-payments/gift-vouchers).

@@ -1,43 +1,36 @@
 ---
-title: Practitioner working hours
-description: Give a practitioner their own schedule so online booking only offers the days and times they actually work.
+title: A practitioner's working hours
+description: Give each practitioner their own hours so the calendar and online booking only offer the days and times they actually work.
 collection: team-roles
-order: 2
+order: 3
 ---
 
-By default every practitioner is bookable across their clinic's own opening hours. When someone only works certain days -- mornings on Tuesdays, no Fridays, two afternoons a week -- give them their own working hours so online booking stops offering slots they'd never take.
+By default, each practitioner follows their clinic's hours: they can be booked whenever the clinic is open. If someone works less than that (Tuesday mornings only, two afternoons a week, never on Fridays), give them their own hours. Online booking and the AI receptionist then stop offering slots when they aren't there, and the calendar warns you if you book outside their hours.
 
-## Setting them
+You need the **Team** permission.
 
-Go to **Settings &rarr; Team** and find the practitioner's row. On the right, click **Working hours**.
+## Setting their own hours
 
-That opens a schedule under their row with one line per weekday. For each day they work, click **+ Add hours** and set a start and end time. Days you leave empty are days they aren't offered at all.
+::help-video{clip="team--own-hours" caption="Giving a practitioner their own hours"}
+::
 
-Click **Save** when you're done. The link then reads **Working hours (custom)**, which is how you can tell at a glance which practitioners have their own schedule and which are just following the clinic's.
+1. Go to **Settings → Team** and click the practitioner.
+2. Under **Sees patients › Their hours**, click **Set their own hours**.
+3. Switch on the days they work and set their hours. **+ Range** adds a second range on the same day (morning and afternoon, for example). Days left **Closed** can't be booked.
+4. Click **Save changes**.
 
-## Empty means "same as the clinic"
+In **Settings → Team**, the person shows the **Own hours** tag.
 
-Leaving *every* day empty is not the same as being unavailable -- it means "no override", and the practitioner stays bookable across the clinic's normal opening hours. That's the default for everyone until you set something.
+## Going back to the clinic's hours
 
-So to put a practitioner back on the clinic's hours, remove every time window you added rather than trying to fill in the full week by hand.
+On their page, under **Their hours**, click **Use the clinic's hours** and then **Save changes**. From then on they follow their clinic's opening hours again.
 
-## They replace the clinic's hours, they don't narrow them
+## How it works
 
-This is the part worth reading twice. Once a practitioner has hours of their own, the clinic's hours stop applying to them entirely -- theirs are used instead, rather than the two being combined.
+- **Their own hours replace the clinic's; they don't trim them.** A day you don't switch on is a day off even if the clinic opens, and their own hours can go beyond opening time (if someone sees patients until 21:00 and the clinic closes at 20:00, they can be booked until 21:00).
+- Without their own hours, they can be booked whenever their clinic is open. The clinic's hours are set in **Settings → Clinics**. See [Managing your clinics](/articles/settings/managing-clinics).
+- The person sees their hours in their **Account Settings**, under **Your schedule › Your hours**, but can't change them.
+- To stop them being booked online at all, turn off **Can be booked online** on their page.
+- For a few days off (holidays, sick leave, a course) don't change their hours: record an absence. See [Team absences](/articles/team-roles/absences). To block specific hours in the calendar, see [Recurring appointments and blocking time](/articles/calendar-appointments/recurring-and-blocking-time).
 
-Two consequences:
-
-- A day you leave empty is a **day off**, not "no restriction". If you set Monday hours and leave the rest of the week blank, that practitioner is bookable on Mondays only.
-- Their hours can fall **outside** the clinic's. If the clinic is open 9:00-17:00 and you give a practitioner 8:00-19:00, 8:00 and 18:00 really are offered to patients.
-
-So set a practitioner's full week, not just the day you meant to change.
-
-## What this affects
-
-These hours drive what's offered on your public booking page, and the working-hours shading on the calendar.
-
-They don't stop your own team booking outside them. If reception picks a time outside a practitioner's hours, QuiroFlow asks *"This appointment falls outside working hours. Book it anyway?"* -- so an exception takes one extra click rather than being refused.
-
-## A practitioner who shouldn't be bookable at all
-
-If someone should never appear on the booking page -- an assistant, or a practitioner who only takes referrals -- turn off the **Bookable** toggle on their row instead. That removes them from online booking entirely, whatever their hours say.
+> **Good to know:** you can still book outside their hours from the calendar: QuiroFlow asks **This appointment falls outside working hours. Book it anyway?** before it does.

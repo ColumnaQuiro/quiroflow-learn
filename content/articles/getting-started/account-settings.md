@@ -1,29 +1,69 @@
 ---
-title: Your account settings
-description: Personal details, password, theme, and language -- the settings that are yours alone, not your clinic's.
+title: Your account
+description: Your photo, your name, your calendar colour, language, password and sign-in security -- the things that are only yours.
 collection: getting-started
-order: 4
+order: 5
 ---
 
-Select your name in the top-right corner and choose **Account Settings** to get here. Everything on this page is personal to you -- it's separate from **Settings** in the sidebar, which is clinic-wide and affects everyone on your team.
+**My account** is your personal page: your details, your preferences and your access. What you change here only affects you, unlike **Settings**, which belongs to the whole clinic. To get there, click your photo or name at the top right and choose **Account Settings**.
 
-![Account Settings page with Personal Details, Appearance theme/language, Change Password, and Delete Account sections](/screenshots/account-settings.png)
+The page has these sections: **You**, **Your schedule** (if you see patients), **Language**, **Weekly summary** (owners), **Security** and **Remove my access**.
 
-## Personal Details
+## Your photo, name and colour
 
-- **Photo** -- shown in the sidebar and, if you take appointments yourself, on the online booking page next to your name.
-- **Full Name** -- how you appear throughout QuiroFlow, including to patients.
-- **Email** -- your login email.
-- **Calendar Color** -- the color your appointments are shown in on the Calendar, so your own bookings are easy to pick out at a glance among your team's.
+::help-video{clip="setup--account-profile" caption="Changing your name and calendar colour"}
+::
 
-## Appearance
+1. Under **You**, tap your photo to change it. It shows in the sidebar and, if you see patients, on online booking.
+2. Correct your **Full name** if needed.
+3. If you see patients, under **Your schedule** choose **Your colour on the calendar**. The **How it looks on the calendar** preview updates as you go.
+4. **You have unsaved changes** appears at the bottom: click **Save** (or **Discard**).
 
-Light, Dark, or System theme, and English or Español for the interface -- both are **your own preference and don't affect what anyone else on your team sees**. A practitioner who prefers Spanish and a front-desk colleague who prefers English can each set their own without discussing it, since this has nothing to do with what language patients receive their WhatsApp messages in (that's set per patient -- see [Connecting WhatsApp](/articles/communications/connecting-whatsapp)).
+> **Good to know:** there's no red among the colours, because on the calendar red means money owed.
 
-## Change Password
+What you can't change yourself here:
 
-Set a new password here at any time -- you don't need your old one, just the new one entered twice to confirm. If you've forgotten your current password entirely, use the **Sign in** page's reset link instead, since this form requires being logged in already.
+- **Login email**: it's what you sign in with. To change it, write to **hola@quiroflow.com**.
+- **Role** and **Clinic(s)**: an owner assigns them in **Settings → Team**.
+- **Your hours**, and whether patients can book you online: shown here, but changed by an owner or whoever manages the team. See [A practitioner's working hours](/articles/team-roles/practitioner-working-hours).
 
-## Delete Account
+## Language and appearance
 
-Removes your own login from this clinic immediately. It doesn't erase you from the clinic's history -- your name stays attached to past appointments and records for the clinic's own record-keeping, only your access to sign in goes away. This button only ever affects your own account; it's not how an Owner removes someone else's access (see [Inviting your team](/articles/getting-started/inviting-your-team) for managing the rest of your team).
+Under **Language**, click **English** or **Español**. It applies at once, and only to you.
+
+Appearance isn't on this page: it's the **Appearance** button in the top bar, next to your account menu (**Light**, **Dark** or **System**).
+
+## Weekly summary (owners)
+
+Turn on **Weekly summary** to get, every Monday at 8:00, an email with last week's takings and payments, visits, no-shows and new patients.
+
+## Changing your password
+
+::help-video{clip="setup--account-password" caption="Changing the password and signing out other devices"}
+::
+
+1. Under **Security**, next to **Password**, click **Change…**.
+2. Type the **New password** and again in **Repeat it**. You'll see **They match** once they're the same.
+3. Click **Change password**.
+
+The password needs at least 8 characters and can't have appeared in known breaches. **Security** also shows your **Last sign-in**.
+
+## Signing out other devices
+
+Left yourself signed in on the front-desk computer or a tablet? Under **Security › Other devices**, click **Sign out the others**. Every session of yours is closed except the one you're using.
+
+## Two-factor authentication
+
+**Security › Two-factor authentication** shows whether it's **On** or **Off**, and **Set up two-factor** starts it. The whole process is in [Two-factor authentication](/articles/security-privacy/two-factor-login).
+
+## Removing your access
+
+If you leave the clinic, you can remove your own login:
+
+1. Click **Remove my access…**.
+2. Read what happens: your login and password **GOES**, at once; your name on appointments, payments, invoices and notes **STAYS**, because they are the clinic's history.
+3. Type **DELETE** and click **Remove my access**.
+
+You can't undo it yourself: to come back, an owner would need to invite you again.
+
+> **Good to know:** if you're the only owner, you can't remove your access. Make someone else an owner in **Settings → Team** first. Removing your access doesn't close the clinic's account; to close it entirely, write to **hola@quiroflow.com**.

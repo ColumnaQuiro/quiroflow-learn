@@ -1,23 +1,36 @@
 ---
-title: Fuentes de referencia y campos de admisión de pacientes
-description: Qué opciones aparecen en el campo de fuente de referencia, y qué campos se muestran en el panel de añadir paciente.
+title: Campos de paciente nuevo y fuentes de referencia
+description: Decide qué se pide al añadir un paciente y qué opciones tiene el campo de origen de la referencia.
 collection: settings
 order: 6
 ---
 
-Dos páginas pequeñas de Settings dan forma al formulario que rellena tu equipo al añadir un paciente nuevo.
+Cuando alguien de recepción añade un paciente, el panel **Añadir paciente** le pide unos datos. Tú decides cuáles: lo imprescindible obligatorio, lo útil opcional y lo que no usáis, oculto. Todo se puede completar después en la ficha. En la misma línea, las **fuentes de referencia** son las opciones del campo que dice cómo os conoció el paciente, y lo que usan los informes para agrupar a los pacientes nuevos.
 
-## Referral Sources
+Necesitas el permiso **Clínica y agenda**.
 
-Las opciones disponibles en el campo **Referral source** de un paciente -- y lo que agrupan tus informes cuando analizas de dónde vienen realmente tus pacientes. QuiroFlow te da de partida un conjunto por defecto razonable (Facebook, Google, Instagram, Organic, Other, Patient, Referral, Website), y cada uno tiene una configuración de **Visibility**:
+## Qué se pide al añadir un paciente
 
-- **Private (Staff only)** -- solo lo ve tu equipo; nunca aparece a los pacientes.
-- **Public** -- también puede aparecer a los propios pacientes, por ejemplo en tu [página de reserva online](/es/articles/online-booking/setting-up-online-booking) si preguntas ahí "¿cómo nos conociste?".
+::help-video{clip="settings--new-patient-fields" caption="Hacer obligatorio el correo y ocultar la ocupación"}
+::
 
-Añade tus propias fuentes para lo que las opciones por defecto no cubran -- una colaboración local concreta, un evento, una campaña de anuncios en particular -- para que tus informes de referencias reflejen cómo llegan realmente los pacientes en lugar de acumularse todos en "Other".
+1. Ve a **Ajustes › Campos de nuevo paciente**.
+2. **Nombre** y **Apellidos** son **Siempre obligatorio**. Para cada uno de los demás (**Fecha de nacimiento**, **Correo electrónico**, **Teléfono**, **Sexo**, **Origen**, **Ocupación**, **Idioma preferido**, **Dirección**, **Nota del paciente**) elige **Oculto**, **Opcional** u **Obligatorio**.
+3. Tus [campos personalizados](/es/articles/settings/custom-fields) aparecen debajo, en **Campos personalizados**, con las mismas tres opciones.
+4. A la derecha, **Cómo se ve Añadir paciente** te enseña el resultado mientras cambias.
+5. Pulsa **Guardar cambios**.
 
-## New Patient Fields
+> **Ten en cuenta:** **Idioma preferido** siempre tiene un valor, así que no puede ser obligatorio. Los campos personalizados clínicos solo se piden si quien añade al paciente tiene acceso clínico.
 
-Configura qué campos se muestran y son obligatorios en el panel **Add Patient** -- el que usa el personal al [reservar una cita](/es/articles/calendar-appointments/booking-an-appointment) para alguien nuevo, o al añadir un paciente directamente desde la lista de Patients. **First Name** y **Last Name** siempre están visibles y son obligatorios y no se pueden desactivar; para el resto -- Preferred Language, Patient Note, Date of Birth, Phone Number, Email, Address, Occupation, Sex -- eliges por campo si se muestra, y si se muestra, si es obligatorio antes de poder guardar al paciente.
+## Las fuentes de referencia
 
-Mantén esta lista corta para los campos que tu recepción realmente rellena durante una llamada de reserva real -- una lista larga de campos obligatorios ralentiza las reservas rápidas por teléfono, mientras que una más corta mete al paciente en el sistema más rápido y deja el resto para rellenarlo después desde su propia ficha. Consulta [La ficha de un paciente](/es/articles/patients/patient-records) para añadir más detalle una vez que el paciente ya existe.
+::help-video{clip="settings--referral-sources" caption="Añadir una fuente de referencia y retirar otra"}
+::
+
+Ve a **Ajustes › Fuentes de referencia** (la página se titula **Fuentes de Referencia**). En **Disponibles** están las opciones que se ofrecen, ordenadas por cuántos pacientes tienen cada una.
+
+- **Añadir**: escribe el nombre en **Añade una fuente, ej. TikTok** y pulsa **Añadir**.
+- **Retirar**: pulsa **Dejar de ofrecer**. La fuente pasa a **Ya no disponibles**: deja de salir en el campo, pero sigue en los pacientes que la tienen y en los informes. **Volver a ofrecer** la recupera.
+- **Eliminar**: solo aparece cuando ningún paciente la tiene.
+
+> **Ten en cuenta:** una fuente que ya tienen pacientes solo se puede retirar, no eliminar, para que los informes sigan cuadrando. Consulta el informe de referencias en [Informes](/es/articles/reports).

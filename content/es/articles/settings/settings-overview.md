@@ -1,44 +1,88 @@
 ---
-title: Un recorrido por Settings
-description: Qué hay en cada sección de Settings, y dónde encontrarlo.
+title: Mapa de Ajustes
+description: Qué hay en cada página de Ajustes, quién puede abrirla y dónde se explica.
 collection: settings
-order: 3
+order: 1
 ---
 
-Settings está organizado en varias secciones (algunos elementos solo aparecen si tu rol tiene permiso para verlos -- consulta [Roles y permisos](/es/articles/team-roles/roles-and-permissions), ya que un rol Front Desk, por ejemplo, no verá casi nada de esto).
+**Ajustes** (abajo del menú lateral) es donde se configura toda la clínica: sedes, equipo, tipos de cita, cobros, mensajes, importaciones... Lo que cambies aquí afecta a todo el equipo. Lo que es solo tuyo (tu foto, tu idioma, tu contraseña) está en **Ajustes de la cuenta**, en el menú de tu foto: consulta [Tu cuenta](/es/articles/getting-started/account-settings).
 
-![Menú lateral de Settings mostrando los grupos Clinic y Billing](/screenshots/settings-team.png)
+## Quién ve qué
 
-Esta página cubre la configuración de toda la clínica -- todo aquí afecta a todo tu equipo. Tus propias preferencias personales (tema, idioma, contraseña) están en otro sitio completamente distinto: selecciona tu nombre en la esquina superior derecha -- consulta [Tu configuración de cuenta](/es/articles/getting-started/account-settings).
+Para entrar en Ajustes hace falta el permiso **Entrar en Ajustes**, y cada grupo de páginas pide además su propio permiso (los tienes en la tabla). Las personas propietarias lo ven todo. Las páginas que tu rol no puede abrir no aparecen: ni en el menú ni en la portada de Ajustes. Consulta [Roles y permisos](/es/articles/team-roles/roles-and-permissions).
 
-## Clinic
-- **Clinics** -- tus ubicaciones. Consulta [Gestionar clínicas](/es/articles/settings/managing-clinics).
-- **Online Booking** -- consulta la colección **Reservas online**.
-- **Team Members** y **Practitioners** -- cuentas de personal e invitaciones; consulta [Invitar a tu equipo](/es/articles/getting-started/inviting-your-team). Practitioners sirve específicamente para vincular nombres migrados a cuentas reales, o para invitar a un profesional que aún no tiene acceso de inicio de sesión.
-- **Roles & Permissions** -- consulta [Roles y permisos](/es/articles/team-roles/roles-and-permissions).
-- **Appointment Types** -- consulta [Tipos de cita, servicios y productos](/es/articles/settings/appointment-types-and-services).
-- **Scheduling Policies**, **Calendar Resources** (salas), **Modalities** -- consulta [Políticas de programación, salas y modalidades](/es/articles/settings/scheduling-and-resources).
-- **Mobile App** -- el código de acceso y el QR de tu clínica para la app de pacientes; consulta [Llevar a tus pacientes a la app de QuiroFlow](/es/articles/patients/mobile-app).
-- **Referral Sources**, **New Patient Fields** -- consulta [Fuentes de referencia y campos de admisión de pacientes](/es/articles/settings/patient-intake-fields).
+A la izquierda tienes el menú de Ajustes, agrupado; en el móvil se abre con el botón **Secciones**. La portada de Ajustes muestra una tarjeta por página, pero no todas: **Bonos regalo**, **Terceros**, **Educación** y **Privacidad** solo están en el menú de la izquierda.
 
-## Billing
-- **Services & Products**, **Packages / Bonos**, **Memberships** -- lo que vendes: servicios puntuales, bonos de sesiones prepagadas, y membresías recurrentes, cada uno con su propia configuración de precios. Consulta [Tipos de cita, servicios y productos](/es/articles/settings/appointment-types-and-services), [Vender un bono a un paciente](/es/articles/billing-payments/selling-a-package-bono) y [Vender y gestionar membresías](/es/articles/billing-payments/memberships).
-- **Payments (Stripe)** -- consulta [Conectar Stripe](/es/articles/settings/connecting-stripe).
-- **Payment Methods**, **Invoice Settings**, **Fiscal Data** -- consulta [Métodos de pago, facturación y datos fiscales](/es/articles/settings/billing-configuration).
+## Clínica
 
-## Communication
-- **General** -- confirmaciones y recordatorios automáticos, consulta [Configurar confirmaciones y recordatorios de citas](/es/articles/calendar-appointments/setting-up-confirmations-and-reminders).
-- **WhatsApp** -- consulta [Conectar WhatsApp](/es/articles/communications/connecting-whatsapp).
-- **Saved Replies** -- respuestas predefinidas para el Inbox; consulta [La bandeja de entrada compartida](/es/articles/communications/the-shared-inbox).
-- **Docs** -- plantillas de documentos para la [pestaña Docs](/es/articles/patients/patient-documents), donde creas una vez formularios de consentimiento y cuestionarios de admisión reutilizables y los envías a cualquier paciente.
+Permiso **Clínica y agenda**, salvo Equipo y Roles.
 
-## Data
-- **Import Patients (CSV)**, **Migrate Attachments**, **Compress Files** -- consulta [Importar y migrar tus datos](/es/articles/settings/importing-your-data).
-- **Webhooks** -- consulta [Webhooks y la API](/es/articles/settings/webhooks-and-api).
+| Página | Para qué sirve | Artículo |
+|---|---|---|
+| **Clínicas** | Tus sedes: horario, cierres y festivos, contacto, zona horaria, datos fiscales, logotipo, portal de llegada | [Gestionar tus clínicas](/es/articles/settings/managing-clinics) |
+| **Reserva online** | Qué se puede reservar por internet y cómo se ve tu página | [Reserva online](/es/articles/online-booking/setting-up-online-booking) |
+| **Equipo** (permiso **Equipo**) | Quién entra, con qué rol, quién atiende pacientes, invitaciones | [Invitar a tu equipo](/es/articles/team-roles/inviting-your-team) |
+| **Roles y permisos** (permiso **Roles y permisos**) | Qué puede ver y hacer cada rol | [Roles y permisos](/es/articles/team-roles/roles-and-permissions) |
+| **Tipos de cita** | Lo que se reserva: duración, precio, color, reserva online | [Tipos de cita y servicios](/es/articles/settings/appointment-types-and-services) |
+| **Políticas de programación** | Tarifas por cancelación, cita perdida o reprogramación, y motivos de reprogramación | [Políticas de programación y recursos](/es/articles/settings/scheduling-and-resources) |
+| **Recursos de calendario** | Las salas de cada clínica | [Salas](/es/articles/settings/rooms) |
+| **App móvil** | La app para tus pacientes: código, QR, qué pueden hacer, avisos | [La app del paciente](/es/articles/patient-app/mobile-app) |
+| **Fuentes de referencia** | Las opciones de "cómo nos conociste" | [Campos de paciente nuevo y fuentes de referencia](/es/articles/settings/patient-intake-fields) |
+| **Biblioteca de ejercicios** | Los ejercicios para casa | [Ejercicios](/es/articles/clinical/exercises) |
+| **Educación** | El contenido educativo para pacientes | [Educación](/es/articles/clinical/education) |
+| **Campos de nuevo paciente** | Qué pide el panel **Añadir paciente** | [Campos de paciente nuevo y fuentes de referencia](/es/articles/settings/patient-intake-fields) |
+| **Campos personalizados** | Tus propios campos en la ficha del paciente | [Campos personalizados](/es/articles/settings/custom-fields) |
 
-## Developers
-- **API & Tokens** -- consulta [Webhooks y la API](/es/articles/settings/webhooks-and-api).
+## Facturación
 
-## Si no encuentras algo
+Permiso **Facturación**, salvo VeriFactu (solo personas propietarias).
 
-Settings está organizado según lo que configuras, no según con qué frecuencia lo usas, así que un elemento que se toca poco puede seguir estando exactamente donde esperarías una vez conoces la agrupación de arriba. Si una sección que esperas ver falta por completo, lo más probable es que sea un problema de permisos y no una función que no existe -- consúltalo con el Owner de tu cuenta.
+| Página | Para qué sirve |
+|---|---|
+| **Servicios y productos** | Lo que cobras además de las citas |
+| **Productos y stock** | Lo que vendes en el mostrador |
+| **Paquetes / Bonos** | Los bonos de sesiones que vendes |
+| **Bonos regalo** | Las tarjetas regalo |
+| **Membresías** | Los planes de pago recurrente |
+| **Terceros** | Aseguradoras y otros que pagan por el paciente |
+| **Pagos** | Los métodos de pago y los cobros con tarjeta (Stripe) |
+| **Facturación** | Datos fiscales, numeración, IVA y lo que muestran los recibos |
+| **VeriFactu** | El envío de los registros de facturación a la AEAT |
+
+Todo esto se explica en [Cobros y pagos](/es/articles/billing-payments) y [Facturas y VeriFactu](/es/articles/invoices-verifactu).
+
+## Comunicación
+
+Permiso **Comunicación y Growth**.
+
+| Página | Para qué sirve |
+|---|---|
+| **Mensajes** | Confirmaciones y recordatorios de cita |
+| **WhatsApp** | La conexión de WhatsApp y sus plantillas |
+| **Respuestas guardadas** | Textos que el equipo inserta en la bandeja |
+| **Documentos** | Plantillas de consentimientos y formularios |
+| **Cartas** | Plantillas de cartas con tu membrete |
+| **Leads** | Cómo avanzan los contactos nuevos y a quién se avisa |
+| **Recordatorios** | Quién hace el seguimiento de los pacientes que no vuelven, y los motivos |
+
+Ojo con la palabra: aquí **Recordatorios** son los pacientes a los que toca volver a llamar (lo que en otros programas se llama *recalls*), no los recordatorios de cita, que están en **Mensajes**. Consulta [Comunicaciones](/es/articles/communications) y [Recordatorios](/es/articles/calendar-appointments/recalls).
+
+## Datos
+
+| Página | Permiso | Para qué sirve | Artículo |
+|---|---|---|---|
+| **Importar** | **Datos** | Traer pacientes, citas y más desde PracticeHub o un CSV | [Importar tus datos](/es/articles/settings/importing-your-data) |
+| **Archivos** | **Datos** | Archivos que faltan tras una migración, y comprimir los que hay | [Importar tus datos](/es/articles/settings/importing-your-data) |
+| **Registro de actividad** | Solo personas propietarias | Quién cambió qué, quién abrió cada ficha, quién entró | [Registro de actividad](/es/articles/security-privacy/activity-log) |
+| **Privacidad** | Solo personas propietarias | Cuánto tiempo se conservan las historias, y anonimizar las antiguas | [Conservación de datos](/es/articles/security-privacy/data-retention) |
+
+## Desarrolladores
+
+Permiso **API para desarrolladores**.
+
+| Página | Para qué sirve |
+|---|---|
+| **API y tokens** | Tokens para que otros programas lean o escriban en tu clínica |
+| **Webhooks** | Avisar a otro sistema cuando cambia un paciente, una cita o un recibo |
+
+Consulta [API y webhooks](/es/articles/settings/webhooks-and-api).

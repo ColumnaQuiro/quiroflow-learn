@@ -1,23 +1,36 @@
 ---
-title: Referral sources and patient intake fields
-description: What options appear on the referral source field, and which fields show on the Add Patient panel.
+title: New patient fields and referral sources
+description: Decide what's asked when adding a patient, and which options the referral source field offers.
 collection: settings
 order: 6
 ---
 
-Two small Settings pages shape the form your team fills in when adding a new patient.
+When someone at the front desk adds a patient, the **Add patient** panel asks for some details. You decide which: the essentials required, the useful ones optional and the ones you don't use hidden. Everything can be completed later on the record. Along the same lines, **referral sources** are the options of the field saying how the patient found you, and what reports group new patients by.
 
-## Referral Sources
+You need the **Clinic and diary** permission.
 
-The options available on a patient's **Referral source** field -- and what your reports group by when you're looking at where patients actually come from. QuiroFlow starts you off with a sensible default set (Facebook, Google, Instagram, Organic, Other, Patient, Referral, Website), and each one has a **Visibility** setting:
+## What's asked when adding a patient
 
-- **Private (Staff only)** -- only your team sees this option; it never appears to patients.
-- **Public** -- can also appear to patients themselves, for example on your [online booking page](/articles/online-booking/setting-up-online-booking) if you ask "how did you hear about us?" there.
+::help-video{clip="settings--new-patient-fields" caption="Making email required and hiding occupation"}
+::
 
-Add your own sources for anything the defaults don't cover -- a specific local partnership, an event, a particular ad campaign -- so your referral reporting reflects how patients actually find you rather than getting lumped into "Other."
+1. Go to **Settings → New Patient Fields**.
+2. **First name** and **Last name** are **Always required**. For each of the others (**Date of birth**, **Email**, **Phone number**, **Sex**, **Referred by**, **Occupation**, **Preferred language**, **Address**, **Patient note**) choose **Hidden**, **Optional** or **Required**.
+3. Your [custom fields](/articles/settings/custom-fields) appear below, under **Custom fields**, with the same three options.
+4. On the right, **How Add patient looks** previews the result as you change things.
+5. Click **Save changes**.
 
-## New Patient Fields
+> **Good to know:** **Preferred language** always has a value, so it can't be required. Clinical custom fields are only asked if whoever adds the patient has clinical access.
 
-Configure which fields are visible and required on the **Add Patient** panel -- the one staff use when [booking an appointment](/articles/calendar-appointments/booking-an-appointment) for someone new, or adding a patient directly from the Patients list. **First Name** and **Last Name** are always visible and required and can't be turned off; everything else -- Preferred Language, Patient Note, Date of Birth, Phone Number, Email, Address, Occupation, Sex -- you choose per field whether it shows at all, and if it does, whether it's required before the patient can be saved.
+## Referral sources
 
-Keep this list short for the fields your front desk actually fills in during a real booking call -- a long list of required fields makes quick phone bookings slower, while a shorter one gets patients into the system faster and leaves the rest to be filled in later from their own record. See [A patient's record](/articles/patients/patient-records) for adding more detail once a patient already exists.
+::help-video{clip="settings--referral-sources" caption="Adding a referral source and retiring another"}
+::
+
+Go to **Settings → Referral Sources**. **Offered** lists the options on offer, sorted by how many patients have each.
+
+- **Add**: type the name into **Add a source, e.g. TikTok** and click **Add**.
+- **Retire**: click **Stop offering**. The source moves to **No longer offered**: it stops appearing in the field but stays on the patients who have it and in reports. **Offer again** brings it back.
+- **Delete**: only appears when no patient has it.
+
+> **Good to know:** a source patients already have can only be retired, not deleted, so reports keep adding up. See the referrals report in [Reports](/articles/reports).

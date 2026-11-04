@@ -1,35 +1,51 @@
 ---
-title: The Scheduled Reminders report
-description: See who has confirmed, who hasn't replied, and who wants to reschedule.
+title: Scheduled Reminders
+description: Whether the clinic's WhatsApp messages arrived, which ones failed and why, and which patients with an appointment have confirmed, are still pending or want to change it.
 collection: reports
-order: 2
+order: 12
 ---
 
-Go to **Reports &rarr; Scheduled Reminders**. This report only counts appointments that had a confirmation or reminder message sent -- it needs the WhatsApp reply webhook configured (see [Connecting WhatsApp](/articles/communications/connecting-whatsapp)), and if that's not set up, the counts here will stay at zero even though messages might still be sending.
+**Scheduled Reminders** answers two everyday questions: did the WhatsApp messages actually go out, and who has confirmed their next appointment? It's the quick way to know who to call before their visit, without going through the calendar. You'll find it under **Reports › Operations**.
 
-![Scheduled Reminders report with WhatsApp delivery stats and Confirmed / Pending / Wants to reschedule counts](/screenshots/reports-scheduled-reminders.png)
+::help-video{clip="reports--scheduled-reminders" caption="WhatsApp delivery status and confirmations for upcoming appointments"}
+::
 
-## What it shows
+## Reviewing deliveries and confirmations
 
-**WhatsApp delivery status**, for the selected date range:
+1. Open **Reports › Scheduled Reminders**.
+2. Choose the period for deliveries (**This month** by default).
+3. Under **WhatsApp delivery status**, look at the four figures and, if there are any, the list of failed sends.
+4. Under **Appointment confirmations**, go through the three columns and click a name to open the record and call or write to the patient.
 
-- **Sent** -- messages QuiroFlow attempted to send.
-- **Delivered** -- confirmed delivered by WhatsApp.
-- **Read** -- the patient opened the message.
-- **Failed** -- didn't go through. A non-zero Failed count is worth investigating right away -- it usually means an invalid number, a patient who's blocked your business number, or an issue with your WhatsApp connection itself (see [Connecting WhatsApp](/articles/communications/connecting-whatsapp)).
+## WhatsApp delivery status
 
-**Appointment confirmations**, broken down into three counts:
+It counts every WhatsApp the clinic has sent in the period (confirmations, reminders, recalls and the rest), each one once, in its latest known status:
 
-- **Confirmed** -- patients who replied confirming their appointment.
-- **Pending** -- a message was sent and there's been no reply yet (or the reply wasn't a clear confirm/reschedule/cancel).
-- **Wants to reschedule** -- patients who replied asking to change their appointment instead of confirming it.
+- **Sent**: it went out, but WhatsApp hasn't yet confirmed it arrived.
+- **Delivered**: it reached the phone, but hasn't been read.
+- **Read**: the patient opened it.
+- **Failed**: it didn't arrive. The card turns red.
 
-Selecting a count opens the list of appointments behind it, and each patient's name links straight to their record -- so going from "12 pending" to actually calling those 12 patients takes a couple of clicks, not a manual cross-reference against the calendar.
+Because each message counts only in its latest status, a read message doesn't also appear under delivered or sent.
 
-## Changing the date range
+If there are failures, **Failed sends — bad number or no WhatsApp account** appears below, with the patient and the reason (or "Error code N"). It's usually a mistyped number or a landline: fix it on the patient's record. If many fail at once, check the WhatsApp connection (see [Connecting WhatsApp](/articles/communications/connecting-whatsapp)).
 
-The date picker at the top (defaulting to **This month**) controls both the delivery stats and the confirmation counts together -- there's no way to view one on a different range than the other. Narrow it to a single day when you're specifically checking on tomorrow's appointments, or widen it to spot a delivery problem that's been building over a week or more.
+## Appointment confirmations
 
-## Using it day to day
+It lists the **upcoming appointments** (from now on, still booked) that were sent a confirmation message, in three columns:
 
-This is the fastest way to see who genuinely needs a follow-up call before their visit, rather than scrolling the whole Calendar looking for amber or purple dots -- see [Appointment statuses explained](/articles/calendar-appointments/appointment-statuses-explained) for what those mean on the calendar itself. Many clinics check this once each morning as part of opening up: anyone still Pending for a same-day appointment is a quick, worthwhile phone call.
+- **Confirmed**: the patient replied that they're coming.
+- **Pending**: it was sent and there's no clear reply yet.
+- **Wants to reschedule**: the patient asked to change the appointment instead of confirming it.
+
+Each name carries the appointment's date and time and opens the patient's record.
+
+> **Good to know:** the period only changes the delivery figures. Confirmations are always those of upcoming appointments, whatever period is chosen.
+
+> **Good to know:** replies are only recorded if WhatsApp replies reach QuiroFlow (Settings → WhatsApp). If they don't, appointments stay under **Pending** even if the patient has answered. To set up the messages, see [Confirmations and reminders](/articles/communications/confirmations-and-reminders).
+
+## Who can see it
+
+You need **See reports** and also **Inbox**. Without it, the report says: "This report needs Inbox access — ask an owner to enable it for your role.". It doesn't appear for roles with **Only their own figures**.
+
+It's a good habit to check it every morning: anyone still under **Pending** for today or tomorrow deserves a quick call. To see what the confirmation colours mean on the calendar itself, see [Appointment statuses explained](/articles/calendar-appointments/appointment-statuses-explained).

@@ -1,24 +1,53 @@
 ---
-title: Conectar Stripe
-description: Conecta Stripe para cobrar con tarjeta, guardar tarjetas y activar el cobro automático.
+title: Métodos de pago y Stripe
+description: Elige con qué métodos se registran los pagos y conecta Stripe para guardar tarjetas, cobrar a plazos y vender online.
 collection: settings
-order: 2
+order: 8
 ---
 
-Ve a **Settings &rarr; Payments (Stripe)**. Stripe es lo que hace posible cada función relacionada con tarjetas en QuiroFlow: cobrar con tarjeta, guardar la [tarjeta de un paciente](/es/articles/billing-payments/adding-a-patients-card), y el autopay de bonos y membresías. Nada relacionado con tarjetas funciona hasta que esto está conectado -- los pagos en efectivo y con saldo a favor no se ven afectados.
+**Ajustes › Pagos** reúne cómo entra el dinero en tu clínica: los **métodos de pago** que elige el personal al registrar un pago (efectivo, tarjeta, Bizum…) y la conexión con **Stripe** para los cobros con tarjeta que QuiroFlow hace por ti.
 
-![Página de configuración de Payments con un botón Connect with Stripe de un clic](/screenshots/settings-payments.png)
+Necesitas los permisos **Entrar en Ajustes** y **Facturación** (en el apartado de Ajustes del rol).
 
-## Conectar
+## Métodos de pago
 
-Selecciona **Connect with Stripe** -- un clic, sin claves de API que buscar ni copiar. Esto te lleva por el propio flujo de alta de Stripe (o vincula una cuenta de Stripe existente si ya tienes una), y te trae de vuelta a QuiroFlow al terminar. Una vez conectado, verás el ID de tu cuenta de Stripe y una opción de **Test connection** para confirmar que funciona antes de depender de ella para cobros reales.
+::help-video{clip="billing--payment-methods" caption="Añadir un método de pago y dejar de ofrecer otro"}
+::
 
-Si aún no tienes una cuenta de Stripe, se crea una para ti como parte de este proceso -- no hace falta configurar una por separado de antemano.
+Vienen creados **Efectivo**, **Tarjeta**, **Transferencia bancaria**, **Bizum** y **Otro**. Junto a cada uno ves cuántas veces se ha usado.
 
-## Desconectar
+- **Añadir uno**: escribe el nombre en **Nuevo método de pago** (por ejemplo, «Cheque») y pulsa **Añadir**.
+- **Dejar de ofrecerlo**: apaga su interruptor **Disponible**. Desaparece de los formularios de pago y los pagos ya registrados lo conservan.
+- **Eliminarlo**: solo si nunca se ha usado. Si tiene pagos, desactívalo en su lugar.
 
-Hay una opción de **Disconnect** si alguna vez necesitas desvincularla -- las facturas y el historial de pagos existentes no se ven afectados, pero no se pueden cobrar nuevas tarjetas hasta que vuelvas a conectar. Esto incluye el autopay: cualquier cuota programada o renovación de membresía que dependa de una tarjeta guardada fallará en silencio hasta que Stripe vuelva a estar conectado, así que no desconectes a la ligera si tienes calendarios de autopay activos en marcha.
+Debajo, en **Integrados, siempre disponibles**, están **Saldo a favor** y **Baja contable** (condonar). Van ligados al saldo real del paciente, así que no se gestionan aquí.
 
-## Vía alternativa (legacy)
+> **Ten en cuenta:** registrar un pago con **Tarjeta** solo apunta que cobraste con tu datáfono. Para que QuiroFlow cobre tarjetas por ti necesitas Stripe.
 
-Si ya tienes tus propias claves de API de Stripe y prefieres pegarlas directamente en lugar de conectar a través de Stripe, esa opción sigue disponible -- busca **advanced setup**. Esta vía también requiere registrar manualmente una URL de webhook en tu propio panel de Stripe, escuchando un conjunto específico de eventos (Settings muestra la lista exacta y la URL a usar). Prioriza **Connect with Stripe** siempre que puedas -- se encarga de todo esto automáticamente, incluido mantener la configuración del webhook al día si cambian los requisitos de QuiroFlow.
+## Qué te da Stripe
+
+Con Stripe conectado puedes:
+
+- **Tarjetas guardadas**: el paciente añade una tarjeta una vez, desde un enlace.
+- **Bonos a plazos**: divide un bono en cobros programados.
+- **Renovación de membresías**: se cobra cada periodo que marca el plan.
+- Que los pacientes paguen sus recibos online y vender [bonos regalo](/es/articles/billing-payments/gift-vouchers).
+
+Cómo se usa en cada paciente lo explica [Tarjeta guardada, pago automático y pago online](/es/articles/billing-payments/adding-a-patients-card).
+
+## Conectar Stripe
+
+1. En **Cobros con tarjeta con Stripe**, pulsa **Conectar con Stripe**.
+2. Sigue los pasos de Stripe: crea tu cuenta o entra en la que ya tienes.
+3. Al volver a QuiroFlow verás «Cuenta de Stripe conectada.» y el estado **Conectado**, con el identificador de tu **Cuenta**.
+4. Pulsa **Probar conexión** para comprobar que funciona.
+
+No hay claves de API que copiar ni webhook que configurar.
+
+## Desconectar Stripe
+
+Pulsa **Desconectar** y confirma. Los calendarios de cobro que ya están en marcha siguen en Stripe, pero QuiroFlow no puede cobrar tarjetas nuevas hasta que vuelvas a conectar. Tus recibos, pagos y facturas no cambian.
+
+## Usar tus propias claves de API
+
+Si prefieres no usar la conexión de un clic, abre **Avanzado: usar tus propias claves de API de Stripe**, pega la **Clave publicable**, la **Clave secreta** y el **Secreto de firma del webhook**, y pulsa **Guardar claves**. En este caso tienes que registrar en tu panel de Stripe la dirección de webhook que muestra la página, con los eventos que indica. Siempre que puedas, usa **Conectar con Stripe**.

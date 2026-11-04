@@ -1,45 +1,53 @@
 ---
-title: Selling and managing memberships
-description: Recurring plans, billed each period, with autopay once a card is on file.
+title: Memberships
+description: Create recurring plans, sign a patient up and keep track of every paid period, by hand or with autopay.
 collection: billing-payments
 order: 5
 ---
 
-A membership is a recurring plan a patient pays for on a schedule -- a monthly maintenance plan, for example -- rather than a fixed number of prepaid sessions like a [package](/articles/billing-payments/selling-a-package-bono). Set up your membership templates first in **Settings -> Memberships**, giving each one a name and a price per period.
+A membership is a plan the patient pays periodically, for example a "Mantenimiento mensual" at 49 € a month. Unlike a [bono](/articles/billing-payments/selling-a-package-bono), it has no number of sessions: it is paid every period while it is active. You create plans in **Settings › Memberships** and activate them from the patient's **Money** tab.
 
-::image-carousel
----
-images:
-  - src: /screenshots/patient-membership-activate.png
-    alt: Memberships panel with a plan selected, Paid now amount, and Method set to Cash
-    caption: "Activating a membership -- same pattern as selling a package"
-  - src: /screenshots/patient-membership-active.png
-    alt: Active membership card showing the plan, price per period, start date, status, and Log payment / Log failed controls
-    caption: "Once active -- status, and how each period gets paid"
----
+You need the **Sell and edit bonos and memberships** permission to activate them for a patient.
+
+## Creating a plan
+
+::help-video{clip="billing--membership-plan" caption="Creating a monthly membership plan"}
 ::
 
-## Activating one
+1. Go to **Settings › Memberships**.
+2. Click **New plan**.
+3. Enter the **Name**, the **Price (€)** and, under **Every**, how often it is paid: **Week**, **Month**, **3 months**, **6 months** or **Year**.
+4. Click **Create plan**.
 
-On a patient's **Billing** tab, find the **Memberships** card:
+At the top you'll see **Active members** and **Recurring each month**. To retire a plan, open it and click **Stop offering**.
 
-1. Choose the plan from the dropdown.
-2. Adjust **Paid now (€)** if this period's charge differs from the template price.
-3. Choose the **Method**: Cash, Card, or Credit on account.
-4. Select **Activate**.
+> **Good to know:** changing or removing a plan only affects patients who sign up from now on. Those who already have it keep their price until you end it on their record.
 
-The membership card then shows the plan name, price per period, the date it started, and a status badge.
+## Activating a membership for a patient
 
-## Keeping it paid each period
+::help-video{clip="billing--membership-activate" caption="Activating a membership and collecting the first month"}
+::
 
-Activating a membership doesn't set up automatic recurring billing by itself -- notice the **No card on file -- add one to enable autopay for this membership** prompt on a freshly-activated one. Without a saved card, you (or the patient) need to pay each period manually, and **Log payment** records that it happened. **Log failed** records the opposite -- useful for keeping an accurate history if a period is missed or paid late, rather than the record just silently having a gap.
+1. On the patient's **Money** tab, under **Memberships**, open **Activate a membership…** and pick the plan.
+2. Under **Paid now (€)**, enter what they pay today (for example, the first month).
+3. If they pay something, choose the **Method**.
+4. Click **Activate**.
 
-Add a card (see [Adding a patient's card](/articles/billing-payments/adding-a-patients-card)) to switch this to autopay -- QuiroFlow then charges it automatically each period, the same underlying mechanism packages use for their own remaining-balance autopay.
+The membership appears with its price per period and the date it started. Every membership payment issues a full factura.
 
-## Changing status
+## Recording each period
 
-The status dropdown next to the plan name isn't limited to **active** -- use it to pause or cancel a membership without deleting its record, so the history of what the patient was on (and for how long) stays intact even after it ends.
+If the patient pays each period at the clinic:
 
-## Where memberships show up in reporting
+- Click **Log payment** on the membership when they pay.
+- Click **Log failed** if a period wasn't paid, so there is a record of it.
 
-**Reports -> Memberships** rolls this up account-wide: active membership count, monthly recurring revenue, and any failed payments -- check it periodically even if you're not actively managing individual memberships day to day, since a failed payment there often just means a patient's card expired and needs updating.
+Each period is listed below with its status.
+
+If you'd rather it charged itself, save a card for the patient and click **Set up autopay**: set **Every** (it comes filled in with the plan's period) and click **Start**. See [Saved card, autopay and online payment](/articles/billing-payments/adding-a-patients-card).
+
+## Pausing or cancelling
+
+With the membership's status selector you can set it to **paused** or **cancelled**, and back to **active**. Its history is kept.
+
+> **Good to know:** a summary of all the clinic's memberships, with failed payments, is under **Reports › Memberships**.

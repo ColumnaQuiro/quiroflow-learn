@@ -1,31 +1,58 @@
 ---
 title: Welcome to QuiroFlow
-description: A quick tour of what QuiroFlow does and where to find everything.
+description: What QuiroFlow is, where everything lives, and where to start if you've just arrived.
 collection: getting-started
 order: 1
 ---
 
-QuiroFlow is the day-to-day system for running your clinic: booking and managing appointments, keeping patient records, handling billing and payments, and communicating with patients over WhatsApp and email -- all in one place. It's built for chiropractic and other manual-therapy practices, from a single practitioner to a multi-clinic team, and everything below is available from the sidebar as soon as you sign in.
+QuiroFlow is your clinic's day-to-day system: the calendar, your patients' records and notes, payments and invoices, and messages with patients over WhatsApp and email, all in one place. It's built for chiropractic, physiotherapy and other manual-therapy clinics, from a solo practitioner to a team with several locations. It runs in the browser and, for your team and your patients, also as an app for iPhone and Android.
 
-## The main areas
+## If you've just created your account
 
-![QuiroFlow dashboard with the full sidebar visible: Dashboard, My Day, Calendar, Patients, Recalls, Inbox, Billing, Reports, and Campaigns](/screenshots/dashboard.png)
+Follow these articles in order and you'll have a working calendar in an afternoon:
 
-- **Dashboard** -- your practice at a glance: visits this week, income this month, no-show rate, active patients, and anything due today. It's the first thing you see when you sign in, and it updates live as your team books, checks in, and bills patients.
-- **My Day** -- a filtered, single-practitioner view of today's schedule -- useful if you're a practitioner who just wants to see your own visits without the full clinic calendar.
-- **Calendar** -- book, confirm, and manage appointments across your clinics, rooms, and practitioners. This is where most of your team will spend their day -- see [Booking an appointment](/articles/calendar-appointments/booking-an-appointment).
-- **Patients** -- every patient's record in one place: contact details, visit history, care plans, documents, and billing history, all on one page per patient.
-- **Recalls** -- an automatically-maintained queue of patients who haven't booked in a while, so nobody falls through the cracks between visits. See [Recalls -- bringing patients back](/articles/patients/recalls).
-- **Waitlist** -- hold a patient's spot for a specific appointment type or practitioner, and offer it automatically the moment a matching slot opens up. See [The Waitlist](/articles/patients/waitlist).
-- **Care Plan Alerts** -- patients on an active care plan who've fallen behind its own schedule. See [Setting up a care plan](/articles/patients/care-plans).
-- **Inbox** -- every WhatsApp conversation with your patients, in one shared place your whole team can see and reply from -- no more messages trapped on one person's phone.
-- **Billing** -- packages (bonos), memberships, invoices, and payments, including cards patients have on file for fast checkout and [cash shift](/articles/billing-payments/cash-shift) reconciliation for your front desk.
-- **Reports** -- financial and activity reporting: revenue, visit counts, cancellations, and more, filterable by clinic, practitioner, and date range.
-- **Campaigns** -- WhatsApp and email marketing to your patient list, from one-off announcements to automated reminder sequences.
-- **Settings** -- your team, roles and permissions, clinics, appointment types, and payment setup. Most one-time configuration lives here.
+1. [Creating your account and practice](/articles/getting-started/creating-your-clinic): signing up and the four setup steps.
+2. [Your first steps](/articles/getting-started/first-steps): your first appointment type, patient and visit, and your clinic's opening hours.
+3. [Inviting your team](/articles/team-roles/inviting-your-team): practitioners and front desk, each with their own role.
+4. [Importing your data](/articles/settings/importing-your-data), if you're coming from another system.
 
-## Where to go next
+If you've been invited to a clinic that already uses QuiroFlow, start with [Signing in and resetting your password](/articles/getting-started/signing-in).
 
-If you're setting up QuiroFlow for the first time, start with [Creating your clinic](/articles/getting-started/creating-your-clinic) and [Inviting your team](/articles/getting-started/inviting-your-team) -- together they take you from a blank sign-up form to a working clinic with staff who can log in and start booking.
+## Where everything lives
 
-If you're already up and running, the **Calendar & Appointments** and **Billing & Payments** collections cover what you'll use most day to day. If something isn't working the way you expect, search for it at the top of this page -- most articles cover the "why" as well as the "how."
+The left-hand menu is grouped. Each person only sees what their role allows, so you may be missing some entries.
+
+**Today**
+- **Dashboard**: your clinic at a glance, with the week's figures and what's pending today.
+- **My Day**: your own visits today, for those who see patients.
+- **Calendar**: book, move, confirm and check patients in, by clinic, room and practitioner.
+- **Working time**: the team's clock-in and clock-out.
+- **Team**: the team's internal chat.
+
+**Patients**
+- **Patients**: the patient list and each patient's record, with their details, visits, notes, documents and payments.
+- **Recalls**: patients due a call because they haven't booked for a while.
+- **Waitlist**: people who want an earlier slot; QuiroFlow offers it to them when one frees up.
+- **Care Plan Alerts**: patients who have fallen behind on their treatment plan.
+- **Inbox**: WhatsApp and other channels' messages, shared by the whole team.
+- **Automations**: messages that go out on their own when something happens (for example, after a first visit).
+
+**Money**
+- **Billing**: receipts, invoices, bonos, memberships and payments.
+- **Reports**: income, visits, retention and the rest of the clinic's reports.
+
+**Growth** (on the plan that includes Growth)
+- **Overview**, **Leads**, **AI Receptionist** and **Reputation**: winning new patients, answering them and looking after your reviews.
+
+At the bottom of the menu are the **Help Centre** (these articles) and **Settings**, where the whole clinic is configured. See [Settings map](/articles/settings/settings-overview).
+
+## The top bar
+
+- **Search or jump to** (or **⌘K**): find a patient or jump to any page.
+- **Support**: the assistant that answers questions from these articles, and the chat with the QuiroFlow team. See [Getting help](/articles/getting-started/getting-help).
+- **Appearance**: light, dark or your system's mode.
+- Your photo: **Account Settings**, **Subscription** and **Sign out**. See [Your account](/articles/getting-started/account-settings).
+
+## Your information is protected
+
+Your data is stored on servers in the European Union. Everyone signs in with their own login and their role decides what they can see. You can require [two-factor authentication](/articles/security-privacy/two-factor-login) for the whole team, and owners have an [activity log](/articles/security-privacy/activity-log) of every change and every look at a record.

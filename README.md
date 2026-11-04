@@ -23,6 +23,19 @@ Article body in Markdown.
 
 A collection with no articles yet still shows up in nav, with an "Articles for this collection are coming soon" message on its page -- so it's fine to add a collection before writing anything for it.
 
+Every article exists twice, with the same slug: Spanish under `content/es/articles/` (written first, quoting the Spanish UI) and English under `content/articles/`. `npm run check` fails on a missing translation, a broken internal link or a bad frontmatter key -- run it before pushing.
+
+## Videos
+
+Articles show how to do things with short, silent clips of the real app rather than screenshots:
+
+```md
+::help-video{clip="calendar--book-new-patient" caption="Reservar a un paciente nuevo desde el panel"}
+::
+```
+
+The clips are recorded by a script against a fictional demo clinic and served from the public `help-videos` bucket on Supabase Storage, not from this repo. When a screen changes, re-record its clips and upload them under the same name; no article needs to change. See [`scripts/record/README.md`](scripts/record/README.md). `npm run check:clips` lists clips an article names that haven't been recorded locally.
+
 ## Local development
 
 ```bash

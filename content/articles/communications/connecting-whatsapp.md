@@ -1,38 +1,52 @@
 ---
-title: Connecting WhatsApp
-description: Connect your Meta WhatsApp Business account so QuiroFlow can send and receive messages.
+title: Connecting WhatsApp and choosing templates
+description: Connect your clinic's WhatsApp Business number in one click and choose which Meta-approved template each automatic message uses.
 collection: communications
 order: 1
 ---
 
-Go to **Settings &rarr; WhatsApp**. You'll need a Meta WhatsApp Business account already set up -- QuiroFlow connects to it rather than providing its own number, which means you keep the same WhatsApp number and message history structure Meta manages, and QuiroFlow becomes one more client sending through it.
+QuiroFlow sends and receives WhatsApp messages from your clinic's own number. You connect it once in **Settings › Communication › WhatsApp**, and from then on confirmations, reminders, automations and replies from the **Inbox** go out from that number. On the same page you choose which Meta-approved template each automatic message uses.
 
-![WhatsApp settings page with Phone Number ID, Business Account ID, and default template fields](/screenshots/settings-whatsapp.png)
+You need the **Open Settings** and **Communication and Growth** permissions.
 
-## Connecting
+## Connecting your number
 
-Enter:
+1. Go to **Settings › Communication › WhatsApp**.
+2. On the **Connect WhatsApp** card, click **Connect**.
+3. A Meta window opens: sign in, pick your business and the WhatsApp Business number you want to use.
+4. Back in QuiroFlow you'll see "WhatsApp connected on +34…" and, under **Status**, **Messages can be sent**.
 
-- **Phone Number ID** and **WhatsApp Business Account ID** -- both from your Meta Business account, found in Meta Business Manager under your WhatsApp app's API setup.
-- **Access token** -- also from Meta. Once saved, it's stored securely and the field just shows that a token is on file; you only need to re-enter it if you're rotating it. If messages suddenly stop sending, an expired or revoked token is one of the first things worth checking here.
+There is nothing to copy across: no Meta app, no tokens. If Meta ever withdraws access, click **Reconnect** on the same card.
 
-If the connection details are wrong or the token has expired, campaign and confirmation sends will fail with a "Could not reach WhatsApp" error rather than failing silently -- so a broken connection is usually noticed quickly rather than discovered after weeks of missed messages.
+> **Good to know:** if your clinic already has its own Meta app, open **Already have your own Meta app? Set it up by hand** and fill in **Phone Number ID**, **WhatsApp Business Account ID**, **Access token** and **Meta App Secret**. On that route the secret is required: without it, patients' replies and delivery status are ignored.
 
-## Default templates
+## Choosing the template for each message
 
-Meta requires pre-approved message templates for anything sent outside a 24-hour reply window (which covers most automatic messages -- a confirmation sent the moment someone books, for example, isn't a reply to anything). Set your default template and language for each purpose:
+WhatsApp only lets a business start a conversation with a template Meta has approved, so each automatic message has its own:
 
-- **Confirmation template** -- used by [automatic appointment confirmations](/articles/calendar-appointments/setting-up-confirmations-and-reminders).
-- **Reminder template** -- same, for reminders.
-- **Recall template** -- used when messaging patients from the Recalls queue. The picker stays visible when sending a recall, so staff can switch it per patient if needed.
-- **Staff notification template** -- used to notify your team of a new online booking, specifically when it falls outside WhatsApp's 24-hour free-form window (i.e. your notification number hasn't messaged the clinic recently). Leave it blank to send free-form instead when that window is open.
+- **Appointment confirmation**: when an appointment is booked.
+- **Appointment reminder**: before the appointment, as far ahead as you set in **Messages**.
+- **Recall**: pre-selected when staff send a recall from Recalls (it can be changed each time).
+- **New booking alert (to staff)**: to the online-booking notify number.
+- **New lead alert (to staff)**: to the notify number in **Leads**, with name, phone, email and source.
 
-Templates themselves are created and approved in your Meta Business account, not in QuiroFlow -- this is just where you tell QuiroFlow which approved template (and language variant) to use for each purpose. Approval can take anywhere from a few minutes to a day or two through Meta, so set up new templates ahead of when you'll need them rather than the same day.
+::help-video{clip="comms--whatsapp-templates" caption="Choosing the template for each automatic message"}
+::
 
-## Language variants
+1. Under **Message templates**, click **Refresh from Meta** to fetch your approved templates.
+2. For each message, open the drop-down and pick the template.
+3. Click **Save changes**. **Status** shows how many you have chosen, for example "5 of 5 templates chosen".
 
-Each template field pairs with a language code (e.g. `es`). If a patient's preferred language has its own approved variant of that template, QuiroFlow uses it automatically instead of the default -- there's nothing extra to configure per patient beyond setting their **Preferred language** on their profile.
+A message left on **None -- not sent** does not go out. If a template you chose disappears from Meta, the drop-down marks it "not in Meta's list".
 
-## Once connected
+> **Good to know:** templates are created and approved in your Meta account (WhatsApp Manager), not in QuiroFlow. Approval can take from a few minutes to a day, so set them up ahead of time.
 
-Every WhatsApp conversation appears in the **Inbox**, and patients can reply directly to confirm, reschedule, or cancel appointments -- see [Appointment statuses explained](/articles/calendar-appointments/appointment-statuses-explained) and [The shared Inbox](/articles/communications/the-shared-inbox) for what happens next.
+> **Good to know:** if the same template is approved in several languages, each patient gets it in their own (the preferred language on their record). Nothing else to set up.
+
+## The 24-hour rule
+
+When a patient writes to you, you have 24 hours to answer with free text from the Inbox. After that, WhatsApp only lets you send an approved template. The Inbox warns you and offers **Send template**; see [The Inbox](/articles/communications/the-shared-inbox).
+
+## On the same page
+
+Below the templates are the other Meta accounts that use this connection: Instagram messages, Facebook Messenger and the chat on your website (see [Instagram, Messenger and your website chat](/articles/communications/instagram-messenger-web-chat)), and **Meta Ads spend**, which lets Growth read what you spent on ads instead of you typing it each month (see [The Growth dashboard](/articles/growth/growth-overview)).

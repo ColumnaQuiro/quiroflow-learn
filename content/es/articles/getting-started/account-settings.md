@@ -1,29 +1,69 @@
 ---
-title: Tu configuración de cuenta
-description: Datos personales, contraseña, tema y idioma -- lo que es tuyo, no de tu clínica.
+title: Tu cuenta
+description: Tu foto, tu nombre, tu color en el calendario, el idioma, la contraseña y la seguridad de tu acceso -- lo que es solo tuyo.
 collection: getting-started
-order: 4
+order: 5
 ---
 
-Selecciona tu nombre en la esquina superior derecha y elige **Account Settings** para llegar aquí. Todo en esta página es personal, tuyo -- es distinto de **Settings** en el menú lateral, que es de toda la clínica y afecta a todo tu equipo.
+**Mi cuenta** es tu página personal: tus datos, tus preferencias y tu acceso. Lo que cambies aquí solo te afecta a ti, a diferencia de **Ajustes**, que es de toda la clínica. Para llegar, pulsa tu foto o tu nombre arriba a la derecha y elige **Ajustes de la cuenta**.
 
-![Página de Account Settings con Personal Details, tema/idioma en Appearance, Change Password y Delete Account](/screenshots/account-settings.png)
+La página tiene estas secciones: **Tú**, **Tu agenda** (si atiendes pacientes), **Idioma**, **Resumen semanal** (personas propietarias), **Seguridad** y **Eliminar mi acceso**.
 
-## Personal Details
+## Tu foto, tu nombre y tu color
 
-- **Foto** -- se muestra en el menú lateral y, si tú mismo atiendes citas, en la página de reserva online junto a tu nombre.
-- **Full Name** -- cómo apareces en todo QuiroFlow, incluido de cara a los pacientes.
-- **Email** -- tu correo de inicio de sesión.
-- **Calendar Color** -- el color con el que se muestran tus citas en el Calendario, para que tus propias reservas se distingan a simple vista entre las de tu equipo.
+::help-video{clip="setup--account-profile" caption="Cambiar el nombre y el color en el calendario"}
+::
 
-## Appearance
+1. En **Tú**, toca tu foto para cambiarla. Sale en la barra lateral y, si atiendes citas, en la reserva online.
+2. Corrige tu **Nombre completo** si hace falta.
+3. Si atiendes pacientes, en **Tu agenda** elige **Tu color en el calendario**. La muestra **Así se ve en el calendario** se actualiza al momento.
+4. Abajo aparece **Tienes cambios sin guardar**: pulsa **Guardar** (o **Descartar**).
 
-Tema Light, Dark o System, e inglés o español para la interfaz -- ambas cosas son **tu propia preferencia y no afectan a lo que ve el resto de tu equipo**. Un profesional que prefiera español y un compañero de recepción que prefiera inglés pueden configurar cada uno lo suyo sin tener que ponerse de acuerdo, ya que esto no tiene nada que ver con el idioma en el que los pacientes reciben sus mensajes de WhatsApp (eso se define por paciente -- consulta [Conectar WhatsApp](/es/articles/communications/connecting-whatsapp)).
+> **Ten en cuenta:** no hay rojo entre los colores, porque en el calendario el rojo significa dinero pendiente.
 
-## Change Password
+Lo que no puedes cambiar tú desde aquí:
 
-Define una contraseña nueva aquí en cualquier momento -- no necesitas la actual, solo escribir la nueva dos veces para confirmarla. Si has olvidado por completo tu contraseña actual, usa el enlace de recuperación de la pantalla de inicio de sesión en su lugar, ya que este formulario requiere haber iniciado sesión primero.
+- **Correo de acceso**: es tu usuario para entrar. Para cambiarlo, escribe a **hola@quiroflow.com**.
+- **Rol** y **Clínica(s)**: los asigna una persona propietaria en **Ajustes › Equipo**.
+- **Tu horario** y si los pacientes pueden reservarte online: se ven aquí, pero los cambia una persona propietaria o quien gestiona el equipo. Consulta [Horario de un profesional](/es/articles/team-roles/practitioner-working-hours).
 
-## Delete Account
+## El idioma y la apariencia
 
-Elimina tu propio acceso a esta clínica de inmediato. No te borra del historial de la clínica -- tu nombre sigue asociado a citas y registros pasados para el propio archivo de la clínica, solo desaparece tu acceso para iniciar sesión. Este botón solo afecta a tu propia cuenta; no es la forma en que un Owner elimina el acceso de otra persona (consulta [Invitar a tu equipo](/es/articles/getting-started/inviting-your-team) para gestionar al resto de tu equipo).
+En **Idioma**, pulsa **Español** o **English**. Se aplica al momento y solo a ti.
+
+La apariencia no está en esta página: está en el botón **Apariencia** de la barra superior, junto al menú de tu cuenta (**Claro**, **Oscuro** o **Sistema**).
+
+## Resumen semanal (personas propietarias)
+
+Activa **Resumen semanal** para recibir cada lunes a las 8:00, por email, lo cobrado y los pagos, las visitas, quién no vino y los pacientes nuevos de la semana anterior.
+
+## Cambiar tu contraseña
+
+::help-video{clip="setup--account-password" caption="Cambiar la contraseña y cerrar las demás sesiones"}
+::
+
+1. En **Seguridad**, junto a **Contraseña**, pulsa **Cambiar…**.
+2. Escribe la **Nueva contraseña** y repítela en **Repítela**. Verás **Coinciden** cuando sean iguales.
+3. Pulsa **Cambiar contraseña**.
+
+La contraseña necesita al menos 8 caracteres y no puede aparecer en filtraciones conocidas. En **Seguridad** también ves cuándo fue tu **Último inicio de sesión**.
+
+## Cerrar la sesión en otros dispositivos
+
+¿Dejaste la sesión abierta en el ordenador de recepción o en una tablet? En **Seguridad › Otros dispositivos**, pulsa **Cerrar las demás**. Se cierran todas tus sesiones menos la que estás usando.
+
+## Verificación en dos pasos
+
+En **Seguridad › Verificación en dos pasos** ves si la tienes **Activada** o **Desactivada**, y la configuras con **Configurar verificación en dos pasos**. Todo el proceso está en [Verificación en dos pasos](/es/articles/security-privacy/two-factor-login).
+
+## Eliminar tu acceso
+
+Si dejas la clínica, puedes quitar tu propio usuario:
+
+1. Pulsa **Eliminar mi acceso…**.
+2. Lee lo que pasa: **SE VA** tu usuario y tu contraseña, al momento; **SE QUEDA** tu nombre en citas, cobros, facturas y notas, porque son historia de la clínica.
+3. Escribe **ELIMINAR** y pulsa **Eliminar mi acceso**.
+
+No lo puedes deshacer tú: para volver, una persona propietaria tendría que invitarte de nuevo.
+
+> **Ten en cuenta:** si eres la única persona propietaria, no puedes eliminar tu acceso. Antes nombra a otra en **Ajustes › Equipo**. Eliminar tu acceso no cierra la cuenta de la clínica; para cerrarla entera, escribe a **hola@quiroflow.com**.

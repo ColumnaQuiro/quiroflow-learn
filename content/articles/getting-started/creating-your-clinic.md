@@ -1,60 +1,71 @@
 ---
-title: Creating your account and first clinic
-description: Sign up, confirm your email, and set up your practice and first clinic location.
+title: Creating your account and practice
+description: Sign up, confirm your email and set up your practice and first clinic in four short steps.
 collection: getting-started
 order: 2
 ---
 
-Setting up QuiroFlow takes two short forms and an email confirmation -- most practices are on their dashboard in under five minutes. Here's the full walkthrough, step by step.
+Getting started with QuiroFlow takes four steps: **Account**, **Practice**, **Preferences** and **Get started**. The top of each screen shows which one you're on. No card is needed, and most clinics are done in about five minutes. This article takes you as far as your **Dashboard**; from there, [Your first steps](/articles/getting-started/first-steps) take you to your first booked visit.
 
-::image-carousel
----
-images:
-  - src: /screenshots/signup.png
-    alt: QuiroFlow sign-up form with Email and Password fields
-    caption: "Step 1 -- Create your account"
-  - src: /screenshots/onboarding-filled.png
-    alt: Set up your practice form, with name, practice name, and clinic location fields filled in
-    caption: "Step 2 -- Set up your practice"
-  - src: /screenshots/dashboard.png
-    alt: QuiroFlow dashboard right after setup, showing the clinic switcher, sidebar, and empty stat cards
-    caption: "Step 3 -- Your dashboard, ready to go"
-  - src: /screenshots/settings-clinics.png
-    alt: Settings > Clinics screen with a Name and Address field for adding a second location
-    caption: "Later -- add more clinics from Settings any time"
----
+The clips show the Spanish interface; the English labels are given in the steps.
+
+## Step 1: create your account
+
+::help-video{clip="setup--signup" caption="Creating the account with your email and a password"}
 ::
 
-## 1. Create your account
+1. Go to **app.quiroflow.com/signup**. You'll see **Create your QuiroFlow account**.
+2. Enter your **Email** and a **Password** (at least 8 characters).
+3. Click **Create account**.
+4. You land on **Check your email**: we've sent you a confirmation link. Open it from that email and you go straight to step 2.
 
-Go to the sign-up page and enter your email and a password, then select **Create account**. There's no separate "start a trial" step and no credit card required at this point -- creating an account is free, and billing only comes up later if you choose a paid plan.
+> **Good to know:** the link works once and expires in 60 minutes. Nothing is created until you open it.
 
-You'll see a **Check your email** screen -- QuiroFlow sends a confirmation link to the address you entered. A few things to know about this step:
+### If the email doesn't arrive
 
-- The link is time-limited, so confirm it soon after signing up rather than days later.
-- If it doesn't arrive within a couple of minutes, check spam/promotions folders before requesting a new one -- confirmation emails occasionally get filtered by aggressive mail rules.
-- Each confirmation link can only be used once. If you click it twice (e.g. once from your phone, once from your laptop), the second click will just take you to the sign-in page instead of erroring out.
+- Check your spam folder.
+- Wait for the countdown (**You can resend in…**) to finish and click **Resend link**.
+- If you mistyped the address, click **use a different address** and start again.
+- If that email already has an account, QuiroFlow tells you so and offers **Sign in**. See [Signing in and resetting your password](/articles/getting-started/signing-in).
 
-Open the email and click the link to finish setting up your account.
+## Step 2: set up your practice
 
-## 2. Set up your practice
+::help-video{clip="setup--onboarding-practice" caption="Setting up the practice and its first clinic"}
+::
 
-Once your email is confirmed, you'll land on **Set up your practice**. This single form creates your account, your practice, and your first clinic location all at once:
+On **Set up your practice** you fill in the basics:
 
-- **Your name** -- how you'll appear as a team member throughout QuiroFlow (in the calendar, on internal notes, in the team list). Use your real name here, not a role like "Reception" -- you can invite separate staff accounts for that later.
-- **Practice name** -- your business name (e.g. "ColumnaQuiro"). This is the name your patients and team will see on booking pages, confirmation emails, and WhatsApp messages, so use the name patients would actually recognize.
-- **First clinic location** -- the name of your first physical location (e.g. "Valencia" or "Downtown"). If you only have one location, a simple name is fine -- you don't need to over-think this, since you can rename it later from Settings.
+1. **Your name**: how the team, and your patients if you treat them, will see you.
+2. **Do you see patients yourself?**: choose **Yes, I treat patients** if you'll be seeing patients (you get your own column in the calendar) or **No, I run the practice** if you run the clinic and others treat (you'll invite them later).
+3. **Practice name**: your business name, as patients will see it.
+4. **First clinic location**: the name of your first clinic, for example the town or neighbourhood. Add more clinics later.
+5. As you type, **Your booking page** shows the address your online booking page will have.
+6. **Phone numbers are mostly from**: the country QuiroFlow assumes when a phone number has no country code. It is filled in from your browser; change it if it isn't yours.
+7. Click **Create practice**.
 
-Select **Create practice** to finish. You'll land on your dashboard as the account **Owner**.
+> **Good to know:** your answer to **Do you see patients yourself?** decides whether you appear in the calendar and take a practitioner seat. You can change it later in **Settings → Team**, on your own page (**Sees patients**). See [Managing team members](/articles/team-roles/managing-team-members).
 
-> The Owner role has full access to everything in the account, including billing, team management, and settings, and it's the only role that can delete the practice or change subscription details. You can invite other staff with more limited roles afterwards -- see [Inviting your team](/articles/getting-started/inviting-your-team).
+> **Good to know:** going back from step 3 edits the practice you already created; it doesn't make a second one. The button then reads **Save and continue**. Renaming here doesn't change your booking page address.
 
-## Adding more clinics
+## Step 3: your preferences
 
-If your practice has more than one physical location, add the rest from **Settings &rarr; Clinics** whenever you're ready -- you don't need to do this on day one. For each clinic you can set:
+::help-video{clip="setup--onboarding-preferences" caption="Choosing appearance and language, then getting started"}
+::
 
-- **Name and address** -- shown to patients on booking confirmations and used to tell locations apart in the calendar and reports.
-- **Logo** -- optional; if left blank, QuiroFlow falls back to your practice's default branding.
-- **Calendar slot** -- how finely that clinic's calendar grid is divided (e.g. 15 minutes shows 9:00, 9:15, 9:30...). Clinics with short, tightly-packed visits often use 15-minute slots; clinics with longer sessions use 30 or 60.
+On **Make QuiroFlow yours**:
 
-Each clinic keeps its own business hours, online booking settings, and calendar -- appointments, practitioners, and rooms are all scoped per clinic, so a practitioner working across two locations will show up separately on each one's calendar. Online booking specifically (enabling it, setting the booking window, patient eligibility, discount codes) lives under **Settings &rarr; Online Booking** rather than the Clinics page itself.
+1. **Appearance**: **Light**, **Dark** or **System** (follows your computer).
+2. **Language**: **English** or **Español**. It's the language you'll see QuiroFlow in, and also the language of your messages to patients, such as reminders.
+3. Click **Continue**. You can change both whenever you like: appearance with the **Appearance** button in the top bar, language in **Account Settings**.
+
+## Step 4: all set
+
+The last screen sums up what you've created (your practice, your clinic, the language and the default dial code) and shows four cards: **Calendar & online booking**, **WhatsApp & email reminders**, **Invoicing & payments** and **Need a hand?**.
+
+Click **Get started** to reach your **Dashboard**. The **Your first visit, three steps away** card is waiting there: carry on with [Your first steps](/articles/getting-started/first-steps).
+
+> **Good to know:** your account starts with a free trial, with no card. During the trial there's no limit on practitioners or clinics. What happens when it ends is covered in [Your subscription](/articles/settings/subscription).
+
+## Were you invited to a clinic that already uses QuiroFlow?
+
+Then don't create a new practice: open the invite link you were sent and create your account from there. See [Inviting your team](/articles/team-roles/inviting-your-team).

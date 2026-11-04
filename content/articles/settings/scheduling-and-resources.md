@@ -1,34 +1,45 @@
 ---
-title: Scheduling policies, rooms, and modalities
-description: Reschedule and cancellation fees, the rooms your calendar uses, and categorizing what you offer.
+title: Scheduling policies
+description: The fees for rescheduling, cancelling or not turning up, and the reasons picked when a visit is moved.
 collection: settings
 order: 5
 ---
 
-Three smaller Settings pages shape how your calendar behaves and how you categorize what you offer. Each is quick to set up once and rarely touched after.
+**Settings › Scheduling Policies** decides what a patient can be charged when a visit changes and which reasons the team gives when moving one. You set it once and rarely touch it again. You need the clinic configuration permission.
 
-::image-carousel
----
-images:
-  - src: /screenshots/settings-scheduling-policies.png
-    alt: Scheduling Policies page with Reschedule fee, Cancellation fee, and Missed appointment fee fields, plus a Reschedule Reason list
-    caption: "Scheduling Policies -- fees and reschedule reasons"
-  - src: /screenshots/settings-modalities.png
-    alt: Modalities page with a Name field and Add Modality button
-    caption: "Modalities -- categorize what you offer"
----
+## Fees for changes and cancellations
+
+::help-video{clip="calendar--policies-fees" caption="Turning on the reschedule fee and adding a reason"}
 ::
 
-## Scheduling Policies
+In **Settings › Scheduling Policies**, the **Fees** section has three fees. Each has a switch and an amount; switched off it reads **Not offered**.
 
-Set flat fees (in euros) for a **Reschedule fee**, **Cancellation fee**, and **Missed appointment fee**. These aren't charged automatically -- the reschedule fee is *offered* on the reschedule confirmation dialog, and the cancellation/missed-appointment fees are offered when staff change an appointment's status from the [Edit Appointment modal](/articles/calendar-appointments/booking-an-appointment); staff still decide case by case whether to actually apply one.
+- **Reschedule**: offered when a visit is moved by dragging or with **Move…**, in the **Rescheduling Appointment** dialog.
+- **Cancellation**: offered when cancelling, to add to the patient's balance or charge to their saved card.
+- **Missed appointment**: offered when a visit is marked **No-show**.
 
-Below the fees, **Reschedule Reason** is a list of options staff pick from when dragging an appointment to a new time on the Calendar -- add whatever reasons are useful for your own reporting (e.g. "Patient request", "Practitioner unavailable", "Weather").
+1. Switch on the fee you want and enter the amount in euros.
+2. Click **Save fees**.
 
-## Calendar Resources
+Fees are "offered, never charged automatically": each time, whoever moves, cancels or marks the visit decides whether to apply it. What that looks like is in [Moving and cancelling appointments](/articles/calendar-appointments/moving-and-cancelling).
 
-Rooms used for scheduling, per clinic. Add a room name and pick which clinic it belongs to -- if your practice has one clinic, all rooms simply belong to that one. Rooms show up as a selectable field when [booking an appointment](/articles/calendar-appointments/booking-an-appointment); leaving a booking's room as "No room" is fine if your clinic doesn't assign specific spaces.
+**Ask for a card at online booking** means that straight after booking online, the patient saves a card on Stripe's own page (nothing is charged), so these fees can be charged to it. The booking page tells them before they book. It needs online payments set up in **Settings › Payments**: see [Connecting Stripe](/articles/settings/connecting-stripe).
 
-## Modalities
+> **Good to know:** the reschedule fee is only offered when dragging or using **Move…**. Changing the time with **Change** in the appointment panel doesn't offer it.
 
-Categorize practitioners, appointment types, and services by what's actually being provided -- Chiropractic, Sports Massage, Osteopathy, and so on. This is optional: a single-modality clinic (everyone doing the same kind of work) has no real need for it, while a multi-disciplinary practice can use it to filter or report on activity by modality rather than just by practitioner or appointment type alone.
+## Reschedule reasons
+
+On the same page, **Reschedule reasons** is the list of reasons picked when a visit is moved (for example "Patient request" or "Practitioner off sick").
+
+1. Type the reason in "Add a reason, e.g. Practitioner off sick" and click **Add**.
+2. Each reason shows how often it has been used. You can rename or delete it.
+
+Deleting a reason leaves visits already moved with it as they are; they simply show no reason.
+
+## Other settings that shape the calendar
+
+- Opening hours, time zone, calendar slot and public holidays are set per clinic: see [Managing clinics](/articles/settings/managing-clinics) and [Holidays and closures](/articles/settings/holidays-and-closures).
+- Rooms, the calendar's columns: [Rooms](/articles/settings/rooms).
+- Each practitioner's hours: [Practitioner working hours](/articles/team-roles/practitioner-working-hours).
+- Appointment types, their lengths, prices and group classes: [Appointment types and services](/articles/settings/appointment-types-and-services).
+- When a slot is offered to the waitlist: [The waitlist](/articles/calendar-appointments/waitlist).

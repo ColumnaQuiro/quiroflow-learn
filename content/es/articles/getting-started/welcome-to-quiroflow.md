@@ -1,31 +1,58 @@
 ---
 title: Bienvenido a QuiroFlow
-description: Un recorrido rápido por lo que hace QuiroFlow y dónde encontrar todo.
+description: Qué es QuiroFlow, dónde está cada cosa y por dónde empezar si acabas de llegar.
 collection: getting-started
 order: 1
 ---
 
-QuiroFlow es el sistema del día a día para gestionar tu clínica: reservar y gestionar citas, mantener las fichas de pacientes, gestionar facturación y pagos, y comunicarte con los pacientes por WhatsApp y correo electrónico -- todo en un mismo lugar. Está pensado para clínicas de quiropráctica y otras terapias manuales, desde un solo profesional hasta un equipo con varias clínicas, y todo lo que ves abajo está disponible desde el menú lateral en cuanto inicias sesión.
+QuiroFlow es el programa del día a día de tu clínica: la agenda, las fichas y las notas de tus pacientes, los cobros y las facturas, y los mensajes con los pacientes por WhatsApp y email, todo en un mismo sitio. Está pensado para clínicas de quiropráctica, fisioterapia y otras terapias manuales, desde quien trabaja solo hasta un equipo con varias sedes. Funciona en el navegador y, para el equipo y los pacientes, también en una app para iPhone y Android.
 
-## Las áreas principales
+## Si acabas de crear tu cuenta
 
-![Panel de control de QuiroFlow con el menú lateral completo: Dashboard, My Day, Calendar, Patients, Recalls, Inbox, Billing, Reports y Campaigns](/screenshots/dashboard.png)
+Sigue estos artículos en orden y en una tarde tendrás la agenda lista para trabajar:
 
-- **Dashboard** -- tu clínica de un vistazo: visitas esta semana, ingresos este mes, tasa de no presentados, pacientes activos y todo lo pendiente para hoy. Es lo primero que ves al iniciar sesión, y se actualiza en tiempo real conforme tu equipo reserva, registra entradas y factura a pacientes.
-- **My Day** -- una vista filtrada, de un solo profesional, de la agenda de hoy -- útil si eres un profesional que solo quiere ver sus propias visitas sin el calendario completo de la clínica.
-- **Calendar** -- reserva, confirma y gestiona citas en tus clínicas, salas y profesionales. Aquí es donde la mayoría de tu equipo pasará su día -- consulta [Reservar una cita](/es/articles/calendar-appointments/booking-an-appointment).
-- **Patients** -- la ficha completa de cada paciente en un mismo lugar: datos de contacto, historial de visitas, planes de tratamiento, documentos e historial de facturación, todo en una sola página por paciente.
-- **Recalls** -- una lista mantenida automáticamente de pacientes que no han reservado en un tiempo, para que nadie se quede sin seguimiento entre visitas. Consulta [Recordatorios (Recalls) -- recuperar pacientes](/es/articles/patients/recalls).
-- **Waitlist** -- guarda el hueco de un paciente para un tipo de cita o profesional concreto, y ofréceselo automáticamente en cuanto quede libre un hueco que coincida. Consulta [La lista de espera (Waitlist)](/es/articles/patients/waitlist).
-- **Care Plan Alerts** -- pacientes con un plan de tratamiento activo que se han retrasado según su propio calendario. Consulta [Configurar un plan de tratamiento](/es/articles/patients/care-plans).
-- **Inbox** -- todas las conversaciones de WhatsApp con tus pacientes, en un solo lugar compartido donde todo tu equipo puede verlas y responder -- se acabaron los mensajes atrapados en el teléfono de una sola persona.
-- **Billing** -- bonos, membresías, facturas y pagos, incluidas las tarjetas guardadas de los pacientes para un cobro rápido y la conciliación de [turnos de caja](/es/articles/billing-payments/cash-shift) para tu recepción.
-- **Reports** -- informes financieros y de actividad: ingresos, número de visitas, cancelaciones y más, filtrables por clínica, profesional y rango de fechas.
-- **Campaigns** -- marketing por WhatsApp y correo electrónico a tu lista de pacientes, desde anuncios puntuales hasta secuencias automáticas de recordatorios.
-- **Settings** -- tu equipo, roles y permisos, clínicas, tipos de cita y configuración de pagos. Casi toda la configuración que solo haces una vez está aquí.
+1. [Crear tu cuenta y tu consulta](/es/articles/getting-started/creating-your-clinic): el registro y los cuatro pasos de configuración.
+2. [Tus primeros pasos](/es/articles/getting-started/first-steps): tu primer tipo de cita, tu primer paciente, tu primera visita y el horario de la clínica.
+3. [Invitar a tu equipo](/es/articles/team-roles/inviting-your-team): profesionales y recepción, cada uno con su rol.
+4. [Importar tus datos](/es/articles/settings/importing-your-data), si vienes de otro programa.
 
-## Por dónde empezar
+Si te han invitado a una clínica que ya usa QuiroFlow, empieza por [Iniciar sesión y recuperar la contraseña](/es/articles/getting-started/signing-in).
 
-Si estás configurando QuiroFlow por primera vez, empieza por [Crear tu clínica](/es/articles/getting-started/creating-your-clinic) e [Invitar a tu equipo](/es/articles/getting-started/inviting-your-team) -- juntos te llevan desde un formulario de registro en blanco hasta una clínica en marcha con personal que puede iniciar sesión y empezar a reservar.
+## Dónde está cada cosa
 
-Si ya estás en marcha, las colecciones **Agenda y citas** y **Facturación y pagos** cubren lo que más usarás en el día a día. Si algo no funciona como esperas, búscalo en la parte superior de esta página -- la mayoría de los artículos explican tanto el "por qué" como el "cómo".
+El menú de la izquierda está agrupado. Cada persona ve solo lo que su rol le permite, así que puede que a ti te falte alguna entrada.
+
+**Hoy**
+- **Panel**: tu clínica de un vistazo, con las cifras de la semana y lo pendiente de hoy.
+- **Mi día**: tus propias visitas de hoy, para quien pasa consulta.
+- **Calendario**: reservar, mover, confirmar y registrar la llegada de los pacientes, por clínica, sala y profesional.
+- **Registro de jornada**: el fichaje de entrada y salida del equipo.
+- **Equipo**: el chat interno del equipo.
+
+**Pacientes**
+- **Pacientes**: la lista de pacientes y la ficha de cada uno, con sus datos, visitas, notas, documentos y cobros.
+- **Recordatorios**: pacientes a los que toca volver a llamar porque hace tiempo que no reservan.
+- **Lista de espera**: quien quiere un hueco antes; QuiroFlow se lo ofrece cuando queda uno libre.
+- **Alertas de plan**: pacientes que se han retrasado en su plan de tratamiento.
+- **Bandeja de entrada**: los mensajes de WhatsApp y de otros canales, compartidos por todo el equipo.
+- **Automatizaciones**: mensajes que salen solos cuando pasa algo (por ejemplo, después de una primera visita).
+
+**Dinero**
+- **Facturación**: recibos, facturas, bonos, membresías y pagos.
+- **Informes**: ingresos, visitas, retención y el resto de informes de la clínica.
+
+**Crecimiento** (en el plan que incluye Growth)
+- **Resumen**, **Contactos**, **Recepcionista IA** y **Reputación**: captar pacientes nuevos, contestarles y cuidar tus reseñas.
+
+Abajo del menú están el **Centro de ayuda** (estos artículos) y **Ajustes**, donde se configura toda la clínica. Consulta [Mapa de Ajustes](/es/articles/settings/settings-overview).
+
+## La barra superior
+
+- **Buscar o ir a** (o **⌘K**): busca un paciente o salta a cualquier página.
+- **Soporte**: el asistente que contesta dudas con estos artículos, y el chat con el equipo de QuiroFlow. Consulta [Pedir ayuda](/es/articles/getting-started/getting-help).
+- **Apariencia**: modo claro, oscuro o el de tu sistema.
+- Tu foto: **Ajustes de la cuenta**, **Suscripción** y **Cerrar sesión**. Consulta [Tu cuenta](/es/articles/getting-started/account-settings).
+
+## Tu información está protegida
+
+Tus datos se guardan en servidores de la Unión Europea. Cada persona entra con su propio usuario y su rol decide qué puede ver. Puedes exigir a todo el equipo la [verificación en dos pasos](/es/articles/security-privacy/two-factor-login), y las personas propietarias tienen un [registro de actividad](/es/articles/security-privacy/activity-log) con cada cambio y cada acceso a las fichas.
