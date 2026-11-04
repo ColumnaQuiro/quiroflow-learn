@@ -15,7 +15,9 @@ const here = dirname(fileURLToPath(import.meta.url))
 const OUT = join(here, 'out')
 const BUCKET = 'help-videos'
 const url = process.env.SUPABASE_URL || 'https://oyaprkfurtuujdfafptw.supabase.co'
-const key = process.env.SUPABASE_SERVICE_ROLE_KEY
+// A key pasted across a terminal line break arrives with a newline in it,
+// which fetch refuses as a header value. Keys never contain whitespace.
+const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.replace(/\s+/g, '')
 if (!key || !/^(eyJ|sb_secret_)/.test(key)) {
   console.error(
     'Set SUPABASE_SERVICE_ROLE_KEY to the secret key (sb_secret_…) or the legacy service_role key (eyJ…), ' +
