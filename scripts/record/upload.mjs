@@ -16,11 +16,17 @@ const OUT = join(here, 'out')
 const BUCKET = 'help-videos'
 const url = process.env.SUPABASE_URL || 'https://oyaprkfurtuujdfafptw.supabase.co'
 const key = process.env.SUPABASE_SERVICE_ROLE_KEY
-if (!key) {
-  console.error('Set SUPABASE_SERVICE_ROLE_KEY (Supabase dashboard → Project settings → API keys).')
+if (!key || !/^(eyJ|sb_secret_)/.test(key)) {
+  console.error(
+    'Set SUPABASE_SERVICE_ROLE_KEY to the secret key (sb_secret_…) or the legacy service_role key (eyJ…), ' +
+      'from Supabase dashboard → Project settings → API keys.',
+  )
   process.exit(1)
 }
-const auth = { Authorization: `Bearer ${key}`, apikey: key }
+// A legacy service_role key is a JWT and goes in both headers. A new sb_secret_
+// key is not a JWT: sent as a Bearer token, Storage rejects it with "Invalid
+// Compact JWS", so it goes in apikey alone and the gateway signs the request.
+const auth = key.startsWith('eyJ') ? { Authorization: `Bearer ${key}`, apikey: key } : { apikey: key }
 
 async function ensureBucket() {
   const r = await fetch(`${url}/storage/v1/bucket/${BUCKET}`, { headers: auth })
