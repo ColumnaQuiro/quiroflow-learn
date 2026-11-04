@@ -1,45 +1,53 @@
 ---
-title: Vender y gestionar membresías
-description: Planes recurrentes, facturados cada período, con cobro automático en cuanto hay una tarjeta guardada.
+title: Membresías
+description: Crea planes recurrentes, apunta a un paciente y lleva el registro de cada periodo pagado, a mano o con cobro automático.
 collection: billing-payments
 order: 5
 ---
 
-Una membresía es un plan recurrente que un paciente paga según un calendario -- un plan mensual de mantenimiento, por ejemplo -- en lugar de un número fijo de sesiones prepagadas como un [bono](/es/articles/billing-payments/selling-a-package-bono). Configura primero tus plantillas de membresía en **Settings &rarr; Memberships**, dando a cada una un nombre y un precio por período.
+Una membresía es un plan que el paciente paga de forma periódica, por ejemplo un «Mantenimiento mensual» de 49 € al mes. A diferencia de un [bono](/es/articles/billing-payments/selling-a-package-bono), no tiene un número de sesiones: se paga cada periodo mientras esté activa. Creas los planes en **Ajustes › Membresías** y los activas desde la pestaña **Dinero** del paciente.
 
-::image-carousel
----
-images:
-  - src: /screenshots/patient-membership-activate.png
-    alt: Panel de Memberships con un plan seleccionado, la cantidad Paid now, y Method en Cash
-    caption: "Activar una membresía -- el mismo patrón que vender un bono"
-  - src: /screenshots/patient-membership-active.png
-    alt: Tarjeta de membresía activa mostrando el plan, precio por período, fecha de inicio, estado, y los controles Log payment / Log failed
-    caption: "Una vez activa -- estado, y cómo se paga cada período"
----
+Necesitas el permiso **Vender y editar bonos y membresías** para activarlas en un paciente.
+
+## Crear un plan
+
+::help-video{clip="billing--membership-plan" caption="Crear un plan de membresía mensual"}
 ::
 
-## Activar una
+1. Ve a **Ajustes › Membresías**.
+2. Pulsa **Nuevo plan**.
+3. Escribe el **Nombre**, el **Precio (€)** y, en **Cada**, cada cuánto se paga: **Semana**, **Mes**, **3 meses**, **6 meses** o **Año**.
+4. Pulsa **Crear plan**.
 
-En la pestaña **Billing** de un paciente, busca la tarjeta **Memberships**:
+Arriba verás los **Miembros activos** y los **Ingresos recurrentes al mes**. Para retirar un plan, ábrelo y pulsa **Dejar de ofrecer**.
 
-1. Elige el plan en el desplegable.
-2. Ajusta **Paid now (€)** si el cobro de este período es distinto del precio de la plantilla.
-3. Elige el **Method**: Cash, Card, o Credit on account.
-4. Selecciona **Activate**.
+> **Ten en cuenta:** cambiar o eliminar un plan solo afecta a los pacientes que se apunten a partir de ahora. Quienes ya lo tienen conservan su precio hasta que lo finalices en su ficha.
 
-La tarjeta de la membresía muestra entonces el nombre del plan, el precio por período, la fecha en que empezó, y una etiqueta de estado.
+## Activar una membresía a un paciente
 
-## Mantenerla pagada cada período
+::help-video{clip="billing--membership-activate" caption="Activar una membresía cobrando el primer mes"}
+::
 
-Activar una membresía no configura por sí sola el cobro recurrente automático -- fíjate en el aviso **No card on file -- add one to enable autopay for this membership** que aparece nada más activarla. Sin una tarjeta guardada, tú (o el paciente) tenéis que pagar cada período manualmente, y **Log payment** registra que ha ocurrido. **Log failed** registra lo contrario -- útil para mantener un historial preciso si un período se pasa por alto o se paga tarde, en lugar de que el registro simplemente tenga un hueco en silencio.
+1. En la pestaña **Dinero** del paciente, en **Membresías**, abre **Activar una membresía…** y elige el plan.
+2. En **Pagado ahora (€)**, escribe lo que paga hoy (por ejemplo, el primer mes).
+3. Si paga algo, elige el **Método**.
+4. Pulsa **Activar**.
 
-Añade una tarjeta (consulta [Añadir la tarjeta de un paciente](/es/articles/billing-payments/adding-a-patients-card)) para pasar a cobro automático -- QuiroFlow entonces la cobra automáticamente cada período, el mismo mecanismo que usan los bonos para el cobro automático de su saldo pendiente.
+La membresía aparece con su precio por periodo y la fecha en la que empezó. Cada pago de una membresía emite una factura completa.
 
-## Cambiar el estado
+## Registrar cada periodo
 
-El desplegable de estado junto al nombre del plan no se limita a **active** -- úsalo para pausar o cancelar una membresía sin eliminar su registro, de modo que el historial de en qué estuvo el paciente (y durante cuánto tiempo) se conserve incluso después de que termine.
+Si el paciente paga cada periodo en la clínica:
 
-## Dónde aparecen las membresías en los informes
+- Pulsa **Registrar pago** en la membresía cuando pague.
+- Pulsa **Registrar fallo** si un periodo no se pagó, para que quede constancia.
 
-**Reports &rarr; Memberships** lo resume a nivel de cuenta: número de membresías activas, ingresos recurrentes mensuales, y cualquier pago fallido -- revísalo periódicamente aunque no estés gestionando membresías individuales cada día, ya que un pago fallido ahí normalmente solo significa que la tarjeta de un paciente ha caducado y necesita actualizarse.
+Debajo verás cada periodo con su estado.
+
+Si prefieres que se cobre sola, guarda una tarjeta del paciente y pulsa **Configurar pago automático**: indica **Cada** cuánto (viene rellenado con el periodo del plan) y pulsa **Iniciar**. Lo explica [Tarjeta guardada, pago automático y pago online](/es/articles/billing-payments/adding-a-patients-card).
+
+## Pausar o cancelar
+
+Con el selector de estado de la membresía puedes pasarla a **pausada** o **cancelada**, y volver a **activa**. El historial se conserva.
+
+> **Ten en cuenta:** el resumen de todas las membresías de la clínica, con los pagos fallidos, está en **Informes › Membresías**.

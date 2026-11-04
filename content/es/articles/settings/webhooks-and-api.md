@@ -1,37 +1,71 @@
 ---
-title: Webhooks y la API
-description: Suscríbete a eventos de la clínica, o lee y escribe datos con un token de API con permisos acotados.
+title: API y webhooks
+description: Conecta QuiroFlow con otros programas -- tokens de API con permisos limitados, y webhooks que avisan a otro sistema cuando algo cambia.
 collection: settings
 order: 9
 ---
 
-Para conectar QuiroFlow con algo que hayas construido tú mismo -- distinto de las conexiones ya hechas con Stripe y WhatsApp que se cubren en otras partes de Settings.
+Si usas otras herramientas (un widget de reservas en tu web, un formulario de anuncios, n8n o Zapier, tus propios scripts), puedes conectarlas con QuiroFlow de dos formas:
 
-## Webhooks
+- **API y tokens**: otro programa **pregunta** a QuiroFlow (lee pacientes, reserva citas…) con un token que solo puede hacer lo que tú le permites.
+- **Webhooks**: QuiroFlow **avisa** a otro programa en cuanto pasa algo (un paciente nuevo, una cita creada, un recibo pagado).
 
-**Settings &rarr; Webhooks** suscribe un endpoint que controlas tú para recibir un HTTP POST cada vez que ocurre un evento suscrito: cita creada, actualizada, eliminada o registrada; paciente creado, actualizado o eliminado; factura pagada. Cada solicitud lleva una cabecera `X-QuiroFlow-Event` y un cuerpo JSON con `{ event, created_at, data }`.
+Las dos páginas están en **Ajustes › Desarrolladores** y necesitan el permiso **API para desarrolladores**. La documentación técnica completa (en inglés) se abre con el botón **Documentación** de la página **API y tokens**.
 
-Para verificar que una solicitud viene realmente de QuiroFlow (y no de alguien que ha adivinado la URL de tu endpoint), recalcula un HMAC-SHA256 del cuerpo bruto de la solicitud usando el secreto propio de tu webhook, y compáralo con la cabecera `X-QuiroFlow-Signature` (codificada en hexadecimal) -- si no coinciden, descarta la solicitud.
+## Crear un token de API
 
-Esto es de toda la cuenta, distinto de la acción de webhook por campaña que se explica en [Enviar campañas](/es/articles/communications/sending-campaigns), que se dispara desde una regla de campaña concreta en lugar de cada evento de un tipo dado.
+::help-video{clip="settings--api-token" caption="Crear un token de API con permisos limitados"}
+::
 
-## API & Tokens
+1. Ve a **Ajustes › API y tokens** y pulsa **Nuevo token**.
+2. Ponle un **Nombre** que diga para qué es (por ejemplo, "Widget de reservas").
+3. Elige cuándo **Caduca**: **Nunca**, **En 30 días**, **En 90 días** o **En un año**.
+4. En **Qué puede hacer**, marca solo lo que necesite la integración:
+   - **Leer pacientes y sus datos de contacto**
+   - **Crear y actualizar pacientes**
+   - **Leer citas y disponibilidad**
+   - **Reservar, reprogramar y cancelar citas**
+   - **Leer clínicas, profesionales, tipos de cita y servicios**
+   - **Leer facturas y pagos**
+   - **Crear leads desde un formulario o plataforma de anuncios externa**
+   - **Enviar mensajes de WhatsApp en nombre de la clínica**
+   - **Reenviar webhooks entrantes de WhatsApp a esta clínica**
+5. Si quieres, rellena **Quién lo ha hecho (opcional)**: el nombre de la integración y el contacto del desarrollador.
+6. Pulsa **Crear token**.
+7. Aparece **Copia el token ahora; no se vuelve a mostrar.** Pulsa **Copiar**, pégalo en la otra herramienta y pulsa **Hecho**.
 
-**Settings &rarr; API & Tokens** es para que software externo -- una herramienta de automatización como n8n, un widget de reservas personalizado, una recepcionista de IA, o tus propios scripts -- lea y escriba los datos de esta clínica sin un inicio de sesión de QuiroFlow. La documentación completa de referencia, con ejemplos, filtrado, paginación y códigos de error, está en `developers.quiroflow.com`.
+> **Ten en cuenta:** trata el token como una contraseña: quien lo tenga puede leer y escribir los datos que le hayas permitido, sin iniciar sesión. Crea uno por integración, para poder revocar cada uno por separado.
 
-Crear un token:
+En la tabla **Tokens** ves qué **Puede** hacer cada uno, su **Último uso** y cuándo **Caduca** (o **Caducado**). **Inicio rápido** enseña un ejemplo de llamada para quien vaya a programar la integración.
 
-1. Dale un **nombre** para que recuerdes para qué es más adelante.
-2. Opcionalmente define una **caducidad** (Never, 30 days, 90 days, 1 year) y anota el **nombre de la integración** / **contacto del desarrollador** para tu propio registro.
-3. Elige los **scopes** (permisos) -- concede solo lo que la integración realmente necesita, agrupados por área: Patients (lectura/escritura), Appointments (lectura/escritura), Catalog (solo lectura: clínicas, profesionales, tipos de cita, servicios), Billing (solo lectura: facturas y pagos), y Messaging (enviar WhatsApp en nombre de la clínica).
+## Revocar un token
 
-Trata un token como una contraseña: quien lo tenga puede actuar como tu clínica dentro de los permisos que se le hayan concedido. Un token al que nunca se le dio `billing:read`, por ejemplo, simplemente no puede filtrar datos de facturación aunque el propio token se filtre -- que es justo el sentido de acotar los permisos en lugar de conceder todo por defecto.
+Pulsa **Revocar** y confirma con **Revocar token**. Todo lo que lo use deja de funcionar al momento, y no se puede reactivar: habría que crear uno nuevo.
 
-Envíalo como token de portador:
+## Ver la actividad de la API
 
-```
-curl "https://app.quiroflow.com/api/public/v1/appointments?starts_at=gte:2026-03-01T00:00:00Z" \
-  -H "Authorization: Bearer qf_live_..."
-```
+**Solicitudes recientes** muestra las últimas 30 llamadas hechas con los tokens de tu clínica: **Cuándo**, **Solicitud**, **Resultado** y **Token**. Pulsa **Actualizar** para ver las últimas. Es lo primero que hay que mirar cuando una integración "no funciona".
 
-La URL base es la misma para todas las clínicas de QuiroFlow -- para qué clínica actúa una solicitud lo determina por completo qué token de clínica envías, no ningún otro dato de la solicitud. **Recent API activity**, en la misma página, muestra las últimas 30 solicitudes hechas con tus tokens, útil para confirmar que una integración realmente se está conectando y no fallando en silencio.
+## Añadir un webhook
+
+::help-video{clip="settings--webhook" caption="Añadir un webhook que avisa cuando se crea una cita"}
+::
+
+1. Ve a **Ajustes › Webhooks** y pulsa **Añadir endpoint**.
+2. En **Dirección**, pega la dirección completa que te dio la otra herramienta (tiene que empezar por https://).
+3. En **Enviar cuando**, marca los eventos que le interesan:
+   - **Pacientes**: **Creado**, **Actualizado**, **Eliminado**
+   - **Citas**: **Creada**, **Actualizada**, **Eliminada**, **Check-in**
+   - **Recibos**: **Pagado**
+4. Pulsa **Añadir endpoint**.
+
+Desde ese momento, QuiroFlow envía un aviso (un POST) a esa dirección cada vez que pasa uno de esos eventos.
+
+## Gestionar un webhook
+
+En la tarjeta de cada endpoint:
+
+- El interruptor **Enviando** pausa o reanuda los avisos sin borrar nada.
+- **Secreto de firma**: **Mostrar**, **Ocultar** o **Copiar**. Quien programe la integración lo necesita para comprobar que los avisos vienen de verdad de QuiroFlow (la explicación técnica está en **Comprobar que una solicitud viene de QuiroFlow**).
+- **Lo enviado**: el registro de lo que se ha enviado y qué respondió la otra herramienta. Pulsa una fila para ver el contenido.
+- **Cambiar** la dirección o los eventos, o **Eliminar** el endpoint (su registro se elimina con él).

@@ -28,3 +28,7 @@ logs
 
 # Generated at build time by scripts/build-corpus.mjs
 public/corpus.json
+scripts/record/out/
+scripts/record/.frames/
+scripts/record/.preview.sh
+scripts/record/.lock/

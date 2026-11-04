@@ -1,43 +1,36 @@
 ---
-title: Horario laboral de un profesional
-description: Da a cada profesional su propio horario para que la reserva online solo ofrezca los días y las horas en que realmente trabaja.
+title: Horario de un profesional
+description: Da a cada profesional su propio horario para que la agenda y la reserva online solo ofrezcan los días y las horas en que de verdad trabaja.
 collection: team-roles
-order: 2
+order: 3
 ---
 
-Por defecto, cualquier profesional es reservable dentro del horario de apertura de su clínica. Cuando alguien solo trabaja ciertos días -- los martes por la mañana, nunca los viernes, dos tardes por semana -- dale su propio horario laboral para que la reserva online deje de ofrecer huecos que nunca aceptaría.
+Por defecto, cada profesional sigue el horario de su sede: se le puede reservar siempre que la clínica esté abierta. Si alguien trabaja menos que eso (solo los martes por la mañana, dos tardes por semana, nunca los viernes), ponle su propio horario. Así la reserva online y la recepcionista IA dejan de ofrecer huecos en los que no está, y el calendario te avisa si reservas fuera de su horario.
 
-## Cómo configurarlo
+Necesitas el permiso **Equipo**.
 
-Ve a **Settings &rarr; Team** y busca la fila del profesional. A la derecha, haz clic en **Horario laboral**.
+## Poner un horario propio
 
-Se abrirá un horario debajo de su fila con una línea por cada día de la semana. Para cada día que trabaje, haz clic en **+ Añadir horas** y define una hora de inicio y otra de fin. Los días que dejes vacíos son días en los que no se le ofrecerá.
+::help-video{clip="team--own-hours" caption="Dar horario propio a un profesional"}
+::
 
-Haz clic en **Guardar** al terminar. El enlace pasará a mostrar **Horario laboral (personalizado)**, que es como puedes ver de un vistazo qué profesionales tienen su propio horario y cuáles siguen el de la clínica.
+1. Ve a **Ajustes › Equipo** y pulsa en el profesional.
+2. En **Atiende pacientes › Su horario**, pulsa **Poner horario propio**.
+3. Activa los días que trabaja y pon sus horas. Con **+ Tramo** añades un segundo tramo en el mismo día (por ejemplo, mañana y tarde). Los días que dejes en **Cerrado** no se le puede reservar.
+4. Pulsa **Guardar cambios**.
 
-## Vacío significa "igual que la clínica"
+En **Ajustes › Equipo**, la persona aparece con la etiqueta **Horario propio**.
 
-Dejar *todos* los días vacíos no significa que no esté disponible: significa "sin anulación", y el profesional sigue siendo reservable dentro del horario normal de la clínica. Ese es el comportamiento por defecto para todo el mundo hasta que configuras algo.
+## Volver al horario de la sede
 
-Así que, para devolver a un profesional al horario de la clínica, elimina todas las franjas horarias que hayas añadido en lugar de intentar rellenar la semana completa a mano.
+En su ficha, en **Su horario**, pulsa **Usar el de la sede** y luego **Guardar cambios**. Desde ese momento vuelve a seguir el horario de apertura de su clínica.
 
-## Sustituyen al horario de la clínica, no lo limitan
+## Cómo funciona
 
-Esta es la parte que conviene leer dos veces. En cuanto un profesional tiene su propio horario, el de la clínica deja de aplicársele por completo: se usa el suyo en su lugar, en vez de combinarse los dos.
+- **El horario propio sustituye al de la sede; no lo recorta.** Un día que no marques es un día libre aunque la clínica abra, y un horario propio puede ir más allá del de apertura (si alguien atiende hasta las 21:00 y la clínica cierra a las 20:00, se le puede reservar hasta las 21:00).
+- Sin horario propio, se le puede reservar siempre que su sede esté abierta. El horario de la sede se pone en **Ajustes › Clínicas**. Consulta [Gestionar tus clínicas](/es/articles/settings/managing-clinics).
+- La propia persona ve su horario en sus **Ajustes de la cuenta**, en **Tu agenda › Tu horario**, pero no puede cambiarlo.
+- Para que no se le pueda reservar online en absoluto, desactiva **Se puede reservar online** en su ficha.
+- Para unos días sueltos fuera (vacaciones, una baja, un curso) no cambies el horario: registra una ausencia. Consulta [Ausencias del equipo](/es/articles/team-roles/absences). Para bloquear unas horas concretas en la agenda, consulta [Citas recurrentes y bloqueos de tiempo](/es/articles/calendar-appointments/recurring-and-blocking-time).
 
-Dos consecuencias:
-
-- Un día que dejes vacío es un **día libre**, no "sin restricción". Si configuras el horario del lunes y dejas el resto de la semana en blanco, ese profesional solo será reservable los lunes.
-- Su horario puede quedar **fuera** del de la clínica. Si la clínica abre de 9:00 a 17:00 y le das a un profesional de 8:00 a 19:00, las 8:00 y las 18:00 se ofrecerán realmente a los pacientes.
-
-Por eso conviene configurar la semana completa del profesional, no solo el día que querías cambiar.
-
-## A qué afecta
-
-Este horario determina lo que se ofrece en tu página pública de reserva, y el sombreado de horario laboral en el calendario.
-
-No impide que tu propio equipo reserve fuera de él. Si recepción elige una hora fuera del horario de un profesional, QuiroFlow pregunta *"Esta cita está fuera del horario de atención. ¿Reservarla de todos modos?"*, de modo que una excepción cuesta un clic más en lugar de estar prohibida.
-
-## Un profesional que no debería ser reservable
-
-Si alguien no debe aparecer nunca en la página de reserva -- un asistente, o un profesional que solo atiende derivaciones -- desactiva el interruptor **Reservable** de su fila en lugar de esto. Eso lo elimina por completo de la reserva online, sea cual sea su horario.
+> **Ten en cuenta:** desde el calendario sí se puede reservar fuera de su horario: QuiroFlow pregunta **Esta cita está fuera del horario de atención. ¿Reservarla de todos modos?** antes de hacerlo.

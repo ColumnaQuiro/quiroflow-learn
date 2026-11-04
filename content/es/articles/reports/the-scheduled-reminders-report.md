@@ -1,35 +1,51 @@
 ---
-title: El informe Scheduled Reminders
-description: Ve quién ha confirmado, quién no ha respondido, y quién quiere reprogramar.
+title: Recordatorios programados
+description: Si los WhatsApp de la clínica llegaron, cuáles fallaron y por qué, y qué pacientes con cita han confirmado, siguen pendientes o quieren cambiarla.
 collection: reports
-order: 2
+order: 12
 ---
 
-Ve a **Reports &rarr; Scheduled Reminders**. Este informe solo cuenta citas a las que se les envió un mensaje de confirmación o recordatorio -- necesita tener configurado el webhook de respuestas de WhatsApp (consulta [Conectar WhatsApp](/es/articles/communications/connecting-whatsapp)), y si no está configurado, los contadores aquí se quedarán en cero aunque los mensajes se sigan enviando.
+**Recordatorios programados** responde a dos preguntas del día a día: ¿salieron de verdad los WhatsApp?, y ¿quién ha confirmado su próxima cita? Es la forma rápida de saber a quién llamar antes de su visita, sin recorrer el calendario. Lo encuentras en **Informes › Operaciones**.
 
-![Informe Scheduled Reminders con estadísticas de entrega de WhatsApp y los contadores Confirmed / Pending / Wants to reschedule](/screenshots/reports-scheduled-reminders.png)
+::help-video{clip="reports--scheduled-reminders" caption="Estado de entrega de WhatsApp y confirmaciones de las próximas citas"}
+::
 
-## Qué muestra
+## Revisar las entregas y las confirmaciones
 
-**WhatsApp delivery status**, para el rango de fechas seleccionado:
+1. Abre **Informes › Recordatorios programados**.
+2. Elige el periodo para las entregas (por defecto **Este mes**).
+3. En **Estado de entrega de WhatsApp**, mira las cuatro cifras y, si hay, la lista de envíos fallidos.
+4. En **Confirmaciones de citas**, repasa las tres columnas y pulsa un nombre para abrir la ficha y llamar o escribir al paciente.
 
-- **Sent** -- mensajes que QuiroFlow intentó enviar.
-- **Delivered** -- confirmados como entregados por WhatsApp.
-- **Read** -- el paciente abrió el mensaje.
-- **Failed** -- no llegó a enviarse. Un contador de Failed distinto de cero merece investigarse enseguida -- suele significar un número inválido, un paciente que ha bloqueado el número de tu negocio, o un problema con tu propia conexión de WhatsApp (consulta [Conectar WhatsApp](/es/articles/communications/connecting-whatsapp)).
+## Estado de entrega de WhatsApp
 
-**Appointment confirmations**, desglosado en tres contadores:
+Cuenta todos los WhatsApp que la clínica ha enviado en el periodo (confirmaciones, recordatorios, recuperaciones y el resto), cada uno una vez, en su último estado conocido:
 
-- **Confirmed** -- pacientes que respondieron confirmando su cita.
-- **Pending** -- se envió un mensaje y todavía no hay respuesta (o la respuesta no fue un confirmar/reprogramar/cancelar claro).
-- **Wants to reschedule** -- pacientes que respondieron pidiendo cambiar su cita en lugar de confirmarla.
+- **Enviados**: salieron, pero WhatsApp aún no ha confirmado que llegaran.
+- **Entregados**: llegaron al teléfono, pero no se han leído.
+- **Leídos**: el paciente los abrió.
+- **Fallidos**: no llegaron. La tarjeta se pone en rojo.
 
-Al seleccionar un contador se abre la lista de citas detrás de él, y el nombre de cada paciente enlaza directamente a su ficha -- así que pasar de "12 pending" a llamar realmente a esos 12 pacientes son un par de clics, no un cruce manual contra el calendario.
+Como cada mensaje cuenta solo en su último estado, un mensaje leído no aparece también en entregados ni en enviados.
 
-## Cambiar el rango de fechas
+Si hay fallidos, debajo aparece **Envíos fallidos — número incorrecto o sin cuenta de WhatsApp**, con el paciente y el motivo (o «Código de error N»). Lo habitual es un número mal escrito o un teléfono fijo: corrígelo en la ficha del paciente. Si fallan muchos de golpe, revisa la conexión de WhatsApp (ver [Conectar WhatsApp](/es/articles/communications/connecting-whatsapp)).
 
-El selector de fechas de arriba (por defecto **This month**) controla a la vez tanto las estadísticas de entrega como los contadores de confirmación -- no hay forma de ver uno con un rango distinto al otro. Acótalo a un solo día cuando estés revisando específicamente las citas de mañana, o amplíalo para detectar un problema de entrega que se ha ido acumulando durante una semana o más.
+## Confirmaciones de citas
 
-## Usarlo en el día a día
+Lista las **próximas citas** (de ahora en adelante, todavía reservadas) a las que se envió un mensaje de confirmación, en tres columnas:
 
-Es la forma más rápida de ver quién realmente necesita una llamada de seguimiento antes de su visita, en lugar de recorrer todo el Calendario buscando puntos ámbar o morados -- consulta [Estados de las citas explicados](/es/articles/calendar-appointments/appointment-statuses-explained) para ver qué significan esos colores en el propio calendario. Muchas clínicas revisan esto cada mañana como parte de la apertura: cualquiera que siga en Pending para una cita del mismo día es una llamada rápida que vale la pena.
+- **Confirmadas**: el paciente respondió que viene.
+- **Pendientes**: se envió y todavía no hay respuesta clara.
+- **Quiere reprogramar**: el paciente pidió cambiar la cita en vez de confirmarla.
+
+Cada nombre lleva la fecha y hora de la cita y abre la ficha del paciente.
+
+> **Ten en cuenta:** el periodo solo cambia las cifras de entrega. Las confirmaciones son siempre las de las citas que están por venir, sea cual sea el periodo elegido.
+
+> **Ten en cuenta:** las respuestas solo se registran si las respuestas de WhatsApp llegan a QuiroFlow (Ajustes → WhatsApp). Si no, las citas se quedan en **Pendientes** aunque el paciente haya contestado. Para configurar los mensajes, ver [Confirmaciones y recordatorios](/es/articles/communications/confirmations-and-reminders).
+
+## Quién puede verlo
+
+Necesitas **Ver informes** y, además, **Bandeja de entrada**. Sin ella, el informe dice: «Este informe requiere acceso a la Bandeja de entrada — pide a un propietario que lo active para tu rol.». No aparece para los roles con **Solo sus propios datos**.
+
+Es un buen hábito revisarlo cada mañana: quien siga en **Pendientes** para hoy o mañana merece una llamada rápida. Para ver qué significan los colores de confirmación en el propio calendario, ver [Estados de las citas](/es/articles/calendar-appointments/appointment-statuses-explained).

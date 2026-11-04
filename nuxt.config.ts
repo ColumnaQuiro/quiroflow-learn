@@ -9,6 +9,12 @@ export default defineNuxtConfig({
   // pure Markdown-to-HTML with no server-side logic anywhere).
   nitro: { preset: 'static' },
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      // Where ::help-video clips are served from (see HelpVideo.vue).
+      helpVideoBase: 'https://oyaprkfurtuujdfafptw.supabase.co/storage/v1/object/public/help-videos',
+    },
+  },
   app: {
     head: {
       title: 'QuiroFlow Help Center',

@@ -1,44 +1,74 @@
 ---
-title: Selling a package (bono) to a patient
-description: Sell a prepaid session package and record how it was paid.
+title: "Bonos: selling, collecting and using them"
+description: Create your session bonos, sell them even when paid in instalments, use up sessions and share them with family.
 collection: billing-payments
-order: 1
+order: 4
 ---
 
-Packages -- also called *bonos* -- let a patient prepay for a set number of sessions at a fixed price. Set up your package templates first in **Settings &rarr; Packages**, with the session count and price each one sells for.
+A bono is a package of sessions the patient pays for up front at a set price, such as a "Bono 10 sesiones". First you create the bonos you offer in **Settings › Packages / Bonos**; then you sell them from the patient's **Money** tab. It can be paid in full, in part or not at all on the day of the sale: every session can be used from the start, and whatever is still owed stays on the bono itself.
 
-::image-carousel
----
-images:
-  - src: /screenshots/sell-package-filled.png
-    alt: Packages / bonos section with a package chosen from the dropdown, Paid now amount, and Method set to Cash
-    caption: "Pick a package, set how much is being paid now"
-  - src: /screenshots/patient-billing.png
-    alt: Billing tab showing the Packages / bonos section with a purchased 10-Session Wellness Package and the Sell a package… dropdown
-    caption: "Once sold, it shows sessions used and remaining"
----
+To sell, collect, share or delete bonos you need the **Sell and edit bonos and memberships** permission (or the Settings **Billing** permission).
+
+## Creating a bono
+
+::help-video{clip="billing--bono-create" caption="Creating a 10-session bono in Settings"}
 ::
 
-## Selling one
+1. Go to **Settings › Packages / Bonos**.
+2. Click **New bono**.
+3. Enter the **Name**, the number of **Sessions** and the **Price (€)**. You'll see what each session works out at, for example "40,00 € per session".
+4. Click **Create bono**.
 
-On a patient's **Billing** tab, find the **Packages / bonos** section:
+The list shows how many you've sold and how many still have sessions left. To change one, click it, edit it and click **Save**; to remove it, **Remove bono**.
 
-1. Choose the package from the **Sell a package…** dropdown -- it shows the session count and price.
-2. Enter **Paid now (€)** -- the amount actually collected today. This defaults to the full price, but you can lower it if the patient is paying in installments or putting down a deposit.
-3. Choose the **Method**: Cash, Card, or Credit on account (only shown if the patient has account credit available).
-4. Select **Sell**.
+> **Good to know:** changing or removing a bono only affects future sales. Bonos already sold keep their sessions and their price.
 
-The package appears in the patient's **Packages / bonos** list immediately, showing the full session count as available to use -- all sessions are unlocked as soon as the package is sold, regardless of how much of the price has actually been paid. An invoice is created for whatever amount was entered in **Paid now**, and it's marked paid right away for that amount.
+## Selling a bono
 
-## Partial payments and autopay
+::help-video{clip="billing--sell-bono" caption="Selling a bono with half paid today and collecting part of the rest later"}
+::
 
-If **Paid now** is less than the package's full price, the difference isn't automatically tracked as a separate due invoice waiting to be chased -- QuiroFlow doesn't nag the patient or flag it as outstanding on its own. Instead, the practical way to collect the rest is:
+1. On the patient's **Money** tab, under **Packages / bonos**, open **Sell a package…** and pick the bono.
+2. Under **Paid now (€)**, enter what they pay today: the full price, part of it, or 0.
+3. If they pay something, choose the **Method**.
+4. Click **Sell**.
 
-1. Add a card to the patient (see [Adding a patient's card](/articles/billing-payments/adding-a-patients-card)).
-2. Once a card is on file, the package's line in **Packages / bonos** offers to schedule the remaining balance via Stripe autopay -- QuiroFlow then charges the card automatically on the schedule you set, instead of you chasing the balance manually.
+The bono appears with its sessions left and, if it isn't fully paid, tagged **owed** with what is outstanding ("200,00 € paid of 400,00 €").
 
-If you'd rather not use autopay, you can also come back later and record another payment against the patient the same way (via **Add credit** or a fresh charge), just without it being tied to a specific "amount owed on this package" figure -- keep your own note of what's expected if you're not using a card and autopay for it.
+To collect the rest later, click **Take payment** on the bono, enter the **Amount**, choose the **Method** and click **Record payment**. You can also schedule automatic charges to the patient's card: see [Saved card, autopay and online payment](/articles/billing-payments/adding-a-patients-card).
 
-## Logging a session
+> **Good to know:** selling a bono **does not create a receipt**. What is owed stays on the bono itself, and shows under **Reports › Debtors**, not on the **Billing** page. Every payment toward the bono, partial ones included, issues a full factura stating which part of the bono has been paid (for example, half of a 10-session bono is 5 sessions).
 
-Each time the patient comes in and uses a session from their package, select **Log session** next to the package to decrement the remaining count. This is separate from marking their appointment Completed -- do both so the package balance and the visit history stay in sync.
+## Using a session
+
+Usually you use it when charging the visit in the calendar: on the appointment's **Billing** tab, click **Use** next to the bono ([Charging a visit and recording payments](/articles/billing-payments/taking-a-payment)).
+
+If that was missed, you can log it afterwards from the record:
+
+::help-video{clip="billing--bono-log-session" caption="Logging a bono session for today's visit"}
+::
+
+1. On the bono, click **Log session**.
+2. Under "Which visit is this session for?", pick the visit (today's is tagged **Today**). If the visit had an unpaid receipt, it is now charged at the bono rate; if it was already paid, that money moves to pay the bono.
+3. If the visit isn't on the calendar, choose **A visit that is not on the calendar** and set the day.
+4. Click **Log session**.
+
+The bono shows one session fewer. Each appointment can only use one session, even if the button is clicked twice. If there are visits with no session and no payment, the bono warns you ("1 visit has no session or payment: …") with a **Log it** link.
+
+## Sharing a bono with family
+
+::help-video{clip="billing--bono-share" caption="Sharing a bono with another family member"}
+::
+
+1. On the bono, click **Share**.
+2. Find the family member under **Search a patient to share with…** and click them.
+
+The family member sees the bono on their record tagged **Shared by** and the buyer's name, and can use sessions from it. The money, the payments and the delete button are only on the buyer's record. A family member's visit paid with that bono is not charged to them. To stop sharing, click **✕** next to their name.
+
+## Linking an existing payment
+
+If a payment for the bono was recorded elsewhere (for example, against the wrong receipt), click **Link payment** on the bono, pick the payment under **-- Select a payment --** and click **Link**.
+
+## Deleting a sold bono
+
+Click the delete icon on the bono and confirm. If sessions have already been used, the warning reminds you. This can't be undone.

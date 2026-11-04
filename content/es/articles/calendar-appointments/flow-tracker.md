@@ -1,32 +1,40 @@
 ---
-title: Seguimiento de pacientes durante su visita (Flow Tracker)
-description: Mueve a un paciente por Arrived, In Session y Awaiting Checkout mientras avanza por la clínica.
+title: Seguimiento de flujo
+description: El panel del calendario que muestra quién ha llegado, quién está en consulta y a quién falta cobrar, y te deja pasarlos al siguiente paso con un clic.
 collection: calendar-appointments
-order: 4
+order: 7
 ---
 
-El Flow Tracker es un flujo independiente del mismo día, distinto del estado de confirmación de una cita -- trata de dónde está físicamente un paciente en su visita *hoy*, no de si respondió a un mensaje de WhatsApp. Aparece como un panel en el Calendario, junto a la agenda del día, y es más útil en clínicas con más de un profesional o con una recepción muy activa, donde "quién está esperando" no es obvio a simple vista.
+El **Seguimiento de flujo** responde a la pregunta de recepción: ¿quién está ahora mismo en la clínica y en qué punto? Está en el panel izquierdo del calendario, debajo del mes en miniatura, y muestra solo el día de hoy de toda la clínica, sea cual sea el día o la pestaña que tengas abiertos.
 
-![Calendario con el panel Flow Tracker mostrando un paciente en cada etapa: Arrived, In Session y Awaiting Checkout](/screenshots/calendar-flow-tracker.png)
+## Las tres columnas
 
-## Las tres etapas
+- **Llegados**: pacientes cuya llegada se ha registrado y que esperan a entrar. Debajo del nombre: "llegó 10:02 · cita 10:00".
+- **En consulta**: pacientes que están con el profesional. Debajo: desde qué hora y con quién ("desde 10:15 · Sara").
+- **Por cobrar**: pacientes que han salido y a los que falta cobrar. Debajo: lo que deben ("debe 44,00 €").
 
-1. **Arrived** -- el paciente ha registrado su entrada. Esto ocurre en el momento en que el personal marca una cita como registrada (el mismo check-in que se usa en el resto de la aplicación); es el punto de entrada al Flow Tracker. Un paciente que aún no ha registrado su entrada no aparece aquí en absoluto, aunque ya haya pasado la hora de su cita.
-2. **In Session** -- el paciente está con el profesional. Selecciona la flecha **&rarr;** junto a su nombre en Arrived para moverlo aquí. Este paso es puramente informativo -- mover a alguien a In Session no inicia ningún temporizador ni afecta a la facturación.
-3. **Awaiting Checkout** -- la visita en sí ha terminado y el paciente está terminando en recepción (pago, reservar su próxima visita). Selecciona **&rarr;** desde In Session para moverlo aquí.
+Lee los mismos estados que los bloques del calendario, así que el seguimiento y la agenda nunca dicen cosas distintas. Si quieres repasar los estados, consulta [Estados de una cita y el panel de la cita](/es/articles/calendar-appointments/appointment-statuses-explained).
 
-Desde Awaiting Checkout, selecciona **Complete** para marcar la cita como completada -- el mismo estado que se usa en el resto de QuiroFlow (informes, historial de visitas del paciente, planes de tratamiento). También es posible mover a un paciente hacia atrás (de In Session de vuelta a Arrived, por ejemplo) si alguien lo avanzó por error.
+## Pasar a un paciente al siguiente paso
 
-## Por qué es útil
+::help-video{clip="calendar--flow-tracker" caption="Pasar a un paciente de la sala de espera a consulta y a cobro desde el seguimiento"}
+::
 
-De un vistazo, recepción y los profesionales pueden ver exactamente quién está esperando, a quién están atendiendo ahora mismo y quién todavía tiene que pasar por recepción al terminar -- sin tener que ir a preguntar o abrir cada cita una por una. En una clínica con varios profesionales, esto sustituye muchísimas idas y venidas del tipo "¿Michael sigue con el quiropráctico?".
+1. En **Llegados**, pulsa la flecha → junto al nombre (**Pasa a consulta**). El paciente pasa a **En consulta**.
+2. En **En consulta**, pulsa → (**Pasar a cobro**). Pasa a **Por cobrar**.
+3. En **Por cobrar**, pulsa **Cobrar**: se abre la cita en la pestaña **Cobro**, lista para cobrar.
 
-Está limitado al día de hoy; no hay necesidad (ni forma) de hacer seguimiento de una fecha pasada o futura. Si la visita de un paciente cruza la medianoche en algún caso poco habitual, o sigue en Awaiting Checkout cuando cambia el día, márcalo como completado antes de que cambie la fecha para que el tracker se mantenga preciso.
+Haz clic en un nombre para abrir el panel de su cita.
 
-## Modo privacidad
+> **Ten en cuenta:** el seguimiento solo avanza. Para deshacer un paso (por ejemplo, una llegada registrada por error), abre la cita y usa **Deshacer llegada**, **Deshacer consulta** o **Deshacer paso a cobro**.
 
-El panel **Display** del Calendario también tiene un interruptor de **Privacy mode**, independiente del Flow Tracker -- al activarlo se ocultan los nombres de los pacientes en toda la vista del calendario (útil si tu pantalla es visible para otros pacientes en una sala de espera), mientras que el propio panel del Flow Tracker sigue mostrando quién está en cada etapa para el personal que necesita esa visibilidad. Los dos interruptores son independientes, así que puedes usar el Flow Tracker con o sin el modo privacidad según cómo esté organizada tu recepción.
+> **Ten en cuenta:** **Cobrar** solo abre la pestaña de cobro; no registra nada hasta que cobras.
 
-## Desactivarlo
+## Ocultarlo o difuminar los nombres
 
-Si tu clínica no necesita este nivel de seguimiento -- una clínica de un solo profesional a menudo no lo necesita -- desactiva **Flow tracker** en el panel de configuración **Display** del Calendario. El panel desaparece y las citas se comportan exactamente igual que sin él; el check-in sigue funcionando de la misma forma, simplemente no aparecerá en una vista de seguimiento separada.
+- El interruptor **Seguimiento de flujo**, en **Visualización**, lo muestra u oculta. Ocultarlo no cambia nada de las llegadas.
+- Con **Modo privacidad** activado, los nombres también se difuminan aquí.
+
+Ninguno de los dos se guarda: al recargar la página, el seguimiento vuelve a verse y el modo privacidad se apaga.
+
+La llegada se puede registrar desde el panel de la cita, desde [Mi día](/es/articles/calendar-appointments/my-day), o la registra el propio paciente en la [tablet de recepción o con su móvil](/es/articles/calendar-appointments/check-in).

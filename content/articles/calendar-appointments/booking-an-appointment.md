@@ -1,79 +1,71 @@
 ---
 title: Booking an appointment
-description: Create a new appointment for an existing or new patient from the Calendar.
+description: Book a visit for a new or existing patient from the calendar, with live checking of free slots.
 collection: calendar-appointments
-order: 1
+order: 2
 ---
 
-Booking is the thing you and your team will do most in QuiroFlow, so it's designed to be fast: one panel, no page reloads, and it works the same whether you're booking a regular visit or a brand-new patient's first one.
+Booking is what your team will do most in QuiroFlow, so it all happens in one side panel without leaving the page. As you choose the patient, type, practitioner and time, the panel tells you live whether the slot is free and, if it isn't, suggests others.
 
-::image-carousel
----
-images:
-  - src: /screenshots/booking-panel-new.png
-    alt: Create Appointment panel with Appointment Type, Date, Time, Room, Practitioner, Patient search, Note, and Repeat fields
-    caption: "The booking panel -- everything in one place"
-  - src: /screenshots/calendar.png
-    alt: Calendar view with several appointments in different colors and statuses
-    caption: "Booked appointments, colored by appointment type"
----
+## Book a patient you already have
+
+::help-video{clip="calendar--book-existing" caption="Booking a visit by clicking a free slot on the calendar"}
 ::
 
-## From the Calendar
+1. Click a free slot on the calendar. The **New appointment** panel opens with the date, time and room already filled in. (You can also use **+ New Appointment** or press `c`.)
+2. Under **Patient**, type in "Search by name, phone, or email…" and pick the patient. Each result shows their last visit or phone number, and flags such as **On waitlist** if they're on the waitlist.
+3. Choose the **Appointment type**. Each card shows the length and price (the practitioner's own, if they have them).
+4. Under **Practitioner**, each card says whether they're **Free**, **Not working then** or busy ("With" and the patient, or "a block"). Only free practitioners can be picked. There's also a **No practitioner** option.
+5. Check the **Time**: **Date**, **Time** and **Room**. Underneath you'll see a green line such as "10:00–10:30 is free in Sala 1 with Sara".
+6. Click the button at the bottom, which reads **Book** followed by the day and time.
 
-Click any empty slot on the Calendar, or use the **+ New Appointment** button, to open the booking panel. Clicking a slot pre-fills the date, time, and room from where you clicked -- the button opens the same panel blank, which is handy when you know the patient but not yet the exact time.
+The visit appears on the calendar. If **Send WhatsApp confirmation** is ticked (it is by default), the patient gets the confirmation.
 
-Fill in:
+> **Good to know:** the panel doesn't cover the calendar. If you click another free slot while it's open, the booking moves to that slot.
 
-- **Appointment Type** -- determines the color, default duration, and price shown on the calendar. Set these up in advance under **Settings &rarr; Appointment Types** so this list matches the visits you actually offer.
-- **Date** and **Time**
-- **Room** and **Practitioner** -- both scoped to the clinic you're currently viewing. "No room" is fine if your clinic doesn't assign specific rooms.
-- **Patient** -- search by name, phone, or email. If they're not in the system yet, select **+ New Patient** and add them right here with first name, last name, email, and phone -- there's no need to leave the panel to create a patient record first.
-- **Note (Optional)** -- anything staff should know before the visit (e.g. "brings X-rays", "first session, allow extra time"). This shows up on the appointment for anyone who opens it, not just the person who booked it.
-- **Repeat** -- for a recurring series (Daily, Weekly, or Monthly); see [Recurring appointments and blocking time](/articles/calendar-appointments/recurring-and-blocking-time) for how that works.
-- **Collect Payment** -- toggle this on to take payment as part of booking, instead of billing at checkout.
+## Book a new patient
 
-Select **Create** (or the equivalent submit button) to save it. The appointment appears on the calendar immediately, colored by its appointment type, and -- if confirmations are turned on -- the patient gets a WhatsApp or email message right away.
-
-## Understanding the calendar block
-
-Each appointment block shows a small status dot -- see [Appointment statuses explained](/articles/calendar-appointments/appointment-statuses-explained) for what each color means.
-
-## The quick view
-
-Clicking an appointment block opens a small popover first, before the full editor -- it's built for the common case of "what's this, and can I move it along" without a full edit screen:
-
-- Patient name, status, time, type, and practitioner at a glance.
-- A balance warning if they owe money from a past visit (e.g. "Patient owes €55.00 -- will need to pay").
-- A quick note field for this specific visit, and the patient's persistent **Patient note** (see [A patient's record](/articles/patients/patient-records)) shown inline and editable right there.
-- A recent activity log (who created it, what's changed).
-- **Check in**, **Open chart** (jumps straight to the patient's record), and **Reschedule…**.
-
-## The full editor
-
-Select the small edit icon in the corner of an appointment block to open the fuller **Edit Appointment** window, split into four tabs:
-
-::image-carousel
----
-images:
-  - src: /screenshots/appointment-edit-details.png
-    alt: Edit Appointment Details tab with date, time, duration, room, practitioner, status, and confirmation fields
-    caption: "Details -- the same fields as booking, plus Status and Confirmation"
-  - src: /screenshots/appointment-edit-billing.png
-    alt: Edit Appointment Billing tab with an invoice, Add Service/Product, and a Process payment form
-    caption: "Billing -- invoice and take payment without leaving the appointment"
-  - src: /screenshots/appointment-edit-history.png
-    alt: Edit Appointment History tab listing this patient's past completed visits
-    caption: "History -- this patient's past visits, for context"
-  - src: /screenshots/appointment-edit-notes.png
-    alt: Edit Appointment Notes tab with a field to add a sticky note
-    caption: "Notes -- a sticky note on this specific appointment"
----
+::help-video{clip="calendar--book-new-patient" caption="Creating the patient from inside the booking panel"}
 ::
 
-- **Details** -- everything from the booking panel, plus **Status** (Booked, Completed, No-show, Cancelled -- see [Appointment statuses explained](/articles/calendar-appointments/appointment-statuses-explained)) and **Confirmation**, which you can also set by hand here if a patient confirms by phone instead of replying on WhatsApp.
-- **Billing** -- the invoice tied to this appointment, right there: add a service or product to it, see the running total and balance due, and take a payment (amount + method) without leaving the appointment or navigating to the patient's own Billing tab. A banner reminds you when there's no future appointment booked, since that's exactly what puts a patient into [Recalls](/articles/patients/recalls).
-- **History** -- a quick list of this patient's past appointments (date, type, practitioner, status), so you can see the pattern of their visits without opening their full record.
-- **Notes** -- a sticky note on this one appointment. This is different from the patient's general **Patient note** (persistent, about the patient) and from [Visit notes](/articles/patients/visit-notes) (clinical notes tied to a specific visit) -- think of it as a short-lived reminder for whoever handles this particular appointment.
+1. Open the panel with **+ New Appointment** or by clicking a slot.
+2. Type the name in the search box. If nobody matches, **New patient "…"** appears with what you typed: click it.
+3. Fill in **First name**, **Last name**, **Email** and **Phone** (with the country prefix). If you got it wrong, **Search existing patients instead** goes back to the search.
+4. Choose the type, practitioner and time as for any booking, and click **Book**.
 
-From either the quick view or the Details tab you can change the time, room, or practitioner, mark it checked in, completed, or a no-show, or cancel it entirely. If it's part of a recurring series, editing or cancelling only affects that one occurrence -- the rest of the series is untouched.
+The patient is created when you book, and the practitioner you chose becomes their usual practitioner.
+
+## When the slot doesn't fit
+
+::help-video{clip="calendar--book-clash" caption="A busy slot: choosing one of the other times the panel suggests"}
+::
+
+If the chosen time clashes with another visit or a block, the time line turns amber ("11:00–11:30 doesn't fit: Sara has … at 11:00. Pick another time.") and the book button changes to **Choose another time**. You have two ways out:
+
+- **Pick another slot:** under "Other free times for … with …" up to six free times are listed, today first. Click one and the date and time change.
+- **Double-book on purpose:** tick **Book it anyway, overlapping**. If you then change the time, practitioner or room, the box unticks itself.
+
+Clashes take into account all the practitioner's visits and blocks, at every clinic they work at, plus whole-clinic blocks.
+
+> **Good to know:** if you book at a time the practitioner doesn't work, QuiroFlow asks "This appointment falls outside working hours. Book it anyway?". You can accept if it's on purpose.
+
+## More options
+
+Open **More options**, below the time, for:
+
+- **Note (optional)**: a note for this visit.
+- **Repeat**: book a series (daily, weekly, monthly or following the care plan). See [Recurring appointments, blocks and absences](/articles/calendar-appointments/recurring-and-blocking-time).
+- **Collect payment now**: take payment as you book, with **Amount (€)** and **Method** (**Cash**, **Card** or **Credit on account**).
+- **Block this time instead…**: turns the panel into a time block. **Back to the booking** returns you to the booking.
+
+## Booking from a patient's record
+
+If you start from a patient (the booking button on their record, **Book appointment** in the inbox, or the Dashboard's first steps), the calendar opens with a banner: **Booking for** the patient's name **· pick a time**. Click any slot and the panel opens with that patient already chosen. The banner's **×** (**Stop booking for this patient**) removes it.
+
+If the patient has a care plan and the date falls on a re-exam visit, the panel says so ("Visit N of the plan", "The plan books it as …") and offers a **Use** button with the type the plan asks for.
+
+> **Good to know:** a new visit has no status or confirmation field. It starts **Unconfirmed** if the patient is asked to confirm, or **Confirmed** if they aren't. See [Appointment stages](/articles/calendar-appointments/appointment-statuses-explained).
+
+> **Good to know:** with the **Read-only calendar** permission, **+ New Appointment** isn't shown and clicking a slot does nothing.
+
+To change or call off a visit that's already booked, carry on with [Moving and cancelling appointments](/articles/calendar-appointments/moving-and-cancelling).

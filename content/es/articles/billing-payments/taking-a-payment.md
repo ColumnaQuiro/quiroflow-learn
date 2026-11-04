@@ -1,27 +1,61 @@
 ---
-title: Registrar un pago
-description: Registra un pago contra una factura pendiente.
+title: Cobrar una visita y registrar pagos
+description: Cobra una visita desde el calendario o registra un pago desde la ficha del paciente, también dividido entre dos métodos.
 collection: billing-payments
-order: 3
+order: 2
 ---
 
-En la pestaña **Billing** de un paciente, selecciona **Take payment**.
+Cobrar en QuiroFlow tiene dos pasos que casi siempre van juntos: se crea el **recibo** (lo que se debe) y se registra el **pago** (el dinero que entra). Lo normal es hacer las dos cosas a la vez desde la cita, en el calendario. Si el paciente paga más tarde, o paga algo pendiente de otro día, registras el pago desde su pestaña **Dinero**. Cada pago emite su factura automáticamente; lo explica [Recibos, facturas y rectificativas](/es/articles/invoices-verifactu/receipts-and-invoices).
 
-![Account Ledger mostrando una factura y un pago parcial con tarjeta contra ella, con 200,00 € aún pendientes](/screenshots/patient-billing.png)
+Necesitas el permiso **Cobrar y hacer recibos** para cobrar citas, y **Registrar pagos y llevar la caja** para registrar pagos.
 
-1. Elige a qué **invoice** aplicar el pago -- por defecto se selecciona la más antigua sin pagar, con su importe completo ya rellenado.
-2. Ajusta el **amount** si el paciente solo paga una parte.
-3. Elige el **method**: Cash, Card, o Credit (usando el saldo a favor propio del paciente -- limitado a lo que realmente esté disponible).
-4. Confirma para registrarlo.
+## Cobrar una visita desde el calendario
 
-La factura pasa a **Paid** automáticamente en cuanto los pagos registrados suman el importe completo; si no, se queda parcialmente pendiente, y **Take payment** puede volver a usarse más adelante para seguir reduciendo el saldo.
+::help-video{clip="billing--charge-visit" caption="Cobrar una visita desde su cita en el calendario"}
+::
 
-Si un paciente no tiene facturas sin pagar, **Take payment** no tiene nada contra lo que aplicar y no ofrecerá ninguna -- esto es normal justo después de vender un bono o una membresía pagados por completo, ya que eso ya crea y salda su propia factura por la cantidad cobrada en el momento.
+1. En el calendario, abre la cita y ve a la pestaña **Cobro**. (Desde el seguimiento de pacientes, **Cobrar** te lleva directamente a ella.)
+2. Mientras no se ha cobrado, verás **Sin cobrar** con el tipo de cita y su precio. Pulsa **Cobrar** (el botón muestra el precio, por ejemplo **Cobrar 45,00 €**). Se crea el recibo.
+3. Si hace falta, añade más cosas con **-- Añadir servicio/producto --**.
+4. Comprueba el **Importe (€)** y elige el **Método**. Si paga con dos métodos, pulsa **Dividir en otro método**.
+5. Pulsa **Procesar**. El recibo queda pagado y se emite su factura.
+6. Si quieres, pulsa **Enviar recibo** para mandarlo por correo.
 
-## Añadir saldo a favor en su lugar
+Si el paciente tiene un bono, en lugar de cobrar verás un botón **Usar** por cada bono, con lo que vale la sesión (por ejemplo **Usar Bono 10 sesiones — 38,00 €**), y el cobro normal pasa a decir **… en su lugar**. Lo explica [Bonos: venderlos, cobrarlos y usarlos](/es/articles/billing-payments/selling-a-package-bono).
 
-Si un paciente ha pagado de más, o quieres añadir un saldo que pueda usar más adelante (por ejemplo, un reembolso mantenido en su cuenta), usa **Add credit** en lugar de Take payment -- eso se añade a su saldo a favor en lugar de aplicarse a una factura concreta. El saldo a favor aparece como opción de método de pago la próxima vez que vendas un bono, registres un pago, o el paciente pague al finalizar una cita, así que es una forma cómoda de gestionar reembolsos sin una transferencia bancaria real.
+> **Ten en cuenta:** una cita que todavía no ha ocurrido no se puede cobrar: verás «Esta cita todavía no ha ocurrido: no habrá recibo hasta entonces».
 
-## Dónde aparecen los pagos después
+## La pestaña Dinero del paciente
 
-Cada pago, saldo a favor y factura aparece en el **Account Ledger** de la misma pestaña Billing, en orden de fecha con un saldo acumulado -- este es el registro definitivo si un paciente (o tu gestoría) pregunta "¿qué se cobró realmente y cuándo?". También es de donde **Reports** obtiene las cifras de ingresos y saldos pendientes, así que mantener los pagos registrados aquí conforme ocurren (en lugar de anotados aparte en papel) mantiene tus informes precisos.
+En la ficha de cada paciente, la pestaña **Dinero** reúne todo lo que tiene que ver con su dinero. Arriba hay tres tarjetas:
+
+- **Debe ahora**: lo que tiene pendiente, con sus recibos. Desde aquí registras un pago o vendes un producto.
+- **En cuenta**: su saldo a favor, separado en **Crédito** y **En bonos**. Desde aquí añades crédito o canjeas un bono regalo.
+- **Cómo paga**: si tiene una tarjeta guardada para los cobros automáticos.
+
+Debajo están sus **Bonos**, sus **Membresías** y, si trabajas con mutuas, sus coberturas en **Terceros**. Al final, **Libro de cuenta** muestra cada movimiento con su saldo, y **Facturas y recibos** sus documentos.
+
+Necesitas el permiso **Ver el historial de cobros** para ver esta pestaña.
+
+## Registrar un pago desde la ficha
+
+::help-video{clip="billing--split-payment" caption="Registrar un pago dividido entre efectivo y tarjeta"}
+::
+
+1. En la pestaña **Dinero**, en **Debe ahora**, pulsa **Registrar pago**.
+2. En **Recibo**, elige el recibo que paga. Viene seleccionado el más antiguo, con su importe pendiente.
+3. Ajusta el **Importe (€)** si paga solo una parte, y elige el **Método**.
+4. Si paga con dos métodos (una parte en efectivo y otra con tarjeta, por ejemplo), pulsa **Dividir en otro método** y rellena la segunda línea. **Total:** te muestra la suma.
+5. Pulsa **Registrar pago**.
+
+El recibo pasa a pagado cuando los pagos cubren su importe; si no, queda pendiente por la diferencia y puedes volver a registrar otro pago más tarde. Cada línea de pago emite su propia factura.
+
+Si el paciente no debe nada, verás «No hay recibos pendientes contra los que registrar un pago».
+
+## Pagar con el saldo a favor
+
+Si el paciente tiene crédito, en **Método** aparece **Crédito en cuenta** con lo que tiene disponible. Solo puedes usar hasta ese importe. Pagar con crédito no emite una factura nueva, porque ese dinero ya se facturó cuando entró. Más en [Saldo a favor, condonar y extracto](/es/articles/billing-payments/credit-and-statements).
+
+> **Ten en cuenta:** el método **Tarjeta** solo apunta que cobraste con tu propio datáfono. QuiroFlow no cobra la tarjeta en ese momento. Los cobros automáticos con una tarjeta guardada se explican en [Tarjeta guardada, pago automático y pago online](/es/articles/billing-payments/adding-a-patients-card).
+
+> **Ten en cuenta:** los métodos que aparecen en **Método** se configuran en **Ajustes › Pagos**. Lo explica [Métodos de pago y Stripe](/es/articles/settings/connecting-stripe).

@@ -1,51 +1,85 @@
 ---
-title: La bandeja de entrada compartida
-description: Todas las conversaciones de WhatsApp con tus pacientes, en un solo lugar que puede ver tu equipo.
+title: La bandeja de entrada
+description: Todas las conversaciones de la clínica (WhatsApp, Instagram, Messenger, el chat de tu web y la app) en una sola lista que comparte el equipo.
 collection: communications
-order: 2
+order: 4
 ---
 
-El **Inbox** muestra todas las conversaciones de WhatsApp que ha tenido tu clínica con los pacientes, ya empezaran con un mensaje automático (una confirmación, un recordatorio, un recall) o con un paciente escribiéndote directamente.
+La **Bandeja de entrada** reúne todas las conversaciones de la clínica con pacientes y con personas que aún no lo son: **WhatsApp**, **Instagram**, **Messenger**, **Chat de la web** y los mensajes de la **App** del paciente. Todo el equipo trabaja sobre la misma lista: contestáis desde aquí, dejáis notas internas, os repartís las conversaciones y apartáis las que pueden esperar. El correo electrónico no pasa por la Bandeja.
 
-![Inbox mostrando una lista de conversaciones de WhatsApp con vistas previas de los mensajes recientes](/screenshots/inbox.png)
+La encuentras en el menú, en **Pacientes › Bandeja de entrada**, con un contador de mensajes sin leer. Necesitas el permiso **Bandeja de entrada**. La app del equipo para el móvil tiene su propia Bandeja, que funciona igual.
 
-## Por qué es compartido
+> **Ten en cuenta:** la primera vez, QuiroFlow te ofrece **Activar notificaciones** para avisarte cuando un paciente te escriba, aunque tengas la pestaña en segundo plano.
 
-Cualquier miembro del personal con acceso al inbox puede ver y responder a cualquier conversación -- así, un paciente que escribe para reprogramar no se pierde solo porque una persona concreta del equipo esté fuera. Los mensajes nuevos se resaltan para que nada quede sin leer mucho tiempo, y el menú lateral muestra un contador de no leídos para saber de un vistazo si hay algo pendiente de atención.
+## Contestar a un paciente
 
-Esta visibilidad compartida es una decisión deliberada frente a un inbox más privado por persona: prioriza que nada se quede sin atender por encima de que alguien "sea dueño" de una conversación. Si tu clínica quiere mantener ciertas conversaciones privadas para personal concreto, eso es una decisión de permisos por rol y no una configuración del Inbox -- consulta [Roles y permisos](/es/articles/team-roles/roles-and-permissions).
+::help-video{clip="inbox--reply-saved-reply" caption="Contestar con una respuesta guardada"}
+::
 
-## Iniciar una conversación nueva
+1. Abre la conversación en la lista de la izquierda.
+2. Escribe en **Escribe un mensaje…**, o pulsa el icono de **Respuestas guardadas** para insertar una ya preparada y retocarla.
+3. Pulsa **Enviar**.
 
-Selecciona **+ New** para iniciar una conversación con un paciente que aún no te ha escrito -- búscalo igual que harías al reservar, y luego envía un mensaje libre si estás dentro de su ventana de 24 horas, o una plantilla si no (ver más abajo).
+También puedes **Adjuntar archivo** (hasta 16 MB, solo en WhatsApp) o **Grabar una nota de voz**. En el menú **Acciones** de la cabecera tienes **Reservar cita**, **Poner el enlace de reserva en la respuesta**, **Poner un enlace de pago en la respuesta** (eliges **¿Qué factura?**) y **Abrir su ficha**. Los enlaces van al cuadro de respuesta: no se envía nada hasta que pulses **Enviar**.
 
-## Responder
+Las respuestas guardadas se preparan en **Ajustes › Comunicación › Respuestas guardadas**; consulta [Respuestas guardadas](/es/articles/communications/saved-replies).
 
-Abre una conversación y responde como en un chat normal. Las respuestas enviadas dentro de las 24 horas desde el último mensaje del paciente pueden ser texto libre; fuera de esa ventana, las normas de WhatsApp exigen enviar en su lugar una plantilla aprobada (las mismas configuradas en [Conectar WhatsApp](/es/articles/communications/connecting-whatsapp)). QuiroFlow te muestra en qué modo estás para que no te pille por sorpresa un mensaje que falla en silencio.
+## Fuera de las 24 horas: enviar una plantilla
 
-## Saved Replies
+WhatsApp solo deja contestar con texto libre durante las 24 horas siguientes al último mensaje del paciente. Pasado ese plazo verás el aviso «Han pasado más de 24h desde que … escribió por última vez — WhatsApp bloquea las respuestas libres. Envía una plantilla en su lugar.»
 
-Para las preguntas que tu recepción responde a menudo -- horario, dónde aparcar, qué traer a la primera visita, tu política de cancelación -- configura **Saved Replies** en **Settings &rarr; Saved Replies** e insértala en el editor en lugar de volver a escribir la misma respuesta cada vez. Se comparten con todo tu equipo, así que en cuanto alguien escribe una buena respuesta, todos pueden usarla -- y si la respuesta cambia alguna vez (nuevo horario, otra dirección), actualizar la respuesta guardada una sola vez mantiene coherente cada envío futuro, en lugar de depender de que cada persona del equipo recuerde la versión actual.
+::help-video{clip="inbox--send-template" caption="Enviar una plantilla cuando han pasado más de 24 horas"}
+::
 
-## Actualizaciones automáticas de estado
+1. Pulsa **Enviar plantilla** en el aviso.
+2. Elige la plantilla y rellena sus datos si los pide.
+3. Pulsa **Enviar**.
 
-Cuando un paciente responde a un mensaje de confirmación o recordatorio, QuiroFlow lee esa respuesta automáticamente y actualiza la cita correspondiente -- consulta [Estados de las citas explicados](/es/articles/calendar-appointments/appointment-statuses-explained). No necesitas hacer nada para que ocurra, pero la conversación sigue siendo visible aquí como contexto -- útil cuando la respuesta de un paciente no encaja claramente con un patrón esperado y alguien necesita leer lo que realmente dijo.
+Para escribir a alguien que no te ha escrito nunca, pulsa **Nueva**, busca al paciente y empieza igual, con una plantilla. El filtro **Por caducar** te enseña las conversaciones cuyas 24 horas se cierran pronto, para contestar a tiempo.
 
-## Filtrar y encontrar conversaciones
+> **Ten en cuenta:** en Instagram y Messenger no hay plantillas. Fuera de las 24 horas, la respuesta queda bloqueada hasta que la persona vuelva a escribir.
 
-Usa el buscador para encontrar una conversación por nombre del paciente, número de teléfono o texto del mensaje, en lugar de recorrer toda la lista. Encima de la lista, unos filtros la acotan aún más:
+## Notas internas, asignar y posponer
 
-- **Unread** -- conversaciones con un mensaje que aún no has abierto.
-- **Awaiting us** -- el paciente respondió y le toca responder a tu equipo.
-- **Awaiting patient** -- ya has respondido y esperas su respuesta.
-- **Label** -- filtra por una etiqueta que hayas aplicado a las conversaciones (por ejemplo, para marcar conversaciones que necesitan seguimiento, o según el motivo de contacto). Las etiquetas se crean y se aplican por conversación; usa el conjunto que tenga sentido según cómo tu recepción organiza los mensajes.
+::help-video{clip="inbox--note-assign-snooze" caption="Dejar una nota, asignar la conversación y posponerla"}
+::
 
-Merece la pena revisar **Awaiting us** a primera hora cada día -- es la forma más rápida de ver exactamente qué pacientes están esperando una respuesta, sin leer conversaciones que no necesitan acción.
+- **Nota interna**: pulsa **Nota interna** encima del cuadro de respuesta, escribe y pulsa **Guardar nota**. Solo la ve el equipo, nunca el paciente. Escribe @ y el nombre de un compañero para mencionarle; le llega un aviso.
+- **Asignar**: en la cabecera, abre **Asignar a** y elige a la persona (o **Sin asignar**). Todo el equipo ve a quién está asignada y, si el paciente vuelve a escribir, sigue con la misma persona.
+- **Posponer (solo para ti)**: elige **Más tarde hoy**, **Mañana**, **La semana que viene** u **Otra fecha**. La conversación desaparece de tu lista y vuelve en ese momento, o antes si te escriben.
+- **Etiquetas**: pulsa **Etiquetas** para marcarla (por ejemplo «Mutua») o crea una con **Nueva etiqueta…**.
 
-## Archivar conversaciones
+> **Ten en cuenta:** archivar, posponer, las etiquetas y marcar como leída o no leída son **solo para ti**: tus compañeros siguen viendo la conversación como estaba. Asignar, en cambio, lo ve todo el equipo. Si el paciente escribe de nuevo, una conversación archivada o pospuesta vuelve sola.
 
-El icono de archivo junto al buscador alterna entre tu inbox habitual y las conversaciones **Archived**. Archivar es algo individual, por usuario -- quitar una conversación de tu propia vista no la archiva para el resto de tu equipo, así que es una herramienta personal de orden y no una forma de marcar algo como resuelto globalmente. Si un paciente responde a una conversación archivada, esta vuelve automáticamente al inbox habitual.
+Con **Seleccionar varias** puedes asignar, archivar o marcar como no leídas muchas conversaciones a la vez.
 
-## Lo que no aparece aquí
+## Encontrar lo que importa: los filtros
 
-Los envíos de campañas y las confirmaciones/recordatorios de citas aparecen todos en el Inbox como parte de la conversación del paciente correspondiente -- no hay un feed separado de "mensajes automáticos" que consultar en otro sitio. Si buscas un mensaje que sabes que se envió pero no encuentras, busca por el paciente en lugar de por el contenido del mensaje.
+Pulsa **Filtros** para elegir qué ves:
+
+- **De quién**: **Todas**, **Mías** o **Sin asignar**.
+- **Por responder** (activado de entrada): solo donde el último en escribir fue el paciente, o las que marcaste como no leídas. Desactívalo para ver todas.
+- **No leídas**, **Por caducar** y, si tienes la recepcionista IA, **Borrador listo** y **Requiere persona**.
+- Con Growth, **Pacientes** o **Leads**.
+- En **Más filtros**: **Esperan al paciente**, la etiqueta, y lo que está gestionando la IA.
+
+**Mostrar mis archivadas** y **Mostrar mis pospuestas** te enseñan lo que apartaste. El buscador (**Buscar nombre, número, mensajes…**) busca también dentro de los mensajes.
+
+## Un número que no es de ningún paciente
+
+Si escribe un número que no coincide con ninguna ficha, el panel de la derecha muestra **Número sin paciente**. Puedes:
+
+- **Vincular a un paciente**: buscas por **Nombre o apellidos** y pulsas **Vincular**. La conversación pasa a su ficha.
+- **Crear paciente con este número**: escribes **Nombre** y **Apellidos** y pulsas **Crear y vincular**.
+
+Si la clínica tiene Growth, quien escribe sin ser paciente aparece además como contacto en Crecimiento; consulta [Contactos](/es/articles/growth/leads).
+
+## La recepcionista IA en la Bandeja
+
+Si tienes la recepcionista IA, verás en algunas conversaciones **IA gestionando**, borradores que esperan tu aprobación (**Aprobar y enviar**) y el botón **Tomar el control** para contestar tú. Lo explicamos en [La recepcionista IA](/es/articles/growth/ai-receptionist).
+
+## Lo que la Bandeja hace sola
+
+- Las respuestas a los recordatorios (confirmar, pedir cambio) se leen solas y actualizan la cita; la conversación sigue a la vista.
+- Si alguien contesta «No, gracias», BAJA o STOP, se le marca **No contactar** y deja de recibir mensajes automáticos. Consulta [Consentimiento de marketing y bajas](/es/articles/communications/marketing-consent-and-unsubscribe).
+- Los mensajes de una automatización en modo prueba aparecen marcados «No enviado ·»: se registraron, pero no salieron.

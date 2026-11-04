@@ -1,42 +1,45 @@
 ---
-title: Cash shifts
-description: Reconcile the physical cash in your drawer against what QuiroFlow recorded.
+title: Cash shift
+description: Check what was collected today and reconcile the cash that should be in the drawer.
 collection: billing-payments
-order: 4
+order: 10
 ---
 
-If your front desk takes cash payments, **Cash Shift** (on the Calendar toolbar) is how you reconcile what's physically in the drawer against what QuiroFlow recorded -- without it, cash is the one payment method with no independent record to check against.
+The **Cash shift** shows what has been charged and collected today, how much of it was cash and how much money should be in the drawer. You open it from the **Cash shift** button in the calendar's top bar. The shift opens by itself every day and rolls over to the next without you doing anything.
 
-::image-carousel
----
-images:
-  - src: /screenshots/cash-shift-modal.png
-    alt: Cash Shift panel showing invoiced and collected totals, a cash drawer breakdown, and a form to log cash in or out
-    caption: "Today's shift -- collected totals and the drawer breakdown"
----
+You need the **Record payments and run the till** permission.
+
+## Reviewing the shift
+
+::help-video{clip="billing--cash-shift" caption="Recording a bank drop in the cash shift"}
 ::
 
-## How a shift works
+When you open it you'll see:
 
-A shift runs automatically from 00:00 and rolls over into the next day on its own -- there's no "start shift" step to remember. Select **Cash Shift** at any point during the day to see where things stand so far:
+- **Charged this shift**: what has been charged on receipts today.
+- **Total collected**, broken down into **Cash**, **Card** and **Other**.
+- **Settled without money coming in (not in the total):** what was paid with **Credit on account** and what was written off (**Write-off**). It isn't money coming in today.
+- A warning if there are completed appointments not charged in this shift, with the patients' names.
 
-- **Invoiced this shift** -- the total value of invoices created today, across all payment methods.
-- **Total collected** -- what's actually been paid today, which can be less than invoiced if some of today's invoices are still outstanding.
-- **Cash** -- just the cash portion of what's been collected.
+## The cash drawer
 
-## The cash drawer breakdown
+Under **Cash drawer**:
 
-- **Cash payments** -- cash collected from patient payments specifically.
-- **Cash in** -- any other cash added to the drawer (a float top-up, for example).
-- **Cash out** -- cash removed (a bank drop, petty cash, change given from the till for a non-payment reason).
-- **Expected in drawer** -- the running total QuiroFlow expects to physically be there, combining all three.
+- **Change at the start**: the float the drawer starts with. It carries over from the previous shift; if it's wrong, click **Edit**, enter the amount and click **Save**.
+- **Cash payments**: the cash collected from patients today.
+- **Cash in** and **Cash out**: what you've put in or taken out for other reasons.
+- **Expected in drawer**: what should physically be there.
 
-Use the **Type / Amount / Note** form to log a cash-in or cash-out event as it happens -- a bank drop at midday, for instance -- so the expected total stays accurate for the rest of the shift rather than only being right at open and close.
+## Recording cash in or out
 
-## Closing a shift
+1. Under **Type**, choose **Cash in** or **Cash out**.
+2. Enter the **Amount** and a **Note** (for example "bank drop").
+3. Click **Add**.
 
-You don't need to close a shift for it to roll over -- it closes itself into the next day automatically. Only use **Close Shift** if you want to leave an end-of-day note (a discrepancy explanation, a handover note for the next person opening the drawer) attached to that specific day's record.
+**Expected in drawer** updates straight away. If the drawer doesn't match when you count it, record the difference with a note explaining why, so there's a record of it.
 
-## When the numbers don't match
+## Closing the shift
 
-If the physical cash in the drawer doesn't match **Expected in drawer**, log the difference as a **Cash out** (for a shortfall) or **Cash in** (for an overage) with a note explaining why, rather than leaving it unreconciled -- that keeps the discrepancy visible and dated instead of it just quietly not adding up next time someone checks.
+There's no need: it closes by itself as the next day starts. Only close it by hand if you want to leave an end-of-day note: write it under **End of shift note** and click **Close Shift**.
+
+> **Good to know:** to see each of the day's payments one by one (time, patient, method), use **Reports › Daily Transactions**.

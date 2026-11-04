@@ -41,12 +41,13 @@ function parseFrontmatter(raw) {
 }
 
 // The assistant reads this as prose, so strip what only makes sense as
-// rendered HTML -- ::image-carousel blocks and their YAML payload are pure
-// screenshot scaffolding and would otherwise read as noise mid-sentence.
+// rendered HTML -- ::help-video and ::image-carousel blocks (with their
+// {props} or YAML payload) are pure media scaffolding and would otherwise
+// read as noise mid-sentence.
 function toPlainText(body) {
   return body
-    .replace(/^::\w[\w-]*\r?\n[\s\S]*?^::\s*$/gm, '')
-    .replace(/^::\w[\w-]*\s*$/gm, '')
+    .replace(/^::\w[\w-]*(\{[^\n]*\})?\s*\r?\n[\s\S]*?^::\s*$/gm, '')
+    .replace(/^::\w[\w-]*(\{[^\n]*\})?\s*$/gm, '')
     .replace(/\n{3,}/g, '\n\n')
     .trim()
 }

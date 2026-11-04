@@ -1,44 +1,83 @@
 ---
-title: A patient's record
-description: What's on a patient's page, and how to add a new patient.
+title: The patient record
+description: What's on a patient's record, tab by tab, and how to edit their details.
 collection: patients
-order: 1
+order: 3
 ---
 
-## Adding a patient
+The record brings together everything you know about a patient: their details, their clinical history, their appointments, what they've paid, the messages the clinic has sent them and their documents. Open it from the **Patients** list, from the search bar at the top (**Search or jump to**) or from any appointment in the calendar.
 
-The fastest way is right from the Calendar when booking an appointment -- search for them, and if they're not found, add them without leaving the booking panel (first name, last name, email, phone). This is the path most staff use day to day, since it turns "new patient calls to book" into a single flow instead of two separate steps.
+::help-video{clip="patients--record-tour" caption="A tour of a patient record"}
+::
 
-You can also go to **Patients** and add one directly, with more fields available (date of birth, national ID, address, referral source, preferred language, and more) -- worth using when you're entering a patient ahead of their first visit and already have their full details on hand, rather than just enough to get them on the calendar.
+## The banner
 
-## The patient page
+The same banner sits at the top whichever tab you open:
 
-Open any patient to see their full record, organized into tabs:
+- The photo or initials (click it to change the photo; see [Patient files and photos](/articles/patients/patient-files)) and the full name.
+- Warning pills when they apply: **VIP**, the balance (owing money or in credit), **Minor**, **Pregnant · N weeks**, **Do not contact**, **Archived** and **View only** (when your role can't edit patients).
+- Age, date of birth and how long they've been a patient.
+- Phone and email, each with a copy button (**Copy phone number**, **Copy email address**), the clinic, the practitioner and whether they use the patient app (**No app**, **Has an app account**, or when they last opened it). **Copy invite** copies a ready-to-paste text with the app links and your clinic's code.
+- The **Message** (WhatsApp) and **Book visit** buttons.
+- The **More actions** menu (⋯), with **Take payment**, **Send the app on WhatsApp**, **Cancel future appointments**, **Archive patient**, **Merge with another record**, **Export their data (GDPR)** and **Delete patient**. Each option appears only if your role allows it.
 
-- **Overview** -- contact details, flags, care plan, and account summary at a glance.
-- **Appointments** -- their full visit history and any upcoming bookings.
-- **Visit notes** -- clinical notes recorded by practitioners, one per visit. See [Visit notes](/articles/patients/visit-notes).
-- **Billing** -- invoices, payments, packages, memberships, and cards on file. See the **Billing & Payments** collection.
-- **Communications** -- every message sent to or from this patient.
-- **Docs** -- forms and documents sent for them to fill out or sign; see [Sending forms and documents to a patient](/articles/patients/patient-documents).
-- **Files** -- uploaded files (photos, reports, etc).
+> **Good to know:** the phone in the banner is the first one added to the record, which isn't necessarily the WhatsApp one. See [Phones, WhatsApp and contact preferences](/articles/patients/managing-contact-numbers).
 
-![Patient Overview tab showing visit stats, care plan, contact details, and recent activity](/screenshots/patient-overview.png)
+## The tabs
 
-The Overview tab's stat row -- **Visits (12mo)**, **Attendance**, **Last visit**, **Lifetime value** -- is the fastest way to size up a patient at a glance before opening any of the other tabs: a low attendance percentage or a lifetime value that's dropped off might be worth a Recall, for instance.
+| Tab | What's there |
+|---|---|
+| **Overview** | What's pending, the next appointment, the care plan, recent activity and their details. |
+| **Clinical** | Clinical summary, flags, visit notes, care plan, patient note, readings and home exercises. See [Clinical summary and flags](/articles/clinical/clinical-summary). |
+| **Progress** | Pain over time and posture assessments. See [Pain and progress](/articles/clinical/pain-and-progress). |
+| **Appointments** | Attendance stats and every visit, upcoming and past. |
+| **Money** | Charges, payments, bonos and memberships. See the [Billing and payments](/articles/billing-payments) collection. |
+| **Communications** | The WhatsApp messages and emails the clinic has sent them. See the [Communications](/articles/communications) collection. |
+| **Attachments** | Forms, letters and files. See [Forms and letters](/articles/patients/patient-documents) and [Patient files and photos](/articles/patients/patient-files). |
 
-## Patient note
+**Progress** only appears if your role can **See visit notes**, and **Money** if it can **See billing history**. **Communications** doesn't appear on a minor's record (messages go to their tutor) or if your role has no access to the inbox.
 
-Separate from Flags, the **Patient note** card on Overview is a single free-text field for anything true about the patient generally -- intake history, ongoing precautions, context worth reading before their first session with a new practitioner. Select **Edit** to write or update it. Unlike [Visit notes](/articles/patients/visit-notes), it isn't tied to a specific date or appointment -- there's only ever one, and editing it overwrites what was there before, so it's for standing context rather than a running log.
+## Overview: the first thing you see
 
-## Flags
+::help-video{clip="patients--record-attention" caption="What needs attention, from the Overview tab"}
+::
 
-The **Flags** card on Overview surfaces anything staff should know at a glance -- things like do-not-contact, minor status, or other account markers. Select **Edit** to change them. Because it's the first thing visible on the page, this is the right place for anything that should change how staff handle the patient before they even open another tab -- not clinical detail, which belongs in Visit notes, and not general background, which belongs in the Patient note above.
+- **Needs attention** appears only when something is pending: unpaid charges (with a **Take payment** button that takes you to **Money**) and forms sent that the patient hasn't returned yet (with **Resend**, which takes you to **Attachments**).
+- **Next appointment**: day, time, type, practitioner, room and whether it is **Confirmed** or **Not confirmed**, with **Reschedule** (opens the calendar) and **Send confirmation**. Below it, how the last visit was paid.
+- **Care plan**: which visit they're on, the cadence, how it's paid and a button to book the visits left. See [Care plans](/articles/clinical/care-plans).
+- **Activity**: a timeline of visits, messages, plan changes, exercises, documents and payments. Filter with **All**, **Visits**, **Contact**, **Plan & exercises**, **Documents** or **Billing**.
 
-## Duplicate patients
+In the right-hand column:
 
-If the same person ends up with two records -- a walk-in created before someone realized they'd called in before, a CSV import that didn't match an existing entry -- avoid just deleting one, since that takes its appointment history, billing, and documents with it. Merging and deleting patients are both permission-gated actions (see **Roles & Permissions** in [Roles & permissions](/articles/team-roles/roles-and-permissions)); if you run into duplicates regularly, check with whoever holds Owner or Front Desk-level access about the right way to consolidate them in your account.
+- **Clinical snapshot**: chief complaint, working diagnosis and whether there are **Red flags** or **Yellow flags**.
+- **Pregnancy**: click **Record a pregnancy**, set the **Due date** and, if you like, the number of **Babies** and a **Note**, then **Save**. The card shows the weeks and trimester, and the banner shows **Pregnant**. When it's over, click **End pregnancy**.
+- **Family**: relatives who are also your patients. See [Minors, tutors and family](/articles/patients/minors-and-family).
+- **Stopped coming**: why they stopped coming. Click **Record reason**, pick the reason, add a note if you like and click **Save**. It counts in **Reports › Retention** and stops applying if the patient comes back. Record only what the patient actually told you.
+- **Patient details**: date of birth, national ID, email, practitioner, clinic and referral source, with the **Edit all details** button.
 
-## Deactivating vs. deleting
+## Editing the patient's details
 
-If a patient stops coming to your clinic, select **Edit** on **Patient details** and set **Status** to **Inactive** rather than deleting the record -- this keeps their full billing and visit history intact, which matters both for accounting and for the rare case they come back later. The same edit panel has two related checkboxes worth knowing about: **This patient is under age** (for parental-consent-style handling) and **Do not contact**, which blocks all communications and recalls to that patient outright -- use it for anyone who's asked not to be messaged, rather than relying on staff to remember not to.
+::help-video{clip="patients--edit-details" caption="Editing a patient's details"}
+::
+
+1. On **Overview**, click **Edit all details**.
+2. Change what you need: name, date of birth, email, address, **National ID**, occupation, **Emergency contact**, **Referral source**, **Preferred language**, **Default practitioner**, **Clinic**, **Tags** and **Status** (**Active** or **Inactive**).
+3. Click **Save**. You'll see **Patient saved**.
+
+The same dialog holds the phone numbers and communication preferences ([Phones, WhatsApp and contact preferences](/articles/patients/managing-contact-numbers)) and the under-age and tutor options ([Minors, tutors and family](/articles/patients/minors-and-family)).
+
+> **Good to know:** QuiroFlow checks the DNI/NIE. If the check letter doesn't match, it tells you it isn't valid. If it isn't a Spanish ID, it's saved anyway, but full facturas will go to the tax agency without the recipient's NIF.
+
+> **Good to know:** if the **Referral source** says another patient recommended them (Paciente, Referido, Recomendación, Boca a boca…), a **Referred by (existing patient)** field appears so you can pick who it was.
+
+> **Good to know:** anyone who can edit patients can add tags, but removing them needs the **Remove patient tags** permission.
+
+## The Appointments tab
+
+At the top you see **Visits, 12 mo**, **Attendance** and **Cancelled**. Below, **Upcoming** and **Past**: each visit shows its status (**Completed**, **Missed**, **Cancelled**, **Confirmed**, **Booked**), how it was paid, **Online** if the patient booked it themselves, and the **Notes** and **Send confirmation** buttons.
+
+**Send history** sends the patient a PDF of their visit history, by **Email** or WhatsApp. It can't be sent to a minor or to a patient marked **Do not contact**.
+
+## Who can do what
+
+You need the **Patients** permission (**All** or **Only their own**) to open a record, and **Edit patient details** to change it. Without the latter you'll see the **View only** pill and a **View all details** button instead of **Edit all details**. Every time someone opens a record it's written to the **Activity log**.

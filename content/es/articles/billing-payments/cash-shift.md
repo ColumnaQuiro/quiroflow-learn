@@ -1,42 +1,45 @@
 ---
-title: Turnos de caja (Cash Shift)
-description: Concilia el efectivo físico de tu caja con lo que ha registrado QuiroFlow.
+title: Turno de caja
+description: Comprueba lo cobrado hoy y cuadra el efectivo que debería haber en la caja.
 collection: billing-payments
-order: 4
+order: 10
 ---
 
-Si tu recepción cobra en efectivo, **Cash Shift** (en la barra de herramientas del Calendario) es cómo conciliar lo que hay físicamente en la caja con lo que QuiroFlow ha registrado -- sin esto, el efectivo es el único método de pago sin un registro independiente con el que contrastarlo.
+El **Turno de caja** te enseña lo que se ha cargado y cobrado hoy, cuánto ha sido en efectivo y cuánto dinero debería haber en la caja. Lo abres desde el botón **Turno de caja** de la barra superior del calendario. El turno se abre solo cada día y pasa al siguiente sin que tengas que hacer nada.
 
-::image-carousel
----
-images:
-  - src: /screenshots/cash-shift-modal.png
-    alt: Panel de Cash Shift mostrando totales facturados y cobrados, un desglose de caja, y un formulario para registrar entradas o salidas de efectivo
-    caption: "El turno de hoy -- totales cobrados y el desglose de caja"
----
+Necesitas el permiso **Registrar pagos y llevar la caja**.
+
+## Revisar el turno
+
+::help-video{clip="billing--cash-shift" caption="Apuntar un ingreso en el banco en el turno de caja"}
 ::
 
-## Cómo funciona un turno
+Al abrirlo verás:
 
-Un turno corre automáticamente desde las 00:00 y pasa al día siguiente por sí solo -- no hay ningún paso de "iniciar turno" que recordar. Selecciona **Cash Shift** en cualquier momento del día para ver cómo va todo hasta ahora:
+- **Cargado en este turno**: lo que se ha cargado hoy en recibos.
+- **Total cobrado**, con su desglose en **Efectivo**, **Tarjeta** y **Otro**.
+- **Saldado sin entrada de dinero (no incluido en el total):** lo pagado con **Crédito en cuenta** y lo condonado (**Baja contable**). No es dinero que entra hoy.
+- Un aviso si hay citas completadas sin cobrar en este turno, con los nombres de los pacientes.
 
-- **Invoiced this shift** -- el valor total de las facturas creadas hoy, en todos los métodos de pago.
-- **Total collected** -- lo que realmente se ha cobrado hoy, que puede ser menos que lo facturado si algunas facturas de hoy siguen pendientes.
-- **Cash** -- solo la parte en efectivo de lo cobrado.
+## La caja registradora
 
-## El desglose de la caja
+En **Caja registradora**:
 
-- **Cash payments** -- efectivo cobrado específicamente de pagos de pacientes.
-- **Cash in** -- cualquier otro efectivo añadido a la caja (por ejemplo, un fondo inicial).
-- **Cash out** -- efectivo retirado (un ingreso al banco, caja chica, cambio entregado por un motivo que no es un pago).
-- **Expected in drawer** -- el total acumulado que QuiroFlow espera que haya físicamente, combinando los tres anteriores.
+- **Cambio inicial**: el fondo con el que empieza la caja. Viene del turno anterior; si no es correcto, pulsa **Editar**, escribe el importe y pulsa **Guardar**.
+- **Pagos en efectivo**: el efectivo cobrado a pacientes hoy.
+- **Entrada de efectivo** y **Salida de efectivo**: lo que has metido o sacado por otros motivos.
+- **Esperado en caja**: lo que debería haber físicamente.
 
-Usa el formulario **Type / Amount / Note** para registrar una entrada o salida de efectivo en el momento en que ocurre -- un ingreso al banco a mediodía, por ejemplo -- para que el total esperado siga siendo correcto durante el resto del turno, en lugar de solo cuadrar al abrir y al cerrar.
+## Apuntar una entrada o salida de efectivo
 
-## Cerrar un turno
+1. En **Tipo**, elige **Entrada de efectivo** o **Salida de efectivo**.
+2. Escribe el **Importe** y una **Nota** (por ejemplo, «ingreso en banco»).
+3. Pulsa **Añadir**.
 
-No hace falta cerrar un turno para que pase al día siguiente -- lo hace solo, automáticamente. Usa **Close Shift** únicamente si quieres dejar una nota de cierre de día (una explicación de una descuadre, una nota de traspaso para quien abra la caja al día siguiente) asociada al registro de ese día en concreto.
+**Esperado en caja** se actualiza al momento. Si al contar la caja no cuadra, apunta la diferencia con una nota que explique el motivo, para que quede registrado.
 
-## Cuando los números no cuadran
+## Cerrar el turno
 
-Si el efectivo físico de la caja no coincide con **Expected in drawer**, registra la diferencia como un **Cash out** (si falta dinero) o un **Cash in** (si sobra) con una nota explicando el motivo, en lugar de dejarlo sin conciliar -- así el descuadre queda visible y fechado, en vez de simplemente no cuadrar en silencio la próxima vez que alguien lo revise.
+No hace falta: se cierra solo hacia el día siguiente. Ciérralo a mano solo si quieres dejar una nota de fin de día: escríbela en **Nota de fin de turno** y pulsa **Cerrar turno**.
+
+> **Ten en cuenta:** para ver cada pago del día uno por uno (hora, paciente, método), usa **Informes › Transacciones del día**.

@@ -1,46 +1,97 @@
 ---
-title: Estados de las citas explicados
-description: Qué significa cada punto de color en un bloque del calendario, y cómo cambia.
+title: Estados de una cita y el panel de la cita
+description: Qué significa cada estado de una cita, cómo pasa de uno a otro y qué puedes hacer desde el panel que se abre al hacer clic en ella.
 collection: calendar-appointments
-order: 2
+order: 3
 ---
 
-Cada bloque de cita en el Calendario muestra un pequeño punto de color que indica su estado. Pasar el cursor sobre un bloque muestra el estado completo en texto, así que nunca tienes que memorizar los colores -- son una forma rápida de revisar de un vistazo un día ajetreado, no la única manera de ver el estado.
+Cada cita tiene un solo estado que dice dónde está el paciente: si ha confirmado, si ha llegado, si está en consulta, si falta cobrarle o si ya está hecha. Ese mismo estado lo ves en el bloque del calendario, en la tarjeta que aparece al pasar el ratón, en la fila de recuentos, en el panel de la cita y en el [seguimiento de flujo](/es/articles/calendar-appointments/flow-tracker), así que nunca se contradicen.
 
-![Calendario mostrando citas con estados Booked, Confirmed, Wants to reschedule y Missed, junto con la leyenda de estados](/screenshots/calendar.png)
+## Los estados
 
-| Estado | Color | Significado |
-| --- | --- | --- |
-| Booked | Azul | Programada, sin respuesta de confirmación todavía y sin recordatorio enviado. |
-| Unconfirmed | Ámbar | Se envió un mensaje de confirmación o recordatorio, y el paciente aún no ha respondido. |
-| Confirmed | Verde | El paciente respondió confirmando la cita. |
-| Wants to reschedule | Morado | El paciente respondió pidiendo cambiar la cita, en lugar de confirmarla. |
-| Completed | Verde | La visita tuvo lugar. |
-| No-show | Rojo | El paciente no vino y no se marcó como cancelada de antemano. |
-| Cancelled | Gris | La cita se canceló. |
+| Estado | Borde del bloque | Cuándo |
+|---|---|---|
+| **Sin confirmar** | Discontinuo | Se le envió una confirmación o un recordatorio y el paciente no ha respondido. |
+| **Online · sin confirmar** | Discontinuo | El paciente reservó online y aún no está confirmada. |
+| **Quiere cambiar** | Discontinuo, ámbar | El paciente respondió pidiendo cambiar la cita. |
+| **Confirmada** | Continuo | El paciente respondió que sí, alguien pulsó **Marcar como confirmada**, o nunca se le pidió confirmación. |
+| **Llegó** (con la hora) | Continuo | Recepción registró la llegada, o el paciente la registró él mismo en la tablet o con «Ya estoy aquí». |
+| **En consulta** | Continuo | Se pulsó **Pasa a consulta**, o el profesional abrió la visita en Mi día. |
+| **Por cobrar** | Continuo | Se pulsó **Pasar a cobro**. |
+| **Hecha** | Apagado | Se cobró la visita, se marcó **Hecha, sin cobro**, se firmó en Mi día o se marcó **Vino** en una clase. |
+| **No vino** | Gris | Se pulsó **No vino**. |
+| **Cancelada** | Sale del calendario | Se canceló desde recepción, el paciente respondió para cancelar o canceló desde su app o portal, o por una ausencia imprevista. |
 
-El panel **Status Key** del Calendario (en el menú lateral, debajo del mini calendario) muestra esta misma leyenda de un vistazo, para que los nuevos miembros del equipo no tengan que volver a este artículo una vez que se la aprenden.
+La regla para leer el calendario de un vistazo: **un borde discontinuo es una cita que aún no está firme**, y **el rojo solo significa dinero pendiente**. La **Leyenda de estados**, abajo en el panel izquierdo del calendario, te lo recuerda.
 
-## Cómo se establecen Confirmed / Wants to reschedule / Unconfirmed
+> **Ten en cuenta:** una cita reservada en recepción sin pedir confirmación aparece directamente como **Confirmada**. Solo pasa a **Sin confirmar** si se le envía un mensaje que pide respuesta.
 
-Si has configurado las [confirmaciones y recordatorios automáticos](/es/articles/calendar-appointments/setting-up-confirmations-and-reminders), QuiroFlow envía al paciente un mensaje de WhatsApp pidiéndole que confirme. Cuando responde:
+## Cómo responde el paciente por WhatsApp
 
-- Algo como "Confirmar", "Sí" u "Ok" &rarr; la cita pasa a **Confirmed**.
-- Algo como "Cambiar cita" o que mencione querer cambiar la hora &rarr; pasa a **Wants to reschedule**, para que el personal sepa que debe contactar en lugar de asumir que está reservada.
-- Algo como "Cancelar" &rarr; la cita se cancela directamente.
+Cuando el paciente contesta a la confirmación o al recordatorio, QuiroFlow lee su respuesta:
 
-Si la respuesta no coincide claramente con ninguna de estas, la cita se queda en **Unconfirmed** y merece la pena echar un vistazo rápido a la conversación en el **Inbox** -- puede que el paciente haya respondido con algo que QuiroFlow no pudo interpretar automáticamente (una pregunta, una errata, una nota de voz), y es fácil pasarlo por alto si solo miras el calendario.
+- Si empieza por "confirmo", "sí", "vale", "ok" (o su equivalente en inglés o francés), la cita pasa a **Confirmada**.
+- Si empieza por "cancelar", "cancelo" o "anular", **la cita se cancela**, sin cargo, y se avisa a la lista de espera si corresponde.
+- Si habla de "cambiar", "reprogramar", "aplazar" o "mover" la cita, pasa a **Quiere cambiar**. No cuenta si lo que quiere cambiar es otra cosa, como su email o su teléfono.
+- Cualquier otra cosa no cambia nada: tu equipo la lee en la [bandeja de entrada](/es/articles/communications/the-shared-inbox).
 
-Ten en cuenta que **Booked** y **Unconfirmed** parecen similares en intención (ninguno tiene aún una respuesta positiva) pero significan cosas distintas: Booked significa que todavía no se ha enviado ningún mensaje (o que las confirmaciones están desactivadas), mientras que Unconfirmed significa que *sí* se envió un mensaje y QuiroFlow sigue esperando respuesta.
+Una respuesta que ya está registrada no se pierde por un mensaje posterior. Y en cuanto el paciente llega a la clínica, lo que dijo antes deja de contar: alguien que pidió cambiar y luego vino aparece como **Llegó**.
 
-## Cambiar un estado manualmente
+## Abrir una cita
 
-Booked, Completed, No-show y Cancelled pueden establecerse directamente por el personal abriendo la cita -- útil cuando un paciente confirma por teléfono o en persona en lugar de responder por WhatsApp. Confirmed y Wants to reschedule dependen de la propia respuesta del paciente y no están pensados para establecerse a mano; si un paciente confirma verbalmente, el equivalente práctico es dejarla como Booked (o marcarla como Completed cuando ocurra la visita) en lugar de intentar forzarla a Confirmed.
+Haz clic en un bloque (o pulsa **Intro** sobre él) y se abre el panel de la cita a la derecha (a pantalla completa en el móvil). Arriba ves el nombre, el tipo, la hora, el profesional, la sala, cuántas visitas lleva y si tiene una próxima cita, y el botón **Ficha** para abrir su ficha. Tiene tres pestañas:
 
-## Por qué importa esto en tu día a día
+- **Resumen**: dónde está, avisos, dinero, notas, mensajes enviados y documentos.
+- **Cobro**: cobrar la visita, usar un bono o enviar el recibo (lo explica [Cobrar una visita](/es/articles/billing-payments/taking-a-payment)). Un punto rojo avisa de que falta cobrar.
+- **Historial**: todo lo que ha pasado con la cita, con quién lo hizo: reservada (en recepción, online o por la recepcionista IA), mensajes enviados, movida, llegó, pasó a consulta, pasó a cobro, cancelada, no vino, hecha o deshecha, y cambios de hora, profesional, sala o tipo.
 
-Los estados no son solo decorativos -- determinan qué aparece en otras partes de QuiroFlow:
+## Llevar al paciente de la llegada al cobro
 
-- Los **Reports** cuentan las visitas Completed y No-show por separado al calcular las tasas de asistencia.
-- El **Flow Tracker** (consulta [Seguimiento de pacientes durante su visita](/es/articles/calendar-appointments/flow-tracker)) es un flujo independiente del mismo día -- no lee ni cambia estos estados, pero el Completed de ahí es el mismo estado subyacente que el Completed de aquí.
-- Un bloque de citas **Unconfirmed** cerca de su horario suele ser la señal de alerta más clara de un día que está a punto de tener huecos -- merece la pena revisarlo cada mañana.
+::help-video{clip="calendar--check-in-to-checkout" caption="Registrar la llegada, pasar a consulta, pasar a cobro y cobrar"}
+::
+
+En **Resumen**, el apartado **Dónde está** muestra una línea de cinco pasos: **Sin confirmar** o **Confirmada** → **Llegó** → **En consulta** → **Por cobrar** → **Hecha**. El botón principal siempre es el siguiente paso:
+
+1. Cuando llega el paciente, pulsa **Registrar llegada**.
+2. Cuando entra con el profesional, pulsa **Pasa a consulta**.
+3. Al salir, pulsa **Pasar a cobro**.
+4. Pulsa **Cobrar**: se abre la pestaña **Cobro**. Al cobrar, la cita queda **Hecha**.
+
+Si no hay nada que cobrar (por ejemplo, una visita de cortesía), en **Por cobrar** tienes **Hecha, sin cobro**. Puedes saltarte pasos: la cita queda en el último que marques. Con una cita abierta, la tecla `a` da el siguiente paso y `p` abre **Cobro**.
+
+> **Ten en cuenta:** **Registrar llegada** pone en marcha las automatizaciones de "llegada" que tenga tu clínica.
+
+## Confirmar a mano
+
+::help-video{clip="calendar--mark-confirmed" caption="Marcar como confirmada una cita que el paciente confirmó por teléfono"}
+::
+
+Si el paciente te confirma por teléfono o en recepción:
+
+1. Abre la cita (con borde discontinuo).
+2. Pulsa **Marcar como confirmada**.
+
+El borde del bloque pasa a ser continuo.
+
+## Deshacer un paso
+
+::help-video{clip="calendar--undo-step" caption="Deshacer una llegada registrada por error"}
+::
+
+Junto al botón principal tienes el que deshace el último paso: **Deshacer llegada**, **Deshacer consulta** o **Deshacer paso a cobro**. La cita vuelve al paso anterior.
+
+Una visita ya **Hecha** se puede reabrir con **Deshacer visita**. Te pregunta "¿Deshacer esta visita?": deja de estar hecha y vuelve al paso en el que estaba. Si se pagó con un bono, la sesión vuelve al bono y se anula su cargo.
+
+> **Ten en cuenta:** una visita cobrada con dinero no se puede deshacer aquí: "Esta visita tiene un pago registrado y no se puede deshacer aquí. Devuelve antes el pago desde la pestaña Dinero de la ficha."
+
+## Lo que más ves en Resumen
+
+- **Señales rojas**, **Para el equipo** (la nota del tipo de cita), etiquetas y formularios pendientes, con **Ver formularios**. Sin permiso de notas clínicas, las señales rojas solo dicen "En la ficha clínica. Avisa al profesional."
+- **Dinero**: **Esta visita** (cobrada, sin cobrar, el bono que descuenta…) y **Saldo del paciente** (**Debe**, con un botón para cobrarlo; saldo disponible; o **Sin saldo pendiente**).
+- **Notas**: la "Nota del paciente · se ve en todas sus citas" y la "Nota de esta visita". Las dos se guardan solas.
+- **Avisos enviados**: cuándo se envió la **Confirmación**, el **Recordatorio** y la **Info del día**.
+- **Documentos**: cuando el paciente ya ha llegado, **Justificante de asistencia** abre un justificante para imprimir.
+
+Si la visita forma parte de un plan de cuidados verás "Visita N del plan". Si se reservó con un tipo distinto al que pide el plan, aparece el aviso y un botón **Cambiar a** con el tipo correcto.
+
+Abajo del panel están **Cancelar cita…**, **No vino** y **Mover…**: se explican en [Mover y cancelar citas](/es/articles/calendar-appointments/moving-and-cancelling).

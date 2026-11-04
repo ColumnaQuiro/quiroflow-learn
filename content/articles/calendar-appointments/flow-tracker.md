@@ -1,32 +1,40 @@
 ---
-title: Tracking patients through their visit (Flow Tracker)
-description: Move a patient through Arrived, In Session, and Awaiting Checkout as they move through the clinic.
+title: Flow tracker
+description: The calendar panel that shows who has arrived, who is in session and who still needs to pay, and moves them to the next step with one click.
 collection: calendar-appointments
-order: 4
+order: 7
 ---
 
-The Flow Tracker is a separate, same-day pipeline from an appointment's confirmation status -- it's about where a patient physically is in their visit *today*, not whether they replied to a WhatsApp message. It shows up as a panel on the Calendar, next to the day's schedule, and is most useful in clinics with more than one practitioner or a busy front desk, where "who's waiting" isn't obvious just by looking around.
+The **Flow tracker** answers the front desk's question: who is in the clinic right now, and at what point? It sits in the calendar's left panel, under the mini month, and shows only today for the whole clinic, whatever day or tab you have open.
 
-![Calendar with the Flow Tracker panel showing one patient each in Arrived, In Session, and Awaiting Checkout](/screenshots/calendar-flow-tracker.png)
+## The three columns
 
-## The three stages
+- **Arrived**: patients who have been checked in and are waiting to go in. Under the name: "arrived 10:02 · booked 10:00".
+- **In session**: patients with the practitioner. Underneath: since when and with whom ("since 10:15 · Sara").
+- **To pay**: patients who have come out and still need to pay. Underneath: what they owe ("owes €44.00").
 
-1. **Arrived** -- the patient has checked in. This happens the moment staff mark an appointment as checked in (the same check-in used elsewhere in the app); it's the entry point into the Flow Tracker. A patient who hasn't checked in yet doesn't appear here at all, even if their appointment time has passed.
-2. **In Session** -- the patient is with the practitioner. Select the **&rarr;** arrow next to their name in Arrived to move them here. This step is purely informational -- moving someone to In Session doesn't start a timer or affect billing.
-3. **Awaiting Checkout** -- the visit itself is done and the patient is finishing up at the front desk (payment, booking their next visit). Select **&rarr;** from In Session to move them here.
+It reads the same stages as the calendar blocks, so the tracker and the diary never disagree. To go over the stages, see [Appointment stages and the appointment panel](/articles/calendar-appointments/appointment-statuses-explained).
 
-From Awaiting Checkout, select **Complete** to mark the appointment completed -- the same status used everywhere else in QuiroFlow (reports, patient visit history, care plans). Moving a patient backward (from In Session back to Arrived, for example) is also possible if someone advances them by mistake.
+## Move a patient to the next step
 
-## Why it's useful
+::help-video{clip="calendar--flow-tracker" caption="Moving a patient from the waiting room into session and to checkout from the tracker"}
+::
 
-At a glance, front desk and practitioners can see exactly who's waiting, who's currently being seen, and who still needs to check out -- without walking over to ask or opening each appointment individually. In a multi-practitioner clinic this replaces a lot of "is Michael still with the chiropractor?" back-and-forth.
+1. In **Arrived**, click the → arrow next to the name (**Into session**). The patient moves to **In session**.
+2. In **In session**, click → (**To checkout**). They move to **To pay**.
+3. In **To pay**, click **Charge**: the visit opens on the **Billing** tab, ready to charge.
 
-It's scoped to today only; there's no need (or way) to flow-track a past or future date. If a patient's visit spans midnight in some unusual edge case, or they're still Awaiting Checkout when the day rolls over, check them out before the date changes to keep the tracker accurate.
+Click a name to open the panel for their visit.
 
-## Privacy mode
+> **Good to know:** the tracker only moves forward. To undo a step (a check-in made by mistake, say), open the visit and use **Undo arrival**, **Undo session** or **Undo checkout**.
 
-The Calendar's **Display** panel also has a **Privacy mode** toggle, separate from Flow Tracker -- turning it on hides patient names throughout the calendar view (useful if your screen is visible to other patients in a waiting area), while the Flow Tracker panel itself still shows who's in which stage for staff who need that visibility. The two toggles are independent, so you can run Flow Tracker with or without Privacy mode depending on how your front desk is laid out.
+> **Good to know:** **Charge** only opens the billing tab; nothing is recorded until you take the payment.
 
-## Turning it off
+## Hide it or blur names
 
-If your clinic doesn't use this level of tracking -- a single-practitioner clinic often doesn't need it -- toggle **Flow tracker** off in the Calendar's **Display** settings panel. The panel disappears and appointments behave exactly as they do without it; check-in still works the same way, it just won't show up in a separate tracker view.
+- The **Flow tracker** switch, under **Display**, shows or hides it. Hiding it changes nothing about check-ins.
+- With **Privacy mode** on, names are blurred here too.
+
+Neither is saved: after a page reload the tracker shows again and privacy mode is off.
+
+Check-in can be done from the appointment panel, from [My Day](/articles/calendar-appointments/my-day), or by the patient on the [reception tablet or their phone](/articles/calendar-appointments/check-in).
