@@ -27,7 +27,7 @@ Arriba de la página verás si está lista: «Tu página de reservas está activ
 
 ## Ponerla en tu web
 
-En **Insertar en tu web** tienes el **Código para insertar en tu web**. Pulsa **Copiar** y pégalo en la página de tu web donde quieras que aparezca la reserva. Quien lleve tu web lo hace en un minuto.
+En **Insertar en tu web** tienes el **Código para insertar en tu web**. Pulsa **Copiar** y pégalo en la página de tu web donde quieras que aparezca la reserva. Quien lleve tu web lo hace en un minuto. Para los pasos en WordPress, Wix o Squarespace, y qué hacer si no aparece, consulta [Poner la reserva en tu web](/es/articles/online-booking/booking-on-your-website).
 
 > **Ten en cuenta:** el código incluye un script que distingue las reservas que vienen de anuncios de pago (Google, Meta) del resto, para que Crecimiento sepa de dónde vino cada paciente. Si ya insertaste la reserva a mano, basta con añadir la etiqueta script.
 
