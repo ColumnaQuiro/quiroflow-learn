@@ -2,7 +2,7 @@
 title: Referral programme
 description: Each patient gets their own link to invite friends; anyone who books with it is recorded as referred by that person.
 collection: online-booking
-order: 3
+order: 4
 ---
 
 With the **Referral programme**, each patient gets their own link to your booking page, in the app and the patient portal. When someone books for the first time through that link, they're saved as referred by that person and your "patient referred" automations run (a thank-you message, for example). That way you know who brings you new patients and who you owe a thank-you.

@@ -2,7 +2,7 @@
 title: Customising the booking page
 description: How far ahead, practitioner order, colours, your own wording and discount codes on your booking page.
 collection: online-booking
-order: 2
+order: 3
 ---
 
 Your booking page can be adapted to your clinic: how far ahead people can book, the order practitioners are listed in, its colours and logo, any of the text it shows, and the discount codes you accept. It's all in **Settings › Clinic › Online Booking**, in the **Rules**, **Look**, **Texts** and **Discount codes** sections.

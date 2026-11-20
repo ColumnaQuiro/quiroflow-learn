@@ -2,7 +2,7 @@
 title: Programa de recomendación
 description: Cada paciente tiene su propio enlace para invitar a amigos; quien reserve con él queda registrado como recomendado por esa persona.
 collection: online-booking
-order: 3
+order: 4
 ---
 
 Con el **Programa de recomendación**, cada paciente tiene su propio enlace a tu página de reservas, en la app y en el portal del paciente. Cuando alguien reserva por primera vez con ese enlace, queda guardado como recomendado por esa persona y se lanzan las automatizaciones de «paciente referido» (por ejemplo, un mensaje de agradecimiento). Así sabes quién te trae pacientes nuevos y a quién le debes un detalle.

@@ -2,7 +2,7 @@
 title: Personalizar la página de reservas
 description: Antelación, orden de los profesionales, colores, textos propios y códigos de descuento de tu página de reservas.
 collection: online-booking
-order: 2
+order: 3
 ---
 
 Tu página de reservas se puede adaptar a tu clínica: hasta cuándo se puede reservar, en qué orden salen los profesionales, sus colores y logotipo, cualquier texto que muestra y los códigos de descuento que aceptas. Todo está en **Ajustes › Clínica › Reserva online**, en las secciones **Reglas**, **Aspecto**, **Textos** y **Códigos de descuento**.

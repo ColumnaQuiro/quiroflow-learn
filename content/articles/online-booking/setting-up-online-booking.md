@@ -27,7 +27,7 @@ At the top of the page you'll see whether it's ready: "Your booking page is live
 
 ## Putting it on your website
 
-Under **Website embed** you have the **Website embed code**. Click **Copy** and paste it on the page of your website where you want booking to appear. Whoever manages your website can do it in a minute.
+Under **Website embed** you have the **Website embed code**. Click **Copy** and paste it on the page of your website where you want booking to appear. Whoever manages your website can do it in a minute. For the steps on WordPress, Wix or Squarespace, and what to do if it doesn't show, see [Putting booking on your website](/articles/online-booking/booking-on-your-website).
 
 > **Good to know:** the code includes a script that tells bookings from paid ads (Google, Meta) apart from the rest, so Growth knows where each patient came from. If you already embedded booking by hand, adding just the script tag is enough.
 
